@@ -1,6 +1,6 @@
 # Tanay Bennur 12/21/2021
 # Stylizes and Pixelizes Images with numpy and PIL
-# Find palettes at https://lospec.com/palette-list and download as hex files
+# Find palettes at https://lospec.com/palette-list and download as hex file
 
 
 from PIL import Image, ImageColor
