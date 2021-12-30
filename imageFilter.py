@@ -3,10 +3,17 @@
 # Find palettes at https://lospec.com/palette-list and download as hex file
 
 
-from PIL import Image, ImageColor
-import numpy as np
 import time
+import numpy as np
+import ctypes
+from PIL import Image, ImageColor
 
+c_file = ctypes.CDLL("../imageFilter/stylize.dll")
+stylize = c_file.stylize
+stylize.restype = None
+stylize.argtypes = [np.ctypeslib.ndpointer(ctypes.c_int16),
+                np.ctypeslib.ndpointer(ctypes.c_int16), 
+                ctypes.c_int, ctypes.c_int, ctypes.c_int]
 
 VALID_IMAGE_FORMATS = [".jpg", ".png"]
 VALID_PALLET_FORMATS = [".hex"]
@@ -94,9 +101,7 @@ def print_timings(dimensions, num_colors, timings):
     
     print("\nTIMINGS")
     print("Setup: " , timings[1] - timings[0])
-    print("Differential Calculation: " , timings[2] - timings[1])
-    print("Normalization: " , timings[3] - timings[2], "\n")
-
+    print("Stylization: " , timings[2] - timings[1], "\n")
 
 def convertImage(image_name, pallet_name, num_colors, should_time = False):
 
@@ -107,22 +112,13 @@ def convertImage(image_name, pallet_name, num_colors, should_time = False):
     
     t1 = time.time()
     
-    data_dif = np.zeros((num_colors, dimensions[0], dimensions[1]), dtype = "int16")
-    for x in range(num_colors):
-        data_dif[x] = np.sum(np.absolute(data - pallet[x]), axis=2)
-    data_dif = np.argmin(data_dif, axis = 0)
+    stylize(data, pallet, dimensions[0], dimensions[1], num_colors)
     
     t2 = time.time()
-    
-    for i in range(dimensions[0]):
-        for j in range(dimensions[1]):
-            data[i][j] = pallet[data_dif[i][j]]
-    
-    t3 = time.time()
-    
+        
     img = Image.fromarray(np.uint8(data), 'RGB')
     img.show()
     
-    if should_time: print_timings(dimensions, num_colors, [t0, t1, t2, t3])
+    if should_time: print_timings(dimensions, num_colors, [t0, t1, t2])
 
-convertImage(image_name = "mountain.png", pallet_name = "fantasy-32.hex", num_colors = 32, should_time = True)
+convertImage(image_name = "foggy.jpg", pallet_name = "marshmellow-32.hex", num_colors = 32, should_time = True)
