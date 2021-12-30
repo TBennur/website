@@ -8,12 +8,14 @@ import numpy as np
 import ctypes
 from PIL import Image, ImageColor
 
-c_file = ctypes.CDLL("../imageFilter/stylize.dll")
-stylize = c_file.stylize
+
+stylize = ctypes.CDLL("../imageFilter/stylize.dll").stylize
 stylize.restype = None
 stylize.argtypes = [np.ctypeslib.ndpointer(ctypes.c_int16),
-                np.ctypeslib.ndpointer(ctypes.c_int16), 
-                ctypes.c_int, ctypes.c_int, ctypes.c_int]
+                    np.ctypeslib.ndpointer(ctypes.c_int16), 
+                    ctypes.c_int, ctypes.c_int, ctypes.c_int,
+                    ctypes.c_bool]
+
 
 VALID_IMAGE_FORMATS = [".jpg", ".png"]
 VALID_PALLET_FORMATS = [".hex"]
@@ -28,6 +30,16 @@ def is_valid_pallet(pallet_name):
         if pallet_name.endswith(format): return True
     return False
 
+def print_timings(dimensions, num_colors, timings):
+    
+    print("\nPARAMETERS")
+    print("Image Size: ", dimensions[0], " by ", dimensions[1])
+    print("Pallet Size: ", num_colors)
+    
+    print("\nTIMINGS")
+    print("Setup: " , timings[1] - timings[0])
+    print("Stylization: " , timings[2] - timings[1], "\n")
+
 
 def get_image(image_name):
     
@@ -39,7 +51,6 @@ def get_image(image_name):
         raise Exception("Non-Existent Image File")
     
     img.load()
-    
     data = np.asarray(img, dtype = "int16")[:, :, 0:3]
     dimensions = [len(data), len(data[0])]
 
@@ -60,7 +71,7 @@ def pallet_folder(num_colors):
     elif num_colors > 32:
         return "palletLarge/"
     
-    return "palletMedium/"
+    return "palletCustom/"
 
 def convert_pallet(pallet_list):
     
@@ -93,16 +104,6 @@ def get_pallet(pallet_name, num_colors):
     return convert_pallet(palletList)
 
 
-def print_timings(dimensions, num_colors, timings):
-    
-    print("\nPARAMETERS")
-    print("Image Size: ", dimensions[0], " by ", dimensions[1])
-    print("Pallet Size: ", num_colors)
-    
-    print("\nTIMINGS")
-    print("Setup: " , timings[1] - timings[0])
-    print("Stylization: " , timings[2] - timings[1], "\n")
-
 def convertImage(image_name, pallet_name, num_colors, should_time = False):
 
     t0 = time.time()
@@ -112,7 +113,7 @@ def convertImage(image_name, pallet_name, num_colors, should_time = False):
     
     t1 = time.time()
     
-    stylize(data, pallet, dimensions[0], dimensions[1], num_colors)
+    stylize(data, pallet, dimensions[0], dimensions[1], num_colors, image_name.endswith(".jpg"))
     
     t2 = time.time()
         
@@ -121,4 +122,4 @@ def convertImage(image_name, pallet_name, num_colors, should_time = False):
     
     if should_time: print_timings(dimensions, num_colors, [t0, t1, t2])
 
-convertImage(image_name = "foggy.jpg", pallet_name = "marshmellow-32.hex", num_colors = 32, should_time = True)
+convertImage(image_name = "pittsburgh.jpg", pallet_name = "fantasy-32.hex", num_colors = 32, should_time = True)
