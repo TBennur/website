@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, jsonify, request
 
 app = Flask(__name__)
 
@@ -9,6 +9,17 @@ def home():
 @app.route("/stylizer")
 def stylizer():
     return render_template("stylizer.html")
+
+@app.route('/stylize-button')
+def stylize_button():
+    print ("Hi")
+    return ("nothing")
+
+@app.route('/selection-test', methods=["GET"])
+def selection_test():
+    print(request.args.get("selectionIndex"))
+    return ("nothing")
+
 
 @app.route("/about")
 def about():
