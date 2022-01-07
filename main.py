@@ -2,6 +2,8 @@ from flask import Flask, render_template, jsonify, request
 
 app = Flask(__name__)
 
+current_selections = {"current_image": 1}
+
 @app.route("/")
 def home():
     return render_template("home.html")
@@ -17,9 +19,11 @@ def stylize_button():
 
 @app.route('/selection-test', methods=["GET"])
 def selection_test():
-    print(request.args.get("selectionIndex"))
+    selection = request.args.get("selectionIndex")
+    if selection != "Please Select an Image":
+        current_selections["current_image"] = int(selection)
+    print(current_selections["current_image"])
     return ("nothing")
-
 
 @app.route("/about")
 def about():

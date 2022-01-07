@@ -1,0 +1,27 @@
+/* Custom CSS Overrides */
+
+.navbar-brand {
+    margin-left: 2%;
+}
+
+.webpage-render {
+    margin-top: 5%;
+    margin-left: 5%;
+    margin-bottom: 5%;
+    margin-right: 5%;
+}
+
+.stylizer-image {
+    margin-top: 1%;;
+    width: 40%;
+    max-height: 40%;
+}
+
+.image-dropdown {
+    margin-top: 1%;
+    margin-left: 12%;
+}
+
+.stylize-button {
+    margin-top: 1%;
+}

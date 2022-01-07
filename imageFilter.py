@@ -46,7 +46,7 @@ def get_image(image_name):
     if (not is_valid_image(image_name)): raise Exception("Invalid Image Format")
 
     try:
-        img = Image.open("Images/" + image_name)
+        img = Image.open("static/defaultFiles/Images/" + image_name)
     except FileNotFoundError:
         raise Exception("Non-Existent Image File")
     
@@ -89,7 +89,7 @@ def get_pallet(pallet_name, num_colors):
     if (not is_valid_pallet(pallet_name)): raise Exception("Invalid Pallet Format")
 
     try:
-        colorList = open("Palettes/" + pallet_folder(num_colors) + pallet_name)
+        colorList = open("static/defaultFiles/Palettes/" + pallet_folder(num_colors) + pallet_name)
     except FileNotFoundError:
         raise Exception("Non-Existent Pallet File")
     
