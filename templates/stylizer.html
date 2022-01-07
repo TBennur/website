@@ -11,16 +11,24 @@
     <script type=text/javascript>
         
         images = {
-            1 : "{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}", 
-            2 : "{{ url_for('static',     filename='defaultFiles/Images/cave.png') }}",
-            3 : "{{ url_for('static',     filename='defaultFiles/Images/foggy.jpg') }}",
-            4 : "{{ url_for('static',     filename='defaultFiles/Images/lake.jpg') }}",
-            5 : "{{ url_for('static',     filename='defaultFiles/Images/microscope.jpg') }}",
-            6 : "{{ url_for('static',     filename='defaultFiles/Images/mountain.png') }}",
-            7 : "{{ url_for('static',     filename='defaultFiles/Images/pittsburgh.jpg') }}",
-            8 : "{{ url_for('static',     filename='defaultFiles/Images/sunset.jpg') }}",
-            9 : "{{ url_for('static',     filename='defaultFiles/Images/train.jpg') }}",
-            10 : "{{ url_for('static',     filename='defaultFiles/Images/wasteland.jpg') }}",
+            "Beach" : "{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}", 
+            "Cave" : "{{ url_for('static',     filename='defaultFiles/Images/cave.png') }}",
+            "Foggy" : "{{ url_for('static',     filename='defaultFiles/Images/foggy.jpg') }}",
+            "Lake" : "{{ url_for('static',     filename='defaultFiles/Images/lake.jpg') }}",
+            "Microscope" : "{{ url_for('static',     filename='defaultFiles/Images/microscope.jpg') }}",
+            "Mountain" : "{{ url_for('static',     filename='defaultFiles/Images/mountain.png') }}",
+            "Pittsburgh" : "{{ url_for('static',     filename='defaultFiles/Images/pittsburgh.jpg') }}",
+            "Sunset" : "{{ url_for('static',     filename='defaultFiles/Images/sunset.jpg') }}",
+            "Train" : "{{ url_for('static',     filename='defaultFiles/Images/train.jpg') }}",
+            "Wasteland" : "{{ url_for('static',     filename='defaultFiles/Images/wasteland.jpg') }}"
+        }
+
+        pallets = {
+            "Small" : ["Carpet Rose", "Monometalic", "Stormy"], 
+            "8-Color" : ["Ammo", "Dawnbringers", "Dreamscape", "Just Parchment", "Paper", "Rust Gold"],
+            "16-Color" : ["Dawnbringer", "Endesga", "Feel The Sun", "Galaxy Flame", "Lost Century", "Ramp Rainbow", "Steam Lords"],
+            "32-Color" : ["AFR", "Endesga", "Fantasy", "Hept", "Marshmellow", "Nanner"],
+            "Large" : ["Comicscapes", "Resurrect", "Shido"]
         }
 
         function stylize() {
@@ -28,51 +36,132 @@
             return false;
         }
         
-        function selection() {;
-            var selection = document.getElementById("selection-test");
-            var selectionVal = selection.value;
+        function select_image() {
+            
+            var image_dropdown = document.getElementById("image-selection-dropdown");
+            var selected_image = image_dropdown.value;
             var image = document.getElementById("unstyled-image");
-            if (selectionVal != "Please Select an Image") {
-                image.src = images[selectionVal];
-            }
-            $.getJSON('/selection-test',
+            
+            image.src = images[selected_image];
+            
+            $.getJSON('/update-stylize-information',
             {
-                selectionIndex: selectionVal
+                selection_type: "Image Selected",
+                image_selection: selected_image
             });
+            
             return false;
         }
 
+        function generate_secondary_dropdown() {
+            
+            var pallet_primary = document.getElementById("pallet-primary");
+            var pallet_size = pallet_primary.value;
+            var pallet_secondary = document.getElementById("pallet-secondary");
+
+            if (pallet_size == "Please Select a Pallet Size") {
+                pallet_secondary.style.display = "none";
+                $.getJSON('/update-stylize-information',
+                {
+                    selection_type: "Deselect Pallet Size",
+                });
+            }
+            else {
+                pallet_secondary.style.display = "block";
+                $.getJSON('/update-stylize-information',
+                {
+                    selection_type: "Select Pallet Size",
+                    pallet_size: pallet_size
+                });    
+            }
+
+            pallet_secondary.length = 1;
+
+            for (var y in pallets[pallet_size]) {
+                pallet_secondary.options[pallet_secondary.options.length] = new Option(pallets[pallet_size][y], pallets[pallet_size][y]);
+            }
+
+            return false;
+        }
+
+        function select_pallet() {
+            
+            var pallet_primary = document.getElementById("pallet-primary");
+            var pallet_size = pallet_primary.value;
+            var pallet_secondary = document.getElementById("pallet-secondary");
+
+            if (pallet_secondary.value == "Please Select a Pallet") {
+                $.getJSON('/update-stylize-information',
+                {
+                    selection_type: "Deselect Pallet",
+                });
+            }
+            else {
+                pallet_secondary.style.display = "block";
+                $.getJSON('/update-stylize-information',
+                {
+                    selection_type: "Select Pallet",
+                    pallet_name: pallet_secondary.value
+                });    
+            }
+
+            return false;
+        }
     </script>
 
 
     <div class="container webpage-render">
-        <div class='container stylize-button position-relative text-center'>
-            <form>
-                <button onclick="stylize()" class='btn btn-primary' type="button">Stylize!</button>
-            </form>
-        </div>
-    
-        <div>
-        <div class='container stylizer-image float-start'>
-            <img id = "unstyled-image" src="{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}" class="img-fluid">
-        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class = "col-xxl-5">
+                    
+                    <div class='container align-top stylizer-image float-start'>
+                        <img id = "unstyled-image" src="{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}" class="img-fluid">
+                    </div>
 
-        <div class='container image-dropdown float-start'>
-            <form>
-                <select onchange="selection()" id="selection-test" class="form-select-sm" aria-label="Default select example">
-                    <option selected>Please Select an Image</option>
-                    <option value="1">Beach</option>
-                    <option value="2">Cave</option>
-                    <option value="3">Foggy</option>
-                    <option value="4">Lake</option>
-                    <option value="5">Microscope</option>
-                    <option value="6">Mountain</option>
-                    <option value="7">Pittsburgh</option>
-                    <option value="8">Sunset</option>
-                    <option value="9">Train</option>
-                    <option value="10">Wasteland</option>
-                </select>
-            </form>
+                    <div class='container align-top image-dropdown float-start'>
+                    <form>
+                        <select onchange="select_image()" id="image-selection-dropdown" class="form-select-sm" aria-label="Default select example">
+                            <option selected value="Beach">Beach</option>
+                            <option value="Cave">Cave</option>
+                            <option value="Foggy">Foggy</option>
+                            <option value="Lake">Lake</option>
+                            <option value="Microscope">Microscope</option>
+                            <option value="Mountain">Mountain</option>
+                            <option value="Pittsburgh">Pittsburgh</option>
+                            <option value="Sunset">Sunset</option>
+                            <option value="Train">Train</option>
+                            <option value="Wasteland">Wasteland</option>
+                        </select>
+                    </form>
+                    </div>
+
+                </div>
+
+                <div class="col-xxl-2">
+                    <div class='container pallet-selection align-top position-relative text-center'>
+                        <form>
+                            <select onchange="generate_secondary_dropdown()" id="pallet-primary" class="form-select-sm" aria-label="Default select example">
+                                <option selected>Please Select a Pallet Size</option>
+                                <option value="Small">Small</option>
+                                <option value="8-Color">8-Color</option>
+                                <option value="16-Color">16-Color</option>
+                                <option value="32-Color">32-Color</option>
+                                <option value="Large">Large</option>
+                            </select>
+                            <select onchange="select_pallet()" id="pallet-secondary" class="form-select-sm secondary-pallet" aria-label="Default select example">
+                                <option selected>Please Select a Pallet</option>
+                            </select>
+                        </form>
+                    </div>
+                
+                    <div class='container align-top stylize-button position-relative text-center'>
+                        <form>
+                            <button onclick="stylize()" class='btn btn-primary' type="button">Stylize!</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
