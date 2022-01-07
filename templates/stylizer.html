@@ -33,16 +33,15 @@
 
         var pallet_selected = false;     
         var current_image = "Beach";
-        var current_pallet_size = null;
         var current_pallet = null; 
 
         function stylize() {
-            $.getJSON('/stylize-button', {
-                pallet_selected: pallet_selected,
-                current_image: current_image,
-                current_pallet_size: current_pallet_size,
-                current_pallet: current_pallet
-            });
+            if (pallet_selected) {
+                $.getJSON('/stylize-button', {
+                    current_image: current_image,
+                    current_pallet: current_pallet
+                });
+            }
             return false;
         }
         
@@ -67,12 +66,10 @@
             if (pallet_size == "Please Select a Pallet Size") {
                 pallet_secondary.style.display = "none";        
                 pallet_selected = false;
-                current_pallet_size = null;
                 current_pallet = null;
             }
             else {
                 pallet_secondary.style.display = "block";
-                current_pallet_size = pallet_size;   
             }
 
             pallet_secondary.length = 1;
