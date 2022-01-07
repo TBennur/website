@@ -31,8 +31,18 @@
             "Large" : ["Comicscapes", "Resurrect", "Shido"]
         }
 
+        var pallet_selected = false;     
+        var current_image = "Beach";
+        var current_pallet_size = null;
+        var current_pallet = null; 
+
         function stylize() {
-            $.getJSON('/stylize-button');
+            $.getJSON('/stylize-button', {
+                pallet_selected: pallet_selected,
+                current_image: current_image,
+                current_pallet_size: current_pallet_size,
+                current_pallet: current_pallet
+            });
             return false;
         }
         
@@ -43,12 +53,7 @@
             var image = document.getElementById("unstyled-image");
             
             image.src = images[selected_image];
-            
-            $.getJSON('/update-stylize-information',
-            {
-                selection_type: "Image Selected",
-                image_selection: selected_image
-            });
+            current_image = selected_image;
             
             return false;
         }
@@ -60,19 +65,14 @@
             var pallet_secondary = document.getElementById("pallet-secondary");
 
             if (pallet_size == "Please Select a Pallet Size") {
-                pallet_secondary.style.display = "none";
-                $.getJSON('/update-stylize-information',
-                {
-                    selection_type: "Deselect Pallet Size",
-                });
+                pallet_secondary.style.display = "none";        
+                pallet_selected = false;
+                current_pallet_size = null;
+                current_pallet = null;
             }
             else {
                 pallet_secondary.style.display = "block";
-                $.getJSON('/update-stylize-information',
-                {
-                    selection_type: "Select Pallet Size",
-                    pallet_size: pallet_size
-                });    
+                current_pallet_size = pallet_size;   
             }
 
             pallet_secondary.length = 1;
@@ -91,18 +91,13 @@
             var pallet_secondary = document.getElementById("pallet-secondary");
 
             if (pallet_secondary.value == "Please Select a Pallet") {
-                $.getJSON('/update-stylize-information',
-                {
-                    selection_type: "Deselect Pallet",
-                });
+                pallet_selected = false;
+                current_pallet = null;
             }
             else {
                 pallet_secondary.style.display = "block";
-                $.getJSON('/update-stylize-information',
-                {
-                    selection_type: "Select Pallet",
-                    pallet_name: pallet_secondary.value
-                });    
+                pallet_selected = true;
+                current_pallet = pallet_secondary.value;    
             }
 
             return false;
