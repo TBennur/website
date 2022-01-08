@@ -10,6 +10,7 @@
     
     <script type=text/javascript>
         
+        // Addresses for default images
         images = {
             "Beach" : "{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}", 
             "Cave" : "{{ url_for('static',     filename='defaultFiles/Images/cave.png') }}",
@@ -23,6 +24,7 @@
             "Wasteland" : "{{ url_for('static',     filename='defaultFiles/Images/wasteland.jpg') }}"
         }
 
+        // Pallet size hierarchy
         pallets = {
             "Small" : ["Carpet Rose", "Monometalic", "Stormy"], 
             "8-Color" : ["Ammo", "Dawnbringers", "Dreamscape", "Just Parchment", "Paper", "Rust Gold"],
@@ -31,10 +33,12 @@
             "Large" : ["Comicscapes", "Resurrect", "Shido"]
         }
 
+        // Status variables
         var pallet_selected = false;     
         var current_image = "Beach";
         var current_pallet = null; 
 
+        // Main function, runs on stylize button press
         async function stylize() {
             
             if (pallet_selected) {
@@ -52,6 +56,7 @@
         
         }
         
+        // Updates selected image
         function select_image() {
             
             var image_dropdown = document.getElementById("image-selection-dropdown");
@@ -63,6 +68,7 @@
 
         }
 
+        // Updates cascading dropdown
         function generate_secondary_dropdown() {
             
             var pallet_primary = document.getElementById("pallet-primary");
@@ -86,6 +92,7 @@
 
         }
 
+        // Updates pallet selection
         function select_pallet() {
             
             var pallet_primary = document.getElementById("pallet-primary");
@@ -105,7 +112,6 @@
         }
 
     </script>
-
 
     <div class="container webpage-render">
         <div class="container-fluid">

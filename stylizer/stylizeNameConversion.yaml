@@ -1,3 +1,4 @@
+# Addresses for default image files
 Beach: beach.jpg
 Cave: cave.png
 Foggy: foggy.jpg
@@ -8,6 +9,8 @@ Pittsburgh: pittsburgh.jpg
 Sunset: sunset.jpg
 Train: train.jpg
 Wasteland: wasteland.jpg
+
+# Addresses and sizes for default pallets
 Carpet Rose: 
   filename: carpet-rose-6.hex 
   size: 6

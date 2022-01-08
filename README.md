@@ -1,3 +1,7 @@
 # Overview
-This project is the backend for a website  
-Currently, the website has 1 planned feature - a page that pixelizes/stylizes images
+This is the source code behind my website, tanaybennur.com
+As of right now, this website hosts my professional information and a stylizer widget
+
+# Stylizer
+The stylizer widget applies prebuilt filters to images
+The widget utilizes PIL and custom C functions to optimize image conversion
