@@ -1,11 +1,9 @@
-from flask import Flask, render_template, request, send_file, jsonify
+from flask import Flask, render_template, request, jsonify
 from io import BytesIO
 import base64
 import yaml
 from stylizer import imageFilter
 
-# Replace with session
-selections = {"image": None, "pallet": None}
 
 # Setup webpage and import constants
 app = Flask(__name__)
@@ -22,17 +20,13 @@ def home():
 def stylizer():
     return render_template("stylizer.html")
 
-# Updates temporary variables, should be replaced by session
-@app.route('/stylize-info', methods = ["GET"])
-def stylize_info():
-    selections["image"] = conversion_dictionary[request.args.get("current_image")]
-    selections["pallet_info"] = conversion_dictionary[request.args.get("current_pallet")]
-    return ("nothing")
-
 # Main stylization function, creates and converts stylized image
-@app.route('/stylize-button')
+@app.route('/stylize-button', methods = ["GET", "POST"])
 def stylize_button():
-    img = imageFilter.convert_image(selections["image"], selections["pallet_info"]['filename'], selections["pallet_info"]['size'])
+    current_request_info = request.get_data().decode('UTF-8').split("|")
+    current_image = conversion_dictionary[current_request_info[0][1:]]
+    current_pallet_info = conversion_dictionary[current_request_info[1][0:len(current_request_info[1]) - 1]]
+    img = imageFilter.convert_image(current_image, current_pallet_info['filename'], current_pallet_info['size'])
     img_io = BytesIO()
     img.save(img_io, 'JPEG', quality=70)
     encoded_img = base64.encodebytes(img_io.getvalue()).decode('ascii')

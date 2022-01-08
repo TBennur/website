@@ -43,11 +43,10 @@
             
             if (pallet_selected) {
                 var image = document.getElementById("styled-image");
-                $.getJSON("/stylize-info", {
-                    current_image: current_image,
-                    current_pallet: current_pallet
-                })
-                fetch("http://localhost:5000/stylize-button")
+                fetch("http://localhost:5000/stylize-button", 
+                    {method: "POST", 
+                    headers: {'content-type': 'application/json'},
+                    body: JSON.stringify(current_image + "|" + current_pallet)})
                 .then(response => response.json())
                 .then(data => {
                     image.src = "data:image/png;base64," + data.ImageBytes;
