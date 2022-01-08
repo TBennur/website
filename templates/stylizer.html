@@ -43,7 +43,7 @@
             
             if (pallet_selected) {
                 var image = document.getElementById("styled-image");
-                fetch("http://localhost:5000/stylize-button", 
+                fetch("{{ url_for('stylize_button') }}", 
                     {method: "POST", 
                     headers: {'content-type': 'application/json'},
                     body: JSON.stringify(current_image + "|" + current_pallet)})
