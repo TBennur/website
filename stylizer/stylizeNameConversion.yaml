@@ -1,0 +1,85 @@
+Beach: beach.jpg
+Cave: cave.png
+Foggy: foggy.jpg
+Lake: lake.jpg
+Microscope: microscope.jpg
+Mountain: mountain.png
+Pittsburgh: pittsburgh.jpg
+Sunset: sunset.jpg
+Train: train.jpg
+Wasteland: wasteland.jpg
+Carpet Rose: 
+  filename: carpet-rose-6.hex 
+  size: 6
+Monometalic: 
+  filename: monometalic-6.hex 
+  size: 6
+Stormy: 
+  filename: stormy-6.hex 
+  size: 6
+Ammo: 
+  filename: ammo-8.hex 
+  size: 8 
+Dawnbringers: 
+  filename: dawnbringer-8.hex 
+  size: 8 
+Dreamscape: 
+  filename: dreamscape-8.hex 
+  size: 8 
+Just Parchment: 
+  filename: just-parchment-8.hex 
+  size: 8 
+Paper: 
+  filename: paper-8.hex 
+  size: 8 
+Rust Gold: 
+  filename: rust-gold-8.hex 
+  size: 8
+Dawnbringer: 
+  filename: dawnbringer-16.hex 
+  size: 16 
+Endesgas: 
+  filename: endesga-16.hex 
+  size: 16 
+Feel The Sun: 
+  filename: feel-the-sun-16.hex 
+  size: 16 
+Galaxy Flame: 
+  filename: galaxy-flame-16.hex 
+  size: 16 
+Lost Century: 
+  filename: lost-century-16.hex 
+  size: 16 
+Ramp Rainbow: 
+  filename: ramp-rainbow-16.hex 
+  size: 16 
+Steam Lords: 
+  filename: steam-lords-16.hex 
+  size: 16
+AFR: 
+  filename: afr-32.hex 
+  size: 32 
+Endesga: 
+  filename: endesga-32.hex 
+  size: 32 
+Fantasy: 
+  filename: fantasy-32.hex 
+  size: 32 
+Hept: 
+  filename: hept-32.hex 
+  size: 32 
+Marshmellow: 
+  filename: marshmellow-32.hex 
+  size: 32 
+Nanner: 
+  filename: nanner-32.hex 
+  size: 32
+Comicscapes: 
+  filename: comicscapes-50.hex 
+  size: 50 
+Resurrect: 
+  filename: resurrect-64.hex 
+  size: 64
+Shido: 
+  filename: shido-50.hex 
+  size: 50

@@ -26,7 +26,7 @@
         pallets = {
             "Small" : ["Carpet Rose", "Monometalic", "Stormy"], 
             "8-Color" : ["Ammo", "Dawnbringers", "Dreamscape", "Just Parchment", "Paper", "Rust Gold"],
-            "16-Color" : ["Dawnbringer", "Endesga", "Feel The Sun", "Galaxy Flame", "Lost Century", "Ramp Rainbow", "Steam Lords"],
+            "16-Color" : ["Dawnbringer", "Endesgas", "Feel The Sun", "Galaxy Flame", "Lost Century", "Ramp Rainbow", "Steam Lords"],
             "32-Color" : ["AFR", "Endesga", "Fantasy", "Hept", "Marshmellow", "Nanner"],
             "Large" : ["Comicscapes", "Resurrect", "Shido"]
         }
@@ -37,7 +37,6 @@
 
         async function stylize() {
             
-
             if (pallet_selected) {
                 var image = document.getElementById("styled-image");
                 $.getJSON("/stylize-info", {
@@ -47,7 +46,6 @@
                 fetch("http://localhost:5000/stylize-button")
                 .then(response => response.json())
                 .then(data => {
-                    $.getJSON("/logger");
                     image.src = "data:image/png;base64," + data.ImageBytes;
                 });
             }; 
@@ -62,8 +60,7 @@
             
             image.src = images[selected_image];
             current_image = selected_image;
-            
-            return false;
+
         }
 
         function generate_secondary_dropdown() {
@@ -87,7 +84,6 @@
                 pallet_secondary.options[pallet_secondary.options.length] = new Option(pallets[pallet_size][y], pallets[pallet_size][y]);
             }
 
-            return false;
         }
 
         function select_pallet() {
@@ -106,14 +102,15 @@
                 current_pallet = pallet_secondary.value;    
             }
 
-            return false;
         }
+
     </script>
 
 
     <div class="container webpage-render">
         <div class="container-fluid">
             <div class="row">
+                
                 <div class = "col-xxl-5">
                     
                     <div class='container align-top stylizer-image float-start'>
@@ -162,11 +159,13 @@
                         </form>
                     </div>
                 </div>
+
                 <div class = "col-xxl-5">
                     <div class='container align-top stylizer-image float-start'>
                         <img id = "styled-image" src="{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}" class="img-fluid styled-image">
                     </div>
                 </div>
+                
             </div>
         </div>
     </div>

@@ -94,7 +94,7 @@ def get_pallet(pallet_name, num_colors, VALID_PALLET_FORMATS):
 
 def convert_image(image_name, pallet_name, num_colors, should_time = False):
 
-    stylize = ctypes.CDLL("../imageFilter/stylize.dll").stylize
+    stylize = ctypes.CDLL("../imageFilter/stylizer/stylize.dll").stylize
     stylize.restype = None
     stylize.argtypes = [np.ctypeslib.ndpointer(ctypes.c_int16),
                         np.ctypeslib.ndpointer(ctypes.c_int16), 
