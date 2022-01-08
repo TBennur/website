@@ -1,5 +1,8 @@
-from flask import Flask, render_template, jsonify, request
+from flask import Flask, render_template, request, send_file, jsonify
+from io import BytesIO
+import base64
 import imageFilter
+from PIL import Image
 
 images = {  "Beach": "beach.jpg",
             "Cave": "cave.png",
@@ -7,7 +10,7 @@ images = {  "Beach": "beach.jpg",
             "Lake": "lake.jpg",
             "Microscope": "microscope.jpg",
             "Mountain": "mountain.png",
-            "Pittsburgh": "pittsburgh.png",
+            "Pittsburgh": "pittsburgh.jpg",
             "Sunset": "sunset.jpg",
             "Train": "train.jpg",
             "Wasteland": "wasteland.jpg"
@@ -40,6 +43,15 @@ pallets = { "Carpet Rose": ("carpet-rose-6.hex", 6),
             "Shido": ("shido-50.hex", 50)
         }
 
+selections = {"image": None, "pallet": None}
+
+def serve_pil_image(img):
+    img_io = BytesIO()
+    img.save(img_io, 'JPEG', quality=70)
+    encoded_img = base64.encodebytes(img_io.getvalue()).decode('ascii')
+    response =  { 'Status' : 'Success', 'ImageBytes': encoded_img}
+    print("Converted")
+    return jsonify(response)
 
 app = Flask(__name__)
 
@@ -51,11 +63,20 @@ def home():
 def stylizer():
     return render_template("stylizer.html")
 
-@app.route('/stylize-button', methods = ["GET"])
+@app.route('/stylize-info', methods = ["GET"])
+def stylize_info():
+    print("Updated")
+    selections["image"] = images[request.args.get("current_image")]
+    selections["pallet_info"] = pallets[request.args.get("current_pallet")]
+    return ("nothing")
+
+@app.route('/stylize-button', methods = ["GET", "POST"])
 def stylize_button():
-    image = images[request.args.get("current_image")]
-    pallet_info = pallets[request.args.get("current_pallet")]
-    imageFilter.convert_image(image, pallet_info[0], pallet_info[1])
+    return serve_pil_image(imageFilter.convert_image(selections["image"], selections["pallet_info"][0], selections["pallet_info"][1]))
+
+@app.route('/logger')
+def logger():
+    print("Log")
     return ("nothing")
 
 @app.route("/about")

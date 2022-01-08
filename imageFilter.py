@@ -103,21 +103,9 @@ def convert_image(image_name, pallet_name, num_colors, should_time = False):
 
     VALID_IMAGE_FORMATS = [".jpg", ".png"]
     VALID_PALLET_FORMATS = [".hex"]
-
-    t0 = time.time()
-
+ 
     data, dimensions = get_image(image_name, VALID_IMAGE_FORMATS)
     pallet = get_pallet(pallet_name, num_colors, VALID_PALLET_FORMATS)
-    
-    t1 = time.time()
-    
     stylize(data, pallet, dimensions[0], dimensions[1], num_colors, image_name.endswith(".jpg"))
-    
-    t2 = time.time()
         
-    img = Image.fromarray(np.uint8(data), 'RGB')
-    img.show()
-    
-    if should_time: print_timings(dimensions, num_colors, [t0, t1, t2])
-
-convert_image(image_name = "pittsburgh.jpg", pallet_name = "fantasy-32.hex", num_colors = 32, should_time = False)
+    return Image.fromarray(np.uint8(data), 'RGB')

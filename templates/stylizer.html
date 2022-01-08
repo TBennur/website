@@ -35,14 +35,23 @@
         var current_image = "Beach";
         var current_pallet = null; 
 
-        function stylize() {
+        async function stylize() {
+            
+
             if (pallet_selected) {
-                $.getJSON('/stylize-button', {
+                var image = document.getElementById("styled-image");
+                $.getJSON("/stylize-info", {
                     current_image: current_image,
                     current_pallet: current_pallet
+                })
+                fetch("http://localhost:5000/stylize-button")
+                .then(response => response.json())
+                .then(data => {
+                    $.getJSON("/logger");
+                    image.src = "data:image/png;base64," + data.ImageBytes;
                 });
-            }
-            return false;
+            }; 
+        
         }
         
         function select_image() {
@@ -131,9 +140,9 @@
                 </div>
 
                 <div class="col-xxl-2">
-                    <div class='container pallet-selection align-top position-relative text-center'>
+                    <div class='container pallet-selection start-0 position-relative'>
                         <form>
-                            <select onchange="generate_secondary_dropdown()" id="pallet-primary" class="form-select-sm" aria-label="Default select example">
+                            <select onchange="generate_secondary_dropdown()" id="pallet-primary" class="form-select-sm primary-pallet" aria-label="Default select example">
                                 <option selected>Please Select a Pallet Size</option>
                                 <option value="Small">Small</option>
                                 <option value="8-Color">8-Color</option>
@@ -151,6 +160,11 @@
                         <form>
                             <button onclick="stylize()" class='btn btn-primary' type="button">Stylize!</button>
                         </form>
+                    </div>
+                </div>
+                <div class = "col-xxl-5">
+                    <div class='container align-top stylizer-image float-start'>
+                        <img id = "styled-image" src="{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}" class="img-fluid styled-image">
                     </div>
                 </div>
             </div>
