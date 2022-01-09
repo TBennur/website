@@ -9,7 +9,7 @@ server {
         gzip_buffers    8 256k;
         uwsgi_buffers   8 256k;
 
-        alias /app/app_backend/webapp/static;
+        alias /app/website/static;
         expires 365d;
     }
 

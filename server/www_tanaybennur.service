@@ -1,11 +1,11 @@
 [Unit]
-Description=uWSGI Panily server instance
+Description=uWSGI server instance
 After=syslog.target
 
 [Service]
 WorkingDirectory=/app/website
-Environment="PATH=/app/website/bin"
-ExecStart=/app/website/bin/uwsgi /app/website/server/www_panily.ini
+Environment="PATH=/app/venv_website/bin"
+ExecStart=/app/venv_website/bin/uwsgi /app/website/server/www_tanaybennur.ini
 Restart=always
 KillSignal=SIGQUIT
 Type=notify
