@@ -9,6 +9,70 @@ server {
         gzip_buffers    8 256k;
         uwsgi_buffers   8 256k;
 
+        alias /app/website/website/static/;
+        expires 365d;
+    }
+
+    location / {
+        try_files $uri @yourapplication;
+    }
+
+    location @yourapplication {
+        include uwsgi_params;
+
+        gzip            on;
+        gzip_buffers    8 256k;
+        uwsgi_buffers   8 256k;
+        uwsgi_read_timeout 300;
+
+        proxy_pass http://127.0.0.1:5000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-Protocol $scheme;
+    }
+
+
+
+
+    listen 443 ssl; # managed by Certbot
+    ssl_certificate /etc/letsencrypt/live/www.tanaybennur.com/fullchain.pem; # managed by Certbot
+    ssl_certificate_key /etc/letsencrypt/live/www.tanaybennur.com/privkey.pem; # managed by Certbot
+    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
+    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
+
+
+    add_header Strict-Transport-Security "max-age=31536000" always; # managed by Certbot
+
+
+
+
+    ssl_trusted_certificate /etc/letsencrypt/live/www.tanaybennur.com/chain.pem; # managed by Certbot
+    ssl_stapling on; # managed by Certbot
+    ssl_stapling_verify on; # managed by Certbot
+
+
+
+}server {
+    if ($host = tanaybennur.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    if ($host = www.tanaybennur.com) {
+        return 301 https://$host$request_uri;
+    } # managed by Certbot
+
+
+    server_name www.tanaybennur.com tanaybennur.com;
+    server_tokens off;
+    charset utf-8;
+    client_max_body_size 150M;
+
+    location /static {
+        gzip            on;
+        gzip_buffers    8 256k;
+        uwsgi_buffers   8 256k;
+
         alias /app/website/static;
         expires 365d;
     }
@@ -30,6 +94,14 @@ server {
         proxy_set_header X-Real-IP $remote_addr;
         proxy_set_header X-Forwarded-Protocol $scheme;
     }
+
+
+
+    listen 80; # managed by Certbot
+
+
+
+
 
 
 }

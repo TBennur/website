@@ -2,12 +2,12 @@ from flask import Flask, render_template, request, jsonify
 from io import BytesIO
 import base64
 import yaml
-from stylizer import imageFilter
+from website.stylizer import imageFilter
 
 
 # Setup webpage and import constants
 app = Flask(__name__)
-conversion_stream = open("stylizer/stylizeNameConversion.yaml", 'r')
+conversion_stream = open("/app/website/website/stylizer/stylizeNameConversion.yaml", 'r')
 conversion_dictionary = yaml.safe_load(conversion_stream)
 
 # Homepage route
