@@ -4,4 +4,3 @@ numpy==1.21.5
 Pillow==8.4.0
 PyYAML==6.0
 ctypes==1.1.0
-Python==3.9.7
