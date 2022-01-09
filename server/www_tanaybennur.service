@@ -1,0 +1,16 @@
+[Unit]
+Description=uWSGI Panily server instance
+After=syslog.target
+
+[Service]
+WorkingDirectory=/app/website
+Environment="PATH=/app/website/bin"
+ExecStart=/app/website/bin/uwsgi /app/website/server/www_panily.ini
+Restart=always
+KillSignal=SIGQUIT
+Type=notify
+StandardError=syslog
+NotifyAccess=all
+
+[Install]
+WantedBy=multi-user.target

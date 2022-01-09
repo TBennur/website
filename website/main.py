@@ -23,14 +23,19 @@ def stylizer():
 # Main stylization function, creates and converts stylized image
 @app.route('/stylize-button', methods = ["GET", "POST"])
 def stylize_button():
+    
     current_request_info = request.get_data().decode('UTF-8').split("|")
     current_image = conversion_dictionary[current_request_info[0][1:]]
     current_pallet_info = conversion_dictionary[current_request_info[1][0:len(current_request_info[1]) - 1]]
+    
     img = imageFilter.convert_image(current_image, current_pallet_info['filename'], current_pallet_info['size'])
+    
     img_io = BytesIO()
     img.save(img_io, 'JPEG', quality=70)
     encoded_img = base64.encodebytes(img_io.getvalue()).decode('ascii')
+    
     response =  { 'Status' : 'Success', 'ImageBytes': encoded_img}
+    
     return jsonify(response)
 
 # About page route
