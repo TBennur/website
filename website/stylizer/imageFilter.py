@@ -6,7 +6,7 @@ import ctypes
 from PIL import Image, ImageColor
 
 # Import C-based stylization function, setup formatting
-stylize = ctypes.CDLL("../website/stylizer/stylize.dll").stylize
+stylize = ctypes.CDLL("../website/stylizer/stylize.so").stylize
 stylize.restype = None
 stylize.argtypes = [np.ctypeslib.ndpointer(ctypes.c_int16),
                     np.ctypeslib.ndpointer(ctypes.c_int16), 
