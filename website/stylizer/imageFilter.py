@@ -6,7 +6,7 @@ import ctypes
 from PIL import Image, ImageColor
 
 # Import C-based stylization function, setup formatting
-stylize = ctypes.CDLL("../website/stylizer/stylize.dll").stylize
+stylize = ctypes.CDLL("/app/website/website/stylizer/stylize.so").stylize
 stylize.restype = None
 stylize.argtypes = [np.ctypeslib.ndpointer(ctypes.c_int16),
                     np.ctypeslib.ndpointer(ctypes.c_int16), 
@@ -61,7 +61,7 @@ def get_pallet(pallet_name, num_colors):
     if (not is_valid_pallet(pallet_name)): raise Exception("Invalid Pallet Format")
 
     try:
-        colorList = open("static/defaultFiles/Palettes/" + pallet_folder(num_colors) + pallet_name)
+        colorList = open("/app/website/website/static/defaultFiles/Palettes/" + pallet_folder(num_colors) + pallet_name)
     except FileNotFoundError:
         raise Exception("Non-Existent Pallet File")
     
@@ -80,7 +80,7 @@ def get_image(image_name):
     if (not is_valid_image(image_name)): raise Exception("Invalid Image Format")
 
     try:
-        img = Image.open("static/defaultFiles/Images/" + image_name)
+        img = Image.open("/app/website/website/static/defaultFiles/Images/" + image_name)
     except FileNotFoundError:
         raise Exception("Non-Existent Image File")
     

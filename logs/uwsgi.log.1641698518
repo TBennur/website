@@ -1,0 +1,1545 @@
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:43:21 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x564a93c378a0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+failed to open python file /app/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:43:21 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x5576ea5158a0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+failed to open python file /app/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:43:22 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55fbe57e78a0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+failed to open python file /app/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:43:22 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x5652520f38a0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+failed to open python file /app/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:43:22 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x559c8757d8a0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+failed to open python file /app/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:50:29 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55ddc4abf8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 1, in <module>
+    from flask import Flask, render_template, request, jsonify
+ModuleNotFoundError: No module named 'flask'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:50:30 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x559898c9f8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 1, in <module>
+    from flask import Flask, render_template, request, jsonify
+ModuleNotFoundError: No module named 'flask'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:50:30 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x56294fc438b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 1, in <module>
+    from flask import Flask, render_template, request, jsonify
+ModuleNotFoundError: No module named 'flask'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:50:30 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x560e660ad8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 1, in <module>
+    from flask import Flask, render_template, request, jsonify
+ModuleNotFoundError: No module named 'flask'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:50:31 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x557721df98b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 1, in <module>
+    from flask import Flask, render_template, request, jsonify
+ModuleNotFoundError: No module named 'flask'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:57:47 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x558deb8fc8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 5, in <module>
+    from stylizer import imageFilter
+ModuleNotFoundError: No module named 'stylizer'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:57:48 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x56265e57e8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 5, in <module>
+    from stylizer import imageFilter
+ModuleNotFoundError: No module named 'stylizer'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:57:49 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55d94f1fb8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 5, in <module>
+    from stylizer import imageFilter
+ModuleNotFoundError: No module named 'stylizer'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:57:50 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x559d49d618b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 5, in <module>
+    from stylizer import imageFilter
+ModuleNotFoundError: No module named 'stylizer'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 02:57:51 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55f28ac768b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 5, in <module>
+    from stylizer import imageFilter
+ModuleNotFoundError: No module named 'stylizer'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:03:31 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55abb9c758b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 5, in <module>
+    from website.stylizer import imageFilter
+  File "/app/website/./website/stylizer/imageFilter.py", line 9, in <module>
+    stylize = ctypes.CDLL("../website/stylizer/stylize.so").stylize
+  File "/usr/lib/python3.8/ctypes/__init__.py", line 373, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: ../website/stylizer/stylize.so: cannot open shared object file: No such file or directory
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:03:31 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x557e1c37c8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 5, in <module>
+    from website.stylizer import imageFilter
+  File "/app/website/./website/stylizer/imageFilter.py", line 9, in <module>
+    stylize = ctypes.CDLL("../website/stylizer/stylize.so").stylize
+  File "/usr/lib/python3.8/ctypes/__init__.py", line 373, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: ../website/stylizer/stylize.so: cannot open shared object file: No such file or directory
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:03:32 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x5589bc2a78b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 5, in <module>
+    from website.stylizer import imageFilter
+  File "/app/website/./website/stylizer/imageFilter.py", line 9, in <module>
+    stylize = ctypes.CDLL("../website/stylizer/stylize.so").stylize
+  File "/usr/lib/python3.8/ctypes/__init__.py", line 373, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: ../website/stylizer/stylize.so: cannot open shared object file: No such file or directory
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:03:33 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55f4b45678b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 5, in <module>
+    from website.stylizer import imageFilter
+  File "/app/website/./website/stylizer/imageFilter.py", line 9, in <module>
+    stylize = ctypes.CDLL("../website/stylizer/stylize.so").stylize
+  File "/usr/lib/python3.8/ctypes/__init__.py", line 373, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: ../website/stylizer/stylize.so: cannot open shared object file: No such file or directory
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:03:34 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x556816e3b8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 5, in <module>
+    from website.stylizer import imageFilter
+  File "/app/website/./website/stylizer/imageFilter.py", line 9, in <module>
+    stylize = ctypes.CDLL("../website/stylizer/stylize.so").stylize
+  File "/usr/lib/python3.8/ctypes/__init__.py", line 373, in __init__
+    self._handle = _dlopen(self._name, mode)
+OSError: ../website/stylizer/stylize.so: cannot open shared object file: No such file or directory
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:08:30 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55eaf89768b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 10, in <module>
+    conversion_stream = open("stylizer/stylizeNameConversion.yaml", 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'stylizer/stylizeNameConversion.yaml'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:08:32 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x557b359ed8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 10, in <module>
+    conversion_stream = open("stylizer/stylizeNameConversion.yaml", 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'stylizer/stylizeNameConversion.yaml'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:08:33 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55a5976278b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 10, in <module>
+    conversion_stream = open("stylizer/stylizeNameConversion.yaml", 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'stylizer/stylizeNameConversion.yaml'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:08:34 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x5566203058b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 10, in <module>
+    conversion_stream = open("stylizer/stylizeNameConversion.yaml", 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'stylizer/stylizeNameConversion.yaml'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:08:35 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x5621b7ad78b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 10, in <module>
+    conversion_stream = open("stylizer/stylizeNameConversion.yaml", 'r')
+FileNotFoundError: [Errno 2] No such file or directory: 'stylizer/stylizeNameConversion.yaml'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:10:16 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55584154b8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 10, in <module>
+    conversion_stream = open("/app/website/webiste/stylizer/stylizeNameConversion.yaml", 'r')
+FileNotFoundError: [Errno 2] No such file or directory: '/app/website/webiste/stylizer/stylizeNameConversion.yaml'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:10:16 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x558f901e58b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 10, in <module>
+    conversion_stream = open("/app/website/webiste/stylizer/stylizeNameConversion.yaml", 'r')
+FileNotFoundError: [Errno 2] No such file or directory: '/app/website/webiste/stylizer/stylizeNameConversion.yaml'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:10:17 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x559ebcb858b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 10, in <module>
+    conversion_stream = open("/app/website/webiste/stylizer/stylizeNameConversion.yaml", 'r')
+FileNotFoundError: [Errno 2] No such file or directory: '/app/website/webiste/stylizer/stylizeNameConversion.yaml'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:10:18 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x5586218438b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 10, in <module>
+    conversion_stream = open("/app/website/webiste/stylizer/stylizeNameConversion.yaml", 'r')
+FileNotFoundError: [Errno 2] No such file or directory: '/app/website/webiste/stylizer/stylizeNameConversion.yaml'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:10:19 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x5609d9cb88b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+Traceback (most recent call last):
+  File "/app/website/website/wsgi.py", line 1, in <module>
+    from website import app
+  File "/app/website/./website/app.py", line 10, in <module>
+    conversion_stream = open("/app/website/webiste/stylizer/stylizeNameConversion.yaml", 'r')
+FileNotFoundError: [Errno 2] No such file or directory: '/app/website/webiste/stylizer/stylizeNameConversion.yaml'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:11:38 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x559ce54488b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+unable to find "application" callable in file /app/website/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:11:39 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x561241b698b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+unable to find "application" callable in file /app/website/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:11:40 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x564ff675b8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+unable to find "application" callable in file /app/website/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:11:41 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x5653066978b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+unable to find "application" callable in file /app/website/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:11:42 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55c32d3ea8b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+ModuleNotFoundError: No module named 'wsgi'
+unable to load app 0 (mountpoint='') (callable not found or import error)
+unable to find "application" callable in file /app/website/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:17:09 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x5558e22dc8a0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+"application" must be a callable object in file /app/website/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:17:11 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x556ad71028a0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+"application" must be a callable object in file /app/website/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:17:12 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55c4577318a0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+"application" must be a callable object in file /app/website/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:17:13 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x55bd8cfb78a0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+"application" must be a callable object in file /app/website/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:17:14 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x5611e3a008a0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+"application" must be a callable object in file /app/website/website/wsgi.py
+unable to load app 0 (mountpoint='') (callable not found or import error)
+*** no app loaded. GAME OVER ***
+*** Starting uWSGI 2.0.20 (64bit) on [Sun Jan  9 03:20:07 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Nov 26 2021, 20:14:08)  [GCC 9.3.0]
+Python main interpreter initialized at 0x562daa8c78b0
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x562daa8c78b0 pid: 36503 (default app)
+mountpoint  already configured. skip.
+spawned uWSGI master process (pid: 36503)
+spawned uWSGI worker 1 (pid: 36514, cores: 2)
+spawned uWSGI worker 2 (pid: 36515, cores: 2)
+spawned uWSGI worker 3 (pid: 36516, cores: 2)
+spawned uWSGI worker 4 (pid: 36517, cores: 2)
+*** Stats server enabled on /tmp/production_stats.socket fd: 20 ***
+TypeError: 'module' object is not callable
+[pid: 36516|app: 0|req: 1/1] 127.0.0.1 () {28 vars in 354 bytes} [Sun Jan  9 03:21:13 2022] GET / => generated 0 bytes in 1 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: 'module' object is not callable
+[pid: 36516|app: 0|req: 2/2] 127.0.0.1 () {28 vars in 354 bytes} [Sun Jan  9 03:21:14 2022] GET / => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: 'module' object is not callable
+[pid: 36517|app: 0|req: 1/3] 127.0.0.1 () {28 vars in 354 bytes} [Sun Jan  9 03:21:16 2022] GET / => generated 0 bytes in 1 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+TypeError: 'module' object is not callable
+[pid: 36516|app: 0|req: 3/4] 127.0.0.1 () {28 vars in 354 bytes} [Sun Jan  9 03:21:41 2022] GET / => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: 'module' object is not callable
+[pid: 36517|app: 0|req: 2/5] 127.0.0.1 () {28 vars in 354 bytes} [Sun Jan  9 03:21:42 2022] GET / => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 1)
+TypeError: 'module' object is not callable
+[pid: 36517|app: 0|req: 3/6] 127.0.0.1 () {28 vars in 354 bytes} [Sun Jan  9 03:21:44 2022] GET / => generated 0 bytes in 0 msecs (HTTP/1.1 500) 0 headers in 0 bytes (0 switches on core 0)
+...brutally killing workers...
