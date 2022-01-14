@@ -5,6 +5,7 @@ import yaml
 import pathlib
 import platform
 
+# Import Image Filter Module
 if platform.system() == "Windows":
     import stylizer.imageFilter as imageFilter
 else:
