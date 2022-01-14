@@ -2,12 +2,24 @@ from flask import Flask, render_template, request, jsonify
 from io import BytesIO
 import base64
 import yaml
-from website.stylizer import imageFilter
+import pathlib
+import platform
 
+if platform.system() == "Windows":
+    import stylizer.imageFilter as imageFilter
+else:
+    from website.stylizer import imageFilter
 
 # Setup webpage and import constants
 app = Flask(__name__)
-conversion_stream = open("/app/website/website/stylizer/stylizeNameConversion.yaml", 'r')
+
+current_path = pathlib.Path(".")
+
+def get_file_path(stem):
+    for path in current_path.rglob(stem):
+        return str(path)
+
+conversion_stream = open(get_file_path("stylizer/stylizeNameConversion.yaml"), 'r')
 conversion_dictionary = yaml.safe_load(conversion_stream)
 
 # Homepage route

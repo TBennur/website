@@ -3,10 +3,23 @@
 
 import numpy as np
 import ctypes
+import platform
+import pathlib
 from PIL import Image, ImageColor
 
 # Import C-based stylization function, setup formatting
-stylize = ctypes.CDLL("/app/website/website/stylizer/stylize.so").stylize
+file_path = pathlib.Path("..")
+
+def get_file_type():
+    if platform.system() == "Windows":
+        return ".dll"
+    return ".so"
+
+def get_file_path(stem):
+    for path in file_path.rglob(stem):
+        return str(path)
+
+stylize = ctypes.CDLL(get_file_path("website/stylizer/stylize" + get_file_type())).stylize
 stylize.restype = None
 stylize.argtypes = [np.ctypeslib.ndpointer(ctypes.c_int16),
                     np.ctypeslib.ndpointer(ctypes.c_int16), 
@@ -61,7 +74,7 @@ def get_pallet(pallet_name, num_colors):
     if (not is_valid_pallet(pallet_name)): raise Exception("Invalid Pallet Format")
 
     try:
-        colorList = open("/app/website/website/static/defaultFiles/Palettes/" + pallet_folder(num_colors) + pallet_name)
+        colorList = open(get_file_path("../static/defaultFiles/Palettes/" + pallet_folder(num_colors) + pallet_name))
     except FileNotFoundError:
         raise Exception("Non-Existent Pallet File")
     
@@ -80,7 +93,7 @@ def get_image(image_name):
     if (not is_valid_image(image_name)): raise Exception("Invalid Image Format")
 
     try:
-        img = Image.open("/app/website/website/static/defaultFiles/Images/" + image_name)
+        img = Image.open(get_file_path("../static/defaultFiles/Images/" + image_name))
     except FileNotFoundError:
         raise Exception("Non-Existent Image File")
     
@@ -98,3 +111,5 @@ def convert_image(image_name, pallet_name, num_colors):
     stylize(data, pallet, dimensions[0], dimensions[1], num_colors, image_name.endswith(".jpg"))
         
     return Image.fromarray(np.uint8(data), 'RGB')
+
+convert_image("beach.jpg", "ammo-8.hex", 8)
