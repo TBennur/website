@@ -9,18 +9,15 @@
 }
 
 .stylizer-image {
-    margin-top: 1%;
     max-height: 100%;
 }
 
 .styled-image {
-    margin-top: 1%;
     max-height: 100%;
 }
 
 .pallet-image {
     visibility: hidden;
-    margin-top: 2%;
 }
 
 .image-dropdown {
@@ -38,7 +35,8 @@
 .secondary-pallet {
     display: none;
     margin-top: 1%;
-    margin-left: 8%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .description {
