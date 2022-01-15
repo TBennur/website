@@ -112,4 +112,29 @@ def convert_image(image_name, pallet_name, num_colors):
         
     return Image.fromarray(np.uint8(data), 'RGB')
 
-convert_image("beach.jpg", "ammo-8.hex", 8)
+def visualize_pallet(pallet_name, num_colors):
+    pallet = get_pallet(pallet_name, num_colors)
+    
+    width = int(np.ceil(num_colors**0.5))
+    height = int(np.ceil(num_colors / width))
+    margin = height * width - num_colors
+    
+    image_array = np.zeros((2 * height, 2 * width, 4), dtype="uint8")
+
+    for i in range(2 * height):
+        for j in range(2 * width):
+            if i < 2 * height - 2:
+                image_array[i][j][0] = pallet[width * int(i / 2) + int(j / 2)][0]
+                image_array[i][j][1] = pallet[width * int(i / 2) + int(j / 2)][1]
+                image_array[i][j][2] = pallet[width * int(i / 2) + int(j / 2)][2]
+                image_array[i][j][3] = 255
+            else:
+                if j < margin or j >= 2 * width - margin:
+                    continue
+                else:
+                    image_array[i][j][0] = pallet[width * (height - 1) + int((j - margin) / 2)][0]
+                    image_array[i][j][1] = pallet[width * (height - 1) + int((j - margin) / 2)][1]
+                    image_array[i][j][2] = pallet[width * (height - 1) + int((j - margin) / 2)][2]
+                    image_array[i][j][3] = 255
+                        
+    return Image.fromarray(np.uint8(image_array), 'RGBA').resize((200, 200), resample=Image.BOX)

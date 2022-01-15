@@ -51,6 +51,23 @@ def stylize_button():
     
     return jsonify(response)
 
+# Visualizes Current Pallet
+@app.route('/visualize-pallet', methods = ["GET", "POST"])
+def visualize_pallet():
+    
+    current_request_info = request.get_data().decode('UTF-8')
+    current_pallet_info = conversion_dictionary[current_request_info[1:len(current_request_info) - 1]]
+    
+    img = imageFilter.visualize_pallet(current_pallet_info['filename'], current_pallet_info['size'])
+    
+    img_io = BytesIO()
+    img.save(img_io, 'PNG', quality=70)
+    encoded_img = base64.encodebytes(img_io.getvalue()).decode('ascii')
+    
+    response =  { 'Status' : 'Success', 'ImageBytes': encoded_img}
+    
+    return jsonify(response)
+
 # About page route
 @app.route("/about")
 def about():

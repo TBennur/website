@@ -73,14 +73,17 @@
             var pallet_primary = document.getElementById("pallet-primary");
             var pallet_size = pallet_primary.value;
             var pallet_secondary = document.getElementById("pallet-secondary");
+            var pallet_image = document.getElementById("pallet-image");
 
             if (pallet_size == "Please Select a Pallet Size") {
                 pallet_secondary.style.display = "none";        
+                pallet_image.style.visibility = "hidden";        
                 pallet_selected = false;
                 current_pallet = null;
             }
             else {
                 pallet_secondary.style.display = "block";
+                pallet_image.style.visiblity = "hidden";
             }
 
             pallet_secondary.length = 1;
@@ -97,22 +100,33 @@
             var pallet_primary = document.getElementById("pallet-primary");
             var pallet_size = pallet_primary.value;
             var pallet_secondary = document.getElementById("pallet-secondary");
+            var pallet_image = document.getElementById("pallet-image");
 
             if (pallet_secondary.value == "Please Select a Pallet") {
                 pallet_selected = false;
                 current_pallet = null;
+                pallet_image.style.visibility = "hidden";        
             }
             else {
                 pallet_secondary.style.display = "block";
                 pallet_selected = true;
-                current_pallet = pallet_secondary.value;    
+                current_pallet = pallet_secondary.value; 
+                pallet_image.style.visibility = "visible";
+                fetch("{{ url_for('visualize_pallet') }}", 
+                    {method: "POST", 
+                    headers: {'content-type': 'application/json'},
+                    body: JSON.stringify(current_pallet)})
+                .then(response => response.json())
+                .then(data => {
+                    pallet_image.src = "data:image/png;base64," + data.ImageBytes;
+                });            
             }
 
         }
 
     </script>
 
-    <div class="container webpage-render">
+    <div class="container-fluid webpage-render">
         <div class="container-fluid">
             <div class="row">
                 <div class = "col-xxl-5">
@@ -131,12 +145,12 @@
                 <div class = "col-xxl-5">
                     
                     <div class='container align-top stylizer-image float-start'>
-                        <img id = "unstyled-image" src="{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}" class="img-fluid">
+                        <img id = "unstyled-image" src="{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}" class="img-fluid stylized-image center">
                     </div>
 
-                    <div class='container align-top image-dropdown float-start'>
+                    <div class='container align-top text-center'>
                     <form>
-                        <select onchange="select_image()" id="image-selection-dropdown" class="form-select-sm" aria-label="Default select example">
+                        <select onchange="select_image()" id="image-selection-dropdown" class="form-select-sm image-dropdown" aria-label="Default select example">
                             <option selected value="Beach">Beach</option>
                             <option value="Cave">Cave</option>
                             <option value="Foggy">Foggy</option>
@@ -154,7 +168,7 @@
                 </div>
 
                 <div class="col-xxl-2">
-                    <div class='container pallet-selection start-0 position-relative'>
+                    <div class='container align-top text-center'>
                         <form>
                             <select onchange="generate_secondary_dropdown()" id="pallet-primary" class="form-select-sm primary-pallet" aria-label="Default select example">
                                 <option selected>Please Select a Pallet Size</option>
@@ -175,11 +189,15 @@
                             <button onclick="stylize()" class='btn btn-primary' type="button">Stylize!</button>
                         </form>
                     </div>
+
+                    <div class='container-fluid align-top pallet-image text-center'>
+                        <img id = "pallet-image" src="{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}" class="img-fluid styled-image center">
+                    </div>
                 </div>
 
                 <div class = "col-xxl-5">
                     <div class='container align-top stylizer-image float-start'>
-                        <img id = "styled-image" src="{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}" class="img-fluid styled-image">
+                        <img id = "styled-image" src="{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}" class="img-fluid styled-image center">
                     </div>
                 </div>
                 
