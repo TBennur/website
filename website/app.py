@@ -1,13 +1,14 @@
 from flask import Flask, render_template, request, jsonify
 import yaml
 import platform
-import appUtilities
 
 # Import Image Filter Module
 if platform.system() == "Windows":
     import stylizer.imageFilter as imageFilter
+    import appUtilities
 else:
     from website.stylizer import imageFilter
+    from website import appUtilities
 
 # Setup webpage and import constants
 app = Flask(__name__)

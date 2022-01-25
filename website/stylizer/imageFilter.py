@@ -4,8 +4,12 @@
 import numpy as np
 import ctypes
 from PIL import Image
-import stylizer.filterUtilities as filterUtilities
+import platform
 
+if platform.system() == "Windows":
+    import stylizer.filterUtilities as filterUtilities
+else:
+    import website.stylizer.filterUtilities as filterUtilities
 
 # Import C-based stylization function, setup formatting
 stylize = ctypes.CDLL(filterUtilities.get_file_path("website/stylizer/stylize" + filterUtilities.get_file_type())).stylize
