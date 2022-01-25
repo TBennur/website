@@ -1,9 +1,7 @@
 from flask import Flask, render_template, request, jsonify
-from io import BytesIO
-import base64
 import yaml
-import pathlib
 import platform
+import appUtilities
 
 # Import Image Filter Module
 if platform.system() == "Windows":
@@ -14,13 +12,7 @@ else:
 # Setup webpage and import constants
 app = Flask(__name__)
 
-current_path = pathlib.Path(".")
-
-def get_file_path(stem):
-    for path in current_path.rglob(stem):
-        return str(path)
-
-conversion_stream = open(get_file_path("stylizer/stylizeNameConversion.yaml"), 'r')
+conversion_stream = open(appUtilities.get_file_path("stylizer/stylizeNameConversion.yaml"), 'r')
 conversion_dictionary = yaml.safe_load(conversion_stream)
 
 # Homepage route
@@ -36,37 +28,18 @@ def stylizer():
 # Main stylization function, creates and converts stylized image
 @app.route('/stylize-button', methods = ["GET", "POST"])
 def stylize_button():
-    
-    current_request_info = request.get_data().decode('UTF-8').split("|")
-    current_image = conversion_dictionary[current_request_info[0][1:]]
-    current_pallet_info = conversion_dictionary[current_request_info[1][0:len(current_request_info[1]) - 1]]
-    
-    img = imageFilter.convert_image(current_image, current_pallet_info['filename'], current_pallet_info['size'])
-    
-    img_io = BytesIO()
-    img.save(img_io, 'JPEG', quality=70)
-    encoded_img = base64.encodebytes(img_io.getvalue()).decode('ascii')
-    
-    response =  { 'Status' : 'Success', 'ImageBytes': encoded_img}
-    
-    return jsonify(response)
+    image, pallet_info = appUtilities.get_image_info(request, conversion_dictionary)
+    img = imageFilter.convert_image(image, pallet_info['filename'], pallet_info['size'])    
+    encoded_img = appUtilities.get_image(img)
+    return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
 
 # Visualizes Current Pallet
 @app.route('/visualize-pallet', methods = ["GET", "POST"])
 def visualize_pallet():
-    
-    current_request_info = request.get_data().decode('UTF-8')
-    current_pallet_info = conversion_dictionary[current_request_info[1:len(current_request_info) - 1]]
-    
-    img = imageFilter.visualize_pallet(current_pallet_info['filename'], current_pallet_info['size'])
-    
-    img_io = BytesIO()
-    img.save(img_io, 'PNG', quality=70)
-    encoded_img = base64.encodebytes(img_io.getvalue()).decode('ascii')
-    
-    response =  { 'Status' : 'Success', 'ImageBytes': encoded_img}
-    
-    return jsonify(response)
+    pallet_info = appUtilities.get_pallet_info(request, conversion_dictionary)
+    img = imageFilter.visualize_pallet(pallet_info['filename'],pallet_info['size'])
+    encoded_img = appUtilities.get_pallet(img)
+    return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
 
 # About page route
 @app.route("/about")
