@@ -28,9 +28,15 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
 
-
-            <li class="nav-item">
-              <a class="nav-link" href="{{ url_for('about') }}">About Me</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                About Me
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="{{ url_for('education') }}">Education</a>
+                <a class="dropdown-item" href="{{ url_for('projects') }}">My Projects</a>
+                <a class="dropdown-item" href="{{ url_for('contact') }}">Contact Me</a>
+              </div>
             </li>
 
             <li class="nav-item dropdown">
