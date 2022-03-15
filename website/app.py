@@ -43,9 +43,9 @@ def visualize_pallet():
     return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
 
 # Education page route
-@app.route("/education")
-def education():
-    return render_template("education.html")
+@app.route("/about")
+def about():
+    return render_template("about.html")
 
 # Projects page route
 @app.route("/projects")
