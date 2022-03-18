@@ -7,11 +7,101 @@
   <body>
     {% extends "template.html" %}
     {% block content %}
-    
-    <h1>Hi, I'm Tanay </h1>
-    <p> This is my website - Projects</p>
-    <p> I'm a freshman in Carnegie Mellon's School of Computer Science </p>
 
+    <div class = "container-fluid webpage-render">
+      <div class="row">
+        <div class="col-6">
+          <div class="card">
+            <h2 class="card-title text-center" style="margin-top:3%"> Jigsaw Puzzle Solver </h2>
+            <div class="card-body" style="flex-direction: row;">
+              <div class="row">
+                <div class="col-6">
+                  <img class="card-img-left text-center" src="{{ url_for('static',     filename='defaultFiles/images/cave.png') }}" style="width: 100%">
+                </div>
+                <div class="col-6">
+                  <p class="card-text">Description:</p>
+                  <p class="card-text">Collaborators:</p>
+                  <p class="card-text">Timeline:</p>
+                  <p class="card-text">Technologies:</p>
+                  <p class="card-text">Skills:</p>
+                  <div class="text-center">
+                    <a href="#" class="btn btn-primary">Go to Project</a>              
+                  </div>            
+                </div>  
+              </div>
+            </div>
+          </div>    
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <h2 class="card-title text-center" style="margin-top:3%"> Modelling Paper </h2>
+            <div class="card-body" style="flex-direction: row;">
+              <div class="row">
+                <div class="col-6">
+                  <img class="card-img-left text-center" src="{{ url_for('static',     filename='defaultFiles/images/cave.png') }}" style="width: 100%">
+                </div>
+                <div class="col-6">
+                  <p class="card-text">Description:</p>
+                  <p class="card-text">Collaborators:</p>
+                  <p class="card-text">Timeline:</p>
+                  <p class="card-text">Technologies:</p>
+                  <p class="card-text">Skills:</p>
+                  <div class="text-center">
+                    <a href="#" class="btn btn-primary">Go to Project</a>              
+                  </div>
+                </div>  
+              </div>
+            </div>
+          </div>    
+        </div>
+      </div>
+      <div class="row" style="margin-top: 2%;">
+        <div class="col-6">
+          <div class="card">
+            <h2 class="card-title text-center" style="margin-top:3%"> Recollections: The Game </h2>
+            <div class="card-body" style="flex-direction: row;">
+              <div class="row">
+                <div class="col-6">
+                  <img class="card-img-left text-center" src="{{ url_for('static',     filename='defaultFiles/images/cave.png') }}" style="width: 100%">
+                </div>
+                <div class="col-6">
+                  <p class="card-text">Description:</p>
+                  <p class="card-text">Collaborators:</p>
+                  <p class="card-text">Timeline:</p>
+                  <p class="card-text">Technologies:</p>
+                  <p class="card-text">Skills:</p>
+                  <div class="text-center">
+                    <a href="#" class="btn btn-primary">Go to Project</a>              
+                  </div>              
+                </div>  
+              </div>
+            </div>
+          </div>    
+        </div>
+        <div class="col-6">
+          <div class="card">
+            <h2 class="card-title text-center" style="margin-top:3%"> Website and Stylizer </h2>
+            <div class="card-body" style="flex-direction: row;">
+              <div class="row">
+                <div class="col-6">
+                  <img class="card-img-left text-center" src="{{ url_for('static',     filename='defaultFiles/images/cave.png') }}" style="width: 100%">
+                </div>
+                <div class="col-6">
+                  <p class="card-text">Description:</p>
+                  <p class="card-text">Collaborators:</p>
+                  <p class="card-text">Timeline:</p>
+                  <p class="card-text">Technologies:</p>
+                  <p class="card-text">Skills:</p>
+                  <div class="text-center">
+                    <a href="#" class="btn btn-primary">Go to Project</a>              
+                  </div>              
+                </div>  
+              </div>
+            </div>
+          </div>    
+        </div>
+      </div>
+    </div>
     {% endblock %}
   </body>
 </html>
