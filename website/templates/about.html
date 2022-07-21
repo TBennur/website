@@ -7,10 +7,35 @@
   <body>
     {% extends "template.html" %}
     {% block content %}
+        
+    <div class="container-fluid webpage-render">
+      <div class = "row">
+        <div class = "col-4">
+          <img src = "{{ url_for('static',     filename='defaultFiles/docksidePic.jpg') }}" class="img-fluid center">
+        </div>
+        <div class = "col-8">
+          <p>
+            Hi, I’m Tanay! I grew up in Philadelphia, Pennsylvania and am currently a sophomore studying CS and AI at CMU. I’m interested in a mixture of software engineering and artificial intelligence - I believe that AI is the future and I’d like to spend my career building ethical AI tools that help people.
+          </p>
     
-    <h1>Hi, I'm Tanay </h1>
-    <p> This is my website - About Me</p>
-    <p> I'm a freshman in Carnegie Mellon's School of Computer Science </p>
+          <p>
+            I built my first major project in my sophomore and junior year of high school - an automated Jigsaw Puzzle solver that used the numpy library and a few custom algorithms. The program took images of unsolved jigsaw puzzles and solved them, generating approximations of the completed puzzle. 
+          </p>
+          
+          <p>
+          During my senior year of high school, I started working with a team of my friends on Recollections, a turn-based RPG similar to the Fire Emblem series. Unfortunately, this project was never finished or published due to time constraints, but I learned valuable lessons in modular and deliberate programming, teamwork and project management.
+          </p>
+        
+          <p>  
+          My latest project is this website. This project started with the stylizer, a C and Python program that applies filters to pictures to make them look like pixel art. I decided to publish the widget by creating a website around it, allowing me to learn valuable web development and server setup skills along the way. My latest work involves using GAN’s to generate custom palettes based on an image's dominant colors.
+          </p>
+        
+          <p>
+          In my free time, I enjoy learning new pieces on the flute and piano, as well as playing Ultimate Frisbee. I also repair bicycles and teach bike repair - I’ve been working as a bicycle mechanic at Neighborhood Bike Works, a Philly bicycle education nonprofit since I was 14.
+          </p>  
+        </div>  
+      </div>
+    </div>    
 
     {% endblock %}
   </body>

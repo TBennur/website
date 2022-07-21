@@ -42,10 +42,15 @@ def visualize_pallet():
     encoded_img = appUtilities.get_pallet(img)
     return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
 
-# Education page route
+# About me page route
 @app.route("/about")
 def about():
     return render_template("about.html")
+
+# Coursework page route
+@app.route("/coursework")
+def coursework():
+    return render_template("coursework.html")
 
 # Projects page route
 @app.route("/projects")

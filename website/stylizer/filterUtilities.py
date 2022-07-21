@@ -55,10 +55,13 @@ def convert_pallet(pallet_list):
 
 def get_pallet(pallet_name, num_colors):
     if (not is_valid_pallet(pallet_name)): raise Exception("Invalid Pallet Format")
-    try:
-        colorList = open(get_file_path("../static/defaultFiles/Palettes/" + pallet_folder(num_colors) + pallet_name))
-    except FileNotFoundError:
-        raise Exception("Non-Existent Pallet File")
+    if pallet_name == "temp_results.hex":
+        colorList = open(get_file_path("../static/defaultFiles/Palettes/palletCustom/" + pallet_name))        
+    else:
+        try:
+            colorList = open(get_file_path("../static/defaultFiles/Palettes/" + pallet_folder(num_colors) + pallet_name))
+        except FileNotFoundError:
+            raise Exception("Non-Existent Pallet File")
     
     palletList = []
     for color in colorList:

@@ -127,3 +127,7 @@ dmypy.json
 
 # files with secrets in any environments
 *.env
+
+# temp nn files
+temp_results.hex
+temp_results_*.hex

@@ -24,7 +24,7 @@
             "Wasteland" : "{{ url_for('static',     filename='defaultFiles/Images/wasteland.jpg') }}"
         }
 
-        // Pallet size hierarchy
+        // Palette size hierarchy
         pallets = {
             "Small" : ["Carpet Rose", "Monometalic", "Stormy"], 
             "8-Color" : ["Ammo", "Dawnbringers", "Dreamscape", "Just Parchment", "Paper", "Rust Gold"],
@@ -75,7 +75,7 @@
             var pallet_secondary = document.getElementById("pallet-secondary");
             var pallet_image = document.getElementById("pallet-image");
 
-            if (pallet_size == "Please Select a Pallet Size") {
+            if (pallet_size == "Please Select a Palette Size") {
                 pallet_secondary.style.display = "none";        
                 pallet_image.style.visibility = "hidden";        
                 pallet_selected = false;
@@ -94,7 +94,7 @@
 
         }
 
-        // Updates pallet selection
+        // Updates palette selection
         function select_pallet() {
             
             var pallet_primary = document.getElementById("pallet-primary");
@@ -133,7 +133,7 @@
                     <h3 class = "text-center"> Starting Image </h3>
                 </div>
                 <div class = "col-xxl-2">
-                    <h3 class = "text-center"> Pallet </h3>
+                    <h3 class = "text-center"> Palette </h3>
                 </div>
                 <div class = "col-xxl-5">
                     <h3 class = "text-center"> Stylized Image </h3>
@@ -171,7 +171,7 @@
                     <div class='container-fluid align-top d-flex justify-content-center'>
                         <form>
                             <select onchange="generate_secondary_dropdown()" id="pallet-primary" class="form-select-sm primary-pallet" aria-label="Default select example">
-                                <option selected>Please Select a Pallet Size</option>
+                                <option selected>Please Select a Palette Size</option>
                                 <option value="Small">Small</option>
                                 <option value="8-Color">8-Color</option>
                                 <option value="16-Color">16-Color</option>
