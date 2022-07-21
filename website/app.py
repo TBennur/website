@@ -57,10 +57,5 @@ def coursework():
 def projects():
     return render_template("projects.html")
 
-# Contact page route
-@app.route("/contact")
-def contact():
-    return render_template("contact.html")
-
 if __name__ == "__main__":
     app.run()

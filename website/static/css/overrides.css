@@ -8,6 +8,11 @@
     margin-top: 5%;
 }
 
+.nav-opacity {
+    --bs-bg-opacity : 0.95;
+    background-color: rgb(202, 194, 186)
+}
+
 .stylizer-image {
     max-height: 100%;
 }
