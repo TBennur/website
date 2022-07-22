@@ -6,6 +6,12 @@
 
 .webpage-render {
     margin-top: 5%;
+    padding-bottom: 1%;
+}
+
+.project-card {
+    border-radius: 25px;
+    background-color: rgb(225, 216, 207)
 }
 
 .nav-opacity {
