@@ -66,3 +66,26 @@
 .description {
     padding-top: -40%;
 }
+
+input[type="file"] {
+    display: none;
+}
+.upload-primary{
+    display:inline-block;
+    font-weight:400;
+    line-height:1.5;
+    text-align:center;
+    text-decoration:none;
+    vertical-align:middle;
+    cursor:pointer;
+    border:1px solid transparent;
+    padding:.375rem .75rem;
+    font-size:1rem;
+    border-radius:.25rem;
+    color:#fff;
+    background-color:#0d6efd;
+    border-color:#0d6efd}
+.upload-primary:hover{
+    color:#fff;
+    background-color:#0b5ed7;
+    border-color:#0a58ca}

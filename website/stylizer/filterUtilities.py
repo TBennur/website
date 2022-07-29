@@ -6,7 +6,7 @@ from PIL import Image, ImageColor
 
 file_path = pathlib.Path("..")
 
-VALID_IMAGE_FORMATS = [".jpg", ".png"]
+VALID_IMAGE_FORMATS = [".jpg", ".png", ".jpeg"]
 VALID_PALLET_FORMATS = [".hex"]
 
 def get_file_type():

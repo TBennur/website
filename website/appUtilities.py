@@ -3,6 +3,10 @@ import base64
 import pathlib
 
 current_path = pathlib.Path(".")
+ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
+def allowed_file(filename):
+    return '.' in filename and filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def get_file_path(stem):
     for path in current_path.rglob(stem):

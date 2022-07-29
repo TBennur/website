@@ -1,6 +1,12 @@
-from flask import Flask, render_template, request, jsonify
+from flask import Flask, render_template, request, jsonify, session, url_for
+from flask_session import Session
 import yaml
 import platform
+import uuid
+import os
+from werkzeug.utils import secure_filename
+from datetime import timedelta
+import base64
 
 # Import Image Filter Module
 if platform.system() == "Windows":
@@ -11,7 +17,13 @@ else:
     from website import appUtilities
 
 # Setup webpage and import constants
+UPLOAD_FOLDER = 'temporaryImageFiles'
 app = Flask(__name__)
+app.config["SESSION_PERMANENT"] = False
+app.config["SESSION_TYPE"] = "filesystem"
+app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes = 30)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+Session(app)
 
 conversion_stream = open(appUtilities.get_file_path("stylizer/stylizeNameConversion.yaml"), 'r')
 conversion_dictionary = yaml.safe_load(conversion_stream)
@@ -24,6 +36,7 @@ def home():
 # Stylizer Route    
 @app.route("/stylizer")
 def stylizer():
+    session["id"] = uuid.uuid4()
     return render_template("stylizer.html")
 
 # Main stylization function, creates and converts stylized image
@@ -35,12 +48,29 @@ def stylize_button():
     return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
 
 # Visualizes Current Pallet
-@app.route('/visualize-pallet', methods = ["GET", "POST"])
-def visualize_pallet():
+@app.route('/visualize-palette', methods = ["GET", "POST"])
+def visualize_palette():
     pallet_info = appUtilities.get_pallet_info(request, conversion_dictionary)
     img = imageFilter.visualize_pallet(pallet_info['filename'],pallet_info['size'])
     encoded_img = appUtilities.get_pallet(img)
     return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
+
+# Visualizes Uploaded Image
+@app.route('/visualize-image', methods = ["GET", "POST"])
+def visualize_image():
+    if 'file' not in request.files:
+        return jsonify({'Status' : 'Failure'})
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'Status' : 'Failure'})
+    if file and appUtilities.allowed_file(file.filename):
+        filename = str(session["id"]) + "-file-" + secure_filename(file.filename)
+        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        file.save(filepath)
+        print("Uploaded")
+        return jsonify({ 'Status' : 'Success', 'ImageBytes': base64.encodebytes(file.getvalue()).decode('ascii')})
+    return jsonify({'Status' : 'Failure'})
+
 
 # About me page route
 @app.route("/about")

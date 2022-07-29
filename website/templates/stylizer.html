@@ -25,7 +25,7 @@
         }
 
         // Palette size hierarchy
-        pallets = {
+        palettes = {
             "Small" : ["Carpet Rose", "Monometalic", "Stormy"], 
             "8-Color" : ["Ammo", "Dawnbringers", "Dreamscape", "Just Parchment", "Paper", "Rust Gold"],
             "16-Color" : ["Dawnbringer", "Endesgas", "Feel The Sun", "Galaxy Flame", "Lost Century", "Ramp Rainbow", "Steam Lords"],
@@ -34,19 +34,19 @@
         }
 
         // Status variables
-        var pallet_selected = false;     
+        var palette_selected = false;     
         var current_image = "Beach";
-        var current_pallet = null; 
+        var current_palette = null; 
 
         // Main function, runs on stylize button press
         async function stylize() {
             
-            if (pallet_selected) {
+            if (palette_selected) {
                 var image = document.getElementById("styled-image");
                 fetch("{{ url_for('stylize_button') }}", 
                     {method: "POST", 
                     headers: {'content-type': 'application/json'},
-                    body: JSON.stringify(current_image + "|" + current_pallet)})
+                    body: JSON.stringify(current_image + "|" + current_palette)})
                 .then(response => response.json())
                 .then(data => {
                     image.src = "data:image/png;base64," + data.ImageBytes;
@@ -70,59 +70,83 @@
         // Updates cascading dropdown
         function generate_secondary_dropdown() {
             
-            var pallet_primary = document.getElementById("pallet-primary");
-            var pallet_size = pallet_primary.value;
-            var pallet_secondary = document.getElementById("pallet-secondary");
-            var pallet_image = document.getElementById("pallet-image");
+            var palette_primary = document.getElementById("palette-primary");
+            var palette_size = palette_primary.value;
+            var palette_secondary = document.getElementById("palette-secondary");
+            var palette_image = document.getElementById("palette-image");
 
-            if (pallet_size == "Please Select a Palette Size") {
-                pallet_secondary.style.display = "none";        
-                pallet_image.style.visibility = "hidden";        
-                pallet_selected = false;
-                current_pallet = null;
+            if (palette_size == "Please Select a Palette Size") {
+                palette_secondary.style.display = "none";        
+                palette_image.style.visibility = "hidden";        
+                palette_selected = false;
+                current_palette = null;
             }
             else {
-                pallet_secondary.style.display = "block";
-                pallet_image.style.visiblity = "hidden";
+                palette_secondary.style.display = "block";
+                palette_image.style.visiblity = "hidden";
             }
 
-            pallet_secondary.length = 1;
+            palette_secondary.length = 1;
 
-            for (var y in pallets[pallet_size]) {
-                pallet_secondary.options[pallet_secondary.options.length] = new Option(pallets[pallet_size][y], pallets[pallet_size][y]);
+            for (var y in palettes[palette_size]) {
+                palette_secondary.options[palette_secondary.options.length] = new Option(palettes[palette_size][y], palettes[palette_size][y]);
             }
 
         }
 
         // Updates palette selection
-        function select_pallet() {
+        function select_palette() {
             
-            var pallet_primary = document.getElementById("pallet-primary");
-            var pallet_size = pallet_primary.value;
-            var pallet_secondary = document.getElementById("pallet-secondary");
-            var pallet_image = document.getElementById("pallet-image");
+            var palette_primary = document.getElementById("palette-primary");
+            var palette_size = palette_primary.value;
+            var palette_secondary = document.getElementById("palette-secondary");
+            var palette_image = document.getElementById("palette-image");
 
-            if (pallet_secondary.value == "Please Select a Pallet") {
-                pallet_selected = false;
-                current_pallet = null;
-                pallet_image.style.visibility = "hidden";        
+            if (palette_secondary.value == "Please Select a palette") {
+                palette_selected = false;
+                current_palette = null;
+                palette_image.style.visibility = "hidden";        
             }
             else {
-                pallet_secondary.style.display = "block";
-                pallet_selected = true;
-                current_pallet = pallet_secondary.value; 
-                pallet_image.style.visibility = "visible";
-                fetch("{{ url_for('visualize_pallet') }}", 
+                palette_secondary.style.display = "block";
+                palette_selected = true;
+                current_palette = palette_secondary.value; 
+                palette_image.style.visibility = "visible";
+                fetch("{{ url_for('visualize_palette') }}", 
                     {method: "POST", 
                     headers: {'content-type': 'application/json'},
-                    body: JSON.stringify(current_pallet)})
+                    body: JSON.stringify(current_palette)})
                 .then(response => response.json())
                 .then(data => {
-                    pallet_image.src = "data:image/png;base64," + data.ImageBytes;
+                    palette_image.src = "data:image/png;base64," + data.ImageBytes;
                 });            
             }
 
+            }
+
+        async function upload() {
+            var upload_button = document.getElementById("image-upload")
+            var source_image = document.getElementById("unstyled-image");
+            var file = upload_button.files[0]
+            const formData = new FormData();
+
+            formData.append("file", file)
+
+            fetch("{{ url_for('visualize_image') }}", 
+                {method: "POST", 
+                files: file,
+                body: formData})
+            .then(response => response.json())
+            .then(data => {
+                if (data.Status == "Success") {
+                    source_image.src = "data:image/png;base64," + data.ImageBytes;
+                }
+                else {
+                    source_image.src = images["Beach"];
+                }
+            });
         }
+        
 
     </script>
 
@@ -170,7 +194,7 @@
                 <div class="col-xxl-2">
                     <div class='container-fluid align-top d-flex justify-content-center'>
                         <form>
-                            <select onchange="generate_secondary_dropdown()" id="pallet-primary" class="form-select-sm primary-pallet" aria-label="Default select example">
+                            <select onchange="generate_secondary_dropdown()" id="palette-primary" class="form-select-sm primary-palette" aria-label="Default select example">
                                 <option selected>Please Select a Palette Size</option>
                                 <option value="Small">Small</option>
                                 <option value="8-Color">8-Color</option>
@@ -178,8 +202,8 @@
                                 <option value="32-Color">32-Color</option>
                                 <option value="Large">Large</option>
                             </select>
-                            <select onchange="select_pallet()" id="pallet-secondary" class="form-select-sm secondary-pallet" aria-label="Default select example">
-                                <option selected>Please Select a Pallet</option>
+                            <select onchange="select_palette()" id="palette-secondary" class="form-select-sm secondary-palette" aria-label="Default select example">
+                                <option selected>Please Select a palette</option>
                             </select>
                         </form>
                     </div>
@@ -190,8 +214,8 @@
                         </form>
                     </div>
 
-                    <div class='container-fluid align-top pallet-image text-center'>
-                        <img id = "pallet-image" class="img-fluid styled-image center">
+                    <div class='container-fluid align-top palette-image text-center'>
+                        <img id = "palette-image" class="img-fluid styled-image center">
                     </div>
                 </div>
 
@@ -210,6 +234,12 @@
                     </a>
                 </p>
             </div>
+
+            <label class = "upload-primary">
+                <input type = "file" name = "file" id = "image-upload" onchange = "upload()">
+                Custom Upload
+            </label>
+
         </div>
     </div>
 
