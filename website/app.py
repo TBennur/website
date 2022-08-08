@@ -4,7 +4,7 @@ import yaml
 import platform
 import uuid
 import os
-from werkzeug.utils import secure_filename
+from werkzeug import utils, exceptions
 from datetime import timedelta
 import base64
 
@@ -23,6 +23,7 @@ app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes = 30)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['MAX_CONTENT_LENGTH'] = 5 * 1000 * 1000
 Session(app)
 
 conversion_stream = open(appUtilities.get_file_path("stylizer/stylizeNameConversion.yaml"), 'r')
@@ -64,13 +65,21 @@ def visualize_image():
     if file.filename == '':
         return jsonify({'Status' : 'Failure'})
     if file and appUtilities.allowed_file(file.filename):
-        filename = str(session["id"]) + "-file-" + secure_filename(file.filename)
+        filename = str(session["id"]) + "-file-" + utils.secure_filename(file.filename)
+        for old_file in os.listdir(app.config["UPLOAD_FOLDER"]):
+            if old_file.startswith(str(session["id"])):
+                print("Old File Found")
+                os.remove(os.path.join(app.config['UPLOAD_FOLDER'], old_file))
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
+        print(type(file))
         print("Uploaded")
         return jsonify({ 'Status' : 'Success', 'ImageBytes': base64.encodebytes(file.getvalue()).decode('ascii')})
     return jsonify({'Status' : 'Failure'})
 
+@app.errorhandler(exceptions.RequestEntityTooLarge)
+def handle_bad_request(e):
+    return jsonify({'Status' : 'Failure'})
 
 # About me page route
 @app.route("/about")

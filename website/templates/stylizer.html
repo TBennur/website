@@ -11,17 +11,30 @@
     <script type=text/javascript>
         
         // Addresses for default images
-        images = {
-            "Beach" : "{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}", 
-            "Cave" : "{{ url_for('static',     filename='defaultFiles/Images/cave.png') }}",
-            "Foggy" : "{{ url_for('static',     filename='defaultFiles/Images/foggy.jpg') }}",
-            "Lake" : "{{ url_for('static',     filename='defaultFiles/Images/lake.jpg') }}",
-            "Microscope" : "{{ url_for('static',     filename='defaultFiles/Images/microscope.jpg') }}",
-            "Mountain" : "{{ url_for('static',     filename='defaultFiles/Images/mountain.png') }}",
-            "Pittsburgh" : "{{ url_for('static',     filename='defaultFiles/Images/pittsburgh.jpg') }}",
-            "Sunset" : "{{ url_for('static',     filename='defaultFiles/Images/sunset.jpg') }}",
-            "Train" : "{{ url_for('static',     filename='defaultFiles/Images/train.jpg') }}",
-            "Wasteland" : "{{ url_for('static',     filename='defaultFiles/Images/wasteland.jpg') }}"
+        images_address = {
+            1 : "{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}", 
+            2 : "{{ url_for('static',     filename='defaultFiles/Images/cave.png') }}",
+            3 : "{{ url_for('static',     filename='defaultFiles/Images/foggy.jpg') }}",
+            4 : "{{ url_for('static',     filename='defaultFiles/Images/lake.jpg') }}",
+            5 : "{{ url_for('static',     filename='defaultFiles/Images/microscope.jpg') }}",
+            6 : "{{ url_for('static',     filename='defaultFiles/Images/mountain.png') }}",
+            7 : "{{ url_for('static',     filename='defaultFiles/Images/pittsburgh.jpg') }}",
+            8 : "{{ url_for('static',     filename='defaultFiles/Images/sunset.jpg') }}",
+            9 : "{{ url_for('static',     filename='defaultFiles/Images/train.jpg') }}",
+            10 : "{{ url_for('static',     filename='defaultFiles/Images/wasteland.jpg') }}"
+        }
+
+        images_naming = {
+            1 : "Beach",
+            2 : "Cave",
+            3 : "Foggy",
+            4 : "Lake",
+            5 : "Microscope",
+            6 : "Mountain",
+            7 : "Pittsburgh",
+            8 : "Sunset",
+            9 : "Train",
+            10 : "Wasteland"
         }
 
         // Palette size hierarchy
@@ -58,12 +71,17 @@
         // Updates selected image
         function select_image() {
             
-            var image_dropdown = document.getElementById("image-selection-dropdown");
-            var selected_image = image_dropdown.value;
+            var selected_image_num = Math.floor(Math.random() * 10) + 1
+            var selected_image_name = images_naming[selected_image_num]
             var image = document.getElementById("unstyled-image");
-            
-            image.src = images[selected_image];
-            current_image = selected_image;
+
+            while (selected_image_name == current_image) {
+                selected_image_num = Math.floor(Math.random() * 10) + 1
+                selected_image_name = images_naming[selected_image_num]
+            }
+
+            image.src = images_address[selected_image_num];
+            current_image = selected_image_name;
 
         }
 
@@ -172,22 +190,16 @@
                         <img id = "unstyled-image" src="{{ url_for('static',     filename='defaultFiles/Images/beach.jpg') }}" class="img-fluid stylized-image center">
                     </div>
 
-                    <div class='container align-top text-center'>
-                    <form>
-                        <select onchange="select_image()" id="image-selection-dropdown" class="form-select-sm image-dropdown" aria-label="Default select example">
-                            <option selected value="Beach">Beach</option>
-                            <option value="Cave">Cave</option>
-                            <option value="Foggy">Foggy</option>
-                            <option value="Lake">Lake</option>
-                            <option value="Microscope">Microscope</option>
-                            <option value="Mountain">Mountain</option>
-                            <option value="Pittsburgh">Pittsburgh</option>
-                            <option value="Sunset">Sunset</option>
-                            <option value="Train">Train</option>
-                            <option value="Wasteland">Wasteland</option>
-                        </select>
-                    </form>
-                    </div>
+                    <div class='container text-center'>
+                        <form>
+                            <button onclick="select_image()" class='btn btn-primary selection-button' type="button">Random Image!</button>
+                            
+                            <label class = "upload-primary selection-button">
+                                <input type = "file" name = "file" id = "image-upload" onchange = "upload()">
+                                Upload File
+                            </label>
+                        </form>
+                </div>
 
                 </div>
 
@@ -234,11 +246,6 @@
                     </a>
                 </p>
             </div>
-
-            <label class = "upload-primary">
-                <input type = "file" name = "file" id = "image-upload" onchange = "upload()">
-                Custom Upload
-            </label>
 
         </div>
     </div>
