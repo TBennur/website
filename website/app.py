@@ -12,18 +12,20 @@ import base64
 if platform.system() == "Windows":
     import stylizer.imageFilter as imageFilter
     import appUtilities
+    UPLOAD_FOLDER = 'temporaryImageFiles'
 else:
     from website.stylizer import imageFilter
     from website import appUtilities
+    UPLOAD_FOLDER = 'website/temporaryImageFiles'
+
 
 # Setup webpage and import constants
-UPLOAD_FOLDER = 'temporaryImageFiles'
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes = 30)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
-app.config['MAX_CONTENT_LENGTH'] = 5 * 1000 * 1000
+app.config['MAX_CONTENT_LENGTH'] = 500 * 1000
 Session(app)
 
 conversion_stream = open(appUtilities.get_file_path("stylizer/stylizeNameConversion.yaml"), 'r')
@@ -43,17 +45,17 @@ def stylizer():
 # Main stylization function, creates and converts stylized image
 @app.route('/stylize-button', methods = ["GET", "POST"])
 def stylize_button():
-    image, pallet_info = appUtilities.get_image_info(request, conversion_dictionary)
-    img = imageFilter.convert_image(image, pallet_info['filename'], pallet_info['size'])    
+    image, palette_info, is_custom = appUtilities.get_image_info(request, conversion_dictionary)
+    img = imageFilter.convert_image(image, palette_info['filename'], palette_info['size'], is_custom, session["id"])    
     encoded_img = appUtilities.get_image(img)
     return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
 
-# Visualizes Current Pallet
+# Visualizes Current palette
 @app.route('/visualize-palette', methods = ["GET", "POST"])
 def visualize_palette():
-    pallet_info = appUtilities.get_pallet_info(request, conversion_dictionary)
-    img = imageFilter.visualize_pallet(pallet_info['filename'],pallet_info['size'])
-    encoded_img = appUtilities.get_pallet(img)
+    palette_info = appUtilities.get_palette_info(request, conversion_dictionary)
+    img = imageFilter.visualize_palette(palette_info['filename'], palette_info['size'])
+    encoded_img = appUtilities.get_palette(img)
     return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
 
 # Visualizes Uploaded Image

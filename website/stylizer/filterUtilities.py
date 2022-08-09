@@ -7,7 +7,7 @@ from PIL import Image, ImageColor
 file_path = pathlib.Path("..")
 
 VALID_IMAGE_FORMATS = [".jpg", ".png", ".jpeg"]
-VALID_PALLET_FORMATS = [".hex"]
+VALID_PALETTE_FORMATS = [".hex"]
 
 def get_file_type():
     if platform.system() == "Windows":
@@ -18,64 +18,70 @@ def get_file_path(stem):
     for path in file_path.rglob(stem):
         return str(path)
 
-# Check parameter validity for pallets and images
+# Check parameter validity for palettes and images
 def is_valid_image(image_name):
     for format in VALID_IMAGE_FORMATS:
         if image_name.endswith(format): return True
     return False
 
-def is_valid_pallet(pallet_name):
-    for format in VALID_PALLET_FORMATS:
-        if pallet_name.endswith(format): return True
+def is_valid_palette(palette_name):
+    for format in VALID_PALETTE_FORMATS:
+        if palette_name.endswith(format): return True
     return False
 
-# Retrieve and setup/load pallets and images
-def pallet_folder(num_colors):
+# Retrieve and setup/load palettes and images
+def palette_folder(num_colors):
     if num_colors < 0:
         raise Exception("Invalid Number of Colors")
     elif num_colors < 8:
-        return "palletSmall/"
+        return "paletteSmall/"
     elif num_colors == 8:
-        return "pallet8/"
+        return "palette8/"
     elif num_colors == 16:
-        return "pallet16/"
+        return "palette16/"
     elif num_colors == 32:
-        return "pallet32/"
+        return "palette32/"
     elif num_colors > 32:
-        return "palletLarge/"
-    return "palletCustom/"
+        return "paletteLarge/"
+    return "paletteCustom/"
 
-def convert_pallet(pallet_list):
-    pallet = np.zeros((len(pallet_list), 3), dtype = "int16")
-    for x in range(len(pallet_list)):
-        pallet[x][0] = pallet_list[x][0]
-        pallet[x][1] = pallet_list[x][1]
-        pallet[x][2] = pallet_list[x][2]
-    return pallet
+def convert_palette(palette_list):
+    palette = np.zeros((len(palette_list), 3), dtype = "int16")
+    for x in range(len(palette_list)):
+        palette[x][0] = palette_list[x][0]
+        palette[x][1] = palette_list[x][1]
+        palette[x][2] = palette_list[x][2]
+    return palette
 
-def get_pallet(pallet_name, num_colors):
-    if (not is_valid_pallet(pallet_name)): raise Exception("Invalid Pallet Format")
-    if pallet_name == "temp_results.hex":
-        colorList = open(get_file_path("../static/defaultFiles/Palettes/palletCustom/" + pallet_name))        
+def get_palette(palette_name, num_colors):
+    if (not is_valid_palette(palette_name)): raise Exception("Invalid palette Format")
+    if palette_name == "temp_results.hex":
+        colorList = open(get_file_path("../static/defaultFiles/Palettes/paletteCustom/" + palette_name))        
     else:
         try:
-            colorList = open(get_file_path("../static/defaultFiles/Palettes/" + pallet_folder(num_colors) + pallet_name))
+            colorList = open(get_file_path("../static/defaultFiles/Palettes/" + palette_folder(num_colors) + palette_name))
         except FileNotFoundError:
-            raise Exception("Non-Existent Pallet File")
+            raise Exception("Non-Existent palette File")
     
-    palletList = []
+    paletteList = []
     for color in colorList:
-        palletList.append(ImageColor.getcolor("#" + color, "RGB"))
-    if len(palletList) != num_colors:
-        raise Exception("Incorrect Pallet Size")
-    return convert_pallet(palletList)
+        paletteList.append(ImageColor.getcolor("#" + color, "RGB"))
+    if len(paletteList) != num_colors:
+        raise Exception("Incorrect palette Size")
+    return convert_palette(paletteList)
 
-def get_image(image_name):
+def get_image(image_name, is_custom, session_id):
     if (not is_valid_image(image_name)): raise Exception("Invalid Image Format")
-    try:
-        img = Image.open(get_file_path("../static/defaultFiles/Images/" + image_name))
-    except FileNotFoundError:
-        raise Exception("Non-Existent Image File")
+    if is_custom:
+        try:
+            img = Image.open(get_file_path("../temporaryImageFiles/" + str(session_id) + "-file-" + image_name))
+        except FileNotFoundError:
+            raise Exception("Non-Existent Image File")
+    else:
+        try:
+            img = Image.open(get_file_path("../static/defaultFiles/Images/" + image_name))
+        except FileNotFoundError:
+            raise Exception("Non-Existent Image File")
     
     img.load()
     data = np.asarray(img, dtype = "int16")[:, :, 0:3]

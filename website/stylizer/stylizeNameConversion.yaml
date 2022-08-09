@@ -10,7 +10,7 @@ Sunset: sunset.jpg
 Train: train.jpg
 Wasteland: wasteland.jpg
 
-# Addresses and sizes for default pallets
+# Addresses and sizes for default palettes
 Carpet Rose: 
   filename: carpet-rose-6.hex 
   size: 6

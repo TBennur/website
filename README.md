@@ -5,8 +5,3 @@ As of right now, this website hosts my professional information and a stylizer w
 # Stylizer
 The stylizer widget applies prebuilt filters to images \
 The widget utilizes PIL and custom C functions to optimize image conversion
-
-# To-Do
-Format Rest of Site \
-Custom Image \
-Custom Pallet

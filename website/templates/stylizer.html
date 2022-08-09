@@ -48,8 +48,9 @@
 
         // Status variables
         var palette_selected = false;     
-        var current_image = "Beach";
         var current_palette = null; 
+        var current_image = "Beach";
+        var image_custom = false;
 
         // Main function, runs on stylize button press
         async function stylize() {
@@ -59,7 +60,7 @@
                 fetch("{{ url_for('stylize_button') }}", 
                     {method: "POST", 
                     headers: {'content-type': 'application/json'},
-                    body: JSON.stringify(current_image + "|" + current_palette)})
+                    body: JSON.stringify(current_image + "|" + current_palette + "|" + image_custom)})
                 .then(response => response.json())
                 .then(data => {
                     image.src = "data:image/png;base64," + data.ImageBytes;
@@ -82,6 +83,7 @@
 
             image.src = images_address[selected_image_num];
             current_image = selected_image_name;
+            image_custom = false;
 
         }
 
@@ -143,9 +145,9 @@
             }
 
         async function upload() {
-            var upload_button = document.getElementById("image-upload")
+            var upload_button = document.getElementById("image-upload");
             var source_image = document.getElementById("unstyled-image");
-            var file = upload_button.files[0]
+            var file = upload_button.files[0];
             const formData = new FormData();
 
             formData.append("file", file)
@@ -158,6 +160,8 @@
             .then(data => {
                 if (data.Status == "Success") {
                     source_image.src = "data:image/png;base64," + data.ImageBytes;
+                    current_image = file.name;
+                    image_custom = true;
                 }
                 else {
                     source_image.src = images["Beach"];

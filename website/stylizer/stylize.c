@@ -6,7 +6,7 @@
 
 // This function stylizes jpg and png image files
 // This function does not check input validity
-void stylize(short *image, short *pallet, int num_rows, int num_columns, 
+void stylize(short *image, short *palette, int num_rows, int num_columns, 
              int num_colors, bool is_jpg) 
 {
     
@@ -23,14 +23,14 @@ void stylize(short *image, short *pallet, int num_rows, int num_columns,
        
         for (int j = 0; j < num_colors * 3; j += 3) {
             
-            current_score = abs(pallet[j] - current_red) + 
-                            abs(pallet[j + 1] - current_green) + 
-                            abs(pallet[j + 2] - current_blue);
+            current_score = abs(palette[j] - current_red) + 
+                            abs(palette[j + 1] - current_green) + 
+                            abs(palette[j + 2] - current_blue);
             
             if (current_score <= best_score) {
-                *image = pallet[j];
-                *(image + 1) = pallet[j + 1];
-                *(image + 2) = pallet[j + 2];
+                *image = palette[j];
+                *(image + 1) = palette[j + 1];
+                *(image + 2) = palette[j + 2];
                 best_score = current_score;
             }
 
