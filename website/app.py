@@ -68,10 +68,7 @@ def visualize_image():
         return jsonify({'Status' : 'Failure', 'Reason' : 'Please Upload a Named File'})
     if file and appUtilities.allowed_file(file.filename):
         filename = str(session["id"]) + "-file-" + utils.secure_filename(file.filename)
-        for old_file in os.listdir(app.config["UPLOAD_FOLDER"]):
-            if old_file.startswith(str(session["id"])):
-                os.remove(os.path.join(app.config['UPLOAD_FOLDER'], old_file))
-        filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
+        filepath = appUtilities.upload_file(filename, app.config["UPLOAD_FOLDER"], session["id"], platform.system())
         file.save(filepath)
         return jsonify({ 'Status' : 'Success', 'ImageBytes': base64.encodebytes(file.getvalue()).decode('ascii')})
     return jsonify({'Status' : 'Failure', 'Reason' : 'Please Upload a JPEG or PNG'})
