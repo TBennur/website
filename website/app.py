@@ -62,26 +62,23 @@ def visualize_palette():
 @app.route('/visualize-image', methods = ["GET", "POST"])
 def visualize_image():
     if 'file' not in request.files:
-        return jsonify({'Status' : 'Failure'})
+        return jsonify({'Status' : 'Failure', 'Reason' : ''})
     file = request.files['file']
     if file.filename == '':
-        return jsonify({'Status' : 'Failure'})
+        return jsonify({'Status' : 'Failure', 'Reason' : 'Please Upload a Named File'})
     if file and appUtilities.allowed_file(file.filename):
         filename = str(session["id"]) + "-file-" + utils.secure_filename(file.filename)
         for old_file in os.listdir(app.config["UPLOAD_FOLDER"]):
             if old_file.startswith(str(session["id"])):
-                print("Old File Found")
                 os.remove(os.path.join(app.config['UPLOAD_FOLDER'], old_file))
         filepath = os.path.join(app.config['UPLOAD_FOLDER'], filename)
         file.save(filepath)
-        print(type(file))
-        print("Uploaded")
         return jsonify({ 'Status' : 'Success', 'ImageBytes': base64.encodebytes(file.getvalue()).decode('ascii')})
-    return jsonify({'Status' : 'Failure'})
+    return jsonify({'Status' : 'Failure', 'Reason' : 'Please Upload a JPEG or PNG'})
 
 @app.errorhandler(exceptions.RequestEntityTooLarge)
 def handle_bad_request(e):
-    return jsonify({'Status' : 'Failure'})
+    return jsonify({'Status' : 'Failure', 'Reason' : 'Please Upload a File Smaller than 500 KB'})
 
 # About me page route
 @app.route("/about")

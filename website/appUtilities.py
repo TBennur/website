@@ -15,7 +15,6 @@ def get_file_path(stem):
 
 def get_image_info(query, conversion_dictionary):
     request_info = query.get_data().decode('UTF-8').split("|")
-    print(request_info)
     image_name = request_info[0][1:]
     is_custom = (request_info[2][:-1] == "true")
     if is_custom:

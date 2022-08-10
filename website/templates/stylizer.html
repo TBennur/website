@@ -147,6 +147,7 @@
         async function upload() {
             var upload_button = document.getElementById("image-upload");
             var source_image = document.getElementById("unstyled-image");
+            var error_text = document.getElementById("file-error");
             var file = upload_button.files[0];
             const formData = new FormData();
 
@@ -162,9 +163,11 @@
                     source_image.src = "data:image/png;base64," + data.ImageBytes;
                     current_image = file.name;
                     image_custom = true;
+                    error_text.hidden = true;
                 }
                 else {
-                    source_image.src = images["Beach"];
+                    error_text.hidden = false;
+                    error_text.innerHTML = data.Reason;
                 }
             });
         }
@@ -203,7 +206,9 @@
                                 Upload File
                             </label>
                         </form>
-                </div>
+                    </div>
+
+                    <p id = "file-error" class = "text-center" hidden></p>
 
                 </div>
 
