@@ -57,13 +57,20 @@
             
             if (palette_selected) {
                 var image = document.getElementById("styled-image");
+                var error_text = document.getElementById("file-error");
                 fetch("{{ url_for('stylize_button') }}", 
                     {method: "POST", 
                     headers: {'content-type': 'application/json'},
                     body: JSON.stringify(current_image + "|" + current_palette + "|" + image_custom)})
                 .then(response => response.json())
                 .then(data => {
-                    image.src = "data:image/png;base64," + data.ImageBytes;
+                    if (data.Status == "Success") {
+                        image.src = "data:image/png;base64," + data.ImageBytes;
+                    }
+                    else {
+                        error_text.hidden = false;
+                        error_text.innerHTML = data.Reason;
+                    }
                 });
             }; 
         

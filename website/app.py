@@ -46,9 +46,12 @@ def stylizer():
 @app.route('/stylize-button', methods = ["GET", "POST"])
 def stylize_button():
     image, palette_info, is_custom = appUtilities.get_image_info(request, conversion_dictionary)
-    img = imageFilter.convert_image(image, palette_info['filename'], palette_info['size'], is_custom, session["id"])    
-    encoded_img = appUtilities.get_image(img)
-    return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
+    try:
+        img = imageFilter.convert_image(image, palette_info['filename'], palette_info['size'], is_custom, session["id"])    
+        encoded_img = appUtilities.get_image(img)
+        return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
+    except AttributeError:
+        return jsonify({'Status' : 'Failure', 'Reason' : 'You recently uploaded a different file. Due to space constraints, only 1 user file can be processed at a time. Please reupload this file.'})
 
 # Visualizes Current palette
 @app.route('/visualize-palette', methods = ["GET", "POST"])
