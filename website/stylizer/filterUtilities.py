@@ -56,10 +56,10 @@ def convert_palette(palette_list):
 def get_palette(palette_name, num_colors):
     if (not is_valid_palette(palette_name)): raise Exception("Invalid palette Format")
     if palette_name == "temp_results.hex":
-        colorList = open(get_file_path("../static/defaultFiles/Palettes/paletteCustom/" + palette_name))        
+        colorList = open(get_file_path("*/Palettes/paletteCustom/" + palette_name))        
     else:
         try:
-            colorList = open(get_file_path("../static/defaultFiles/Palettes/" + palette_folder(num_colors) + palette_name))
+            colorList = open(get_file_path("*/Palettes/" + palette_folder(num_colors) + palette_name))
         except FileNotFoundError:
             raise Exception("Non-Existent palette File")
     
@@ -74,12 +74,12 @@ def get_image(image_name, is_custom, session_id):
     if (not is_valid_image(image_name)): raise Exception("Invalid Image Format")
     if is_custom:
         try:
-            img = Image.open(get_file_path("../temporaryImageFiles/" + str(session_id) + "-file-" + image_name))
+            img = Image.open(get_file_path(str(session_id) + "-file-" + image_name))
         except FileNotFoundError:
             raise Exception("Non-Existent Image File")
     else:
         try:
-            img = Image.open(get_file_path("../static/defaultFiles/Images/" + image_name))
+            img = Image.open(get_file_path("*/Images/" + image_name))
         except FileNotFoundError:
             raise Exception("Non-Existent Image File")
     
