@@ -135,3 +135,4 @@ temporaryImageFiles/
 # temp nn files
 temp_results.hex
 temp_results_*.hex
+website/temporaryImageFileLog.txt
