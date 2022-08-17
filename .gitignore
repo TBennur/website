@@ -131,6 +131,7 @@ dmypy.json
 #cached sessions
 flask_session/
 temporaryImageFiles/
+logs/
 
 # temp nn files
 temp_results.hex
