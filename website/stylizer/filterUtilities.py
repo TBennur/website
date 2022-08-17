@@ -1,12 +1,9 @@
 import pathlib
 import platform
 import numpy as np
-import logging
 from PIL import Image, ImageColor
-import os
 
 file_path = pathlib.Path("..")
-logger = logging.getLogger()
 
 VALID_IMAGE_FORMATS = [".jpg", ".png", ".jpeg"]
 VALID_PALETTE_FORMATS = [".hex"]
@@ -17,10 +14,7 @@ def get_file_type():
     return ".so"
 
 def get_file_path(stem):
-    logger.error(stem)
-    logger.error(os.curdid)
     for path in file_path.rglob(stem):
-        logger.error(path)
         return str(path)
 
 # Check parameter validity for palettes and images

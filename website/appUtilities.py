@@ -2,7 +2,6 @@ from io import BytesIO
 import base64
 import pathlib
 import os
-import re
 from werkzeug.utils import secure_filename
 
 current_path = pathlib.Path(".")
@@ -22,15 +21,15 @@ def get_logfile_name(system):
     return root_folder + "temporaryImageFileLog.txt"
 
 def edit_logfile(filename, session_id, logfile_name, replacement_necessary):
-    with open(logfile_name,'r',encoding='utf-8') as logfile:
+    with open(get_file_path(logfile_name),'r',encoding='utf-8') as logfile:
         data = logfile.readlines()
     if replacement_necessary:
         for i in range(len(data)):
             if data[i].startswith(str(session_id)):
                 data[i] = ""
-    with open(logfile_name, 'w', encoding='utf-8') as logfile:
+    with open(get_file_path(logfile_name), 'w', encoding='utf-8') as logfile:
         logfile.writelines(data)
-    logfile = open(logfile_name, "a")
+    logfile = open(get_file_path(logfile_name), "a")
     logfile.write(filename + " 0\n")
     logfile.close()
 
