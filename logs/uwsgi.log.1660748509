@@ -1,0 +1,121 @@
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+binary reloading uWSGI...
+chdir() to /app/website
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 7 mapped to socket 0 (127.0.0.1:5000)
+running /app/venv_website/bin/uwsgi
+*** Starting uWSGI 2.0.20 (64bit) on [Wed Aug 17 14:55:32 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Jun 22 2022, 20:18:18)  [GCC 9.4.0]
+Python main interpreter initialized at 0x5609bfe57460
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5609bfe57460 pid: 707084 (default app)
+mountpoint  already configured. skip.
+gracefully (RE)spawned uWSGI master process (pid: 707084)
+sendmsg(): Transport endpoint is already connected [core/notify.c line 39]
+spawned uWSGI worker 1 (pid: 707149, cores: 2)
+spawned uWSGI worker 2 (pid: 707150, cores: 2)
+spawned uWSGI worker 3 (pid: 707151, cores: 2)
+spawned uWSGI worker 4 (pid: 707152, cores: 2)
+*** Starting uWSGI 2.0.20 (64bit) on [Wed Aug 17 14:57:08 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Jun 22 2022, 20:18:18)  [GCC 9.4.0]
+Python main interpreter initialized at 0x56410981d870
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x56410981d870 pid: 707170 (default app)
+mountpoint  already configured. skip.
+spawned uWSGI master process (pid: 707170)
+spawned uWSGI worker 1 (pid: 707181, cores: 2)
+spawned uWSGI worker 2 (pid: 707182, cores: 2)
+spawned uWSGI worker 3 (pid: 707183, cores: 2)
+spawned uWSGI worker 4 (pid: 707184, cores: 2)
+[pid: 707182|app: 0|req: 1/1] 127.0.0.1 () {54 vars in 1052 bytes} [Wed Aug 17 14:57:15 2022] GET / => generated 5584 bytes in 46 msecs (HTTP/1.0 200) 3 headers in 157 bytes (1 switches on core 0)
+[pid: 707182|app: 0|req: 2/2] 127.0.0.1 () {56 vars in 1119 bytes} [Wed Aug 17 14:57:17 2022] GET /stylizer => generated 15578 bytes in 31 msecs (HTTP/1.0 200) 3 headers in 158 bytes (1 switches on core 1)
+[pid: 707183|app: 0|req: 1/3] 127.0.0.1 () {58 vars in 1040 bytes} [Wed Aug 17 14:57:21 2022] POST /visualize-palette => generated 953 bytes in 104 msecs (HTTP/1.0 200) 3 headers in 148 bytes (1 switches on core 0)
+[pid: 707183|app: 0|req: 2/4] 127.0.0.1 () {58 vars in 1035 bytes} [Wed Aug 17 14:57:22 2022] POST /stylize-button => generated 166469 bytes in 382 msecs (HTTP/1.0 200) 3 headers in 151 bytes (1 switches on core 1)
+[2022-08-17 14:57:29,383] ERROR in app: Exception on /visualize-image [POST]
+Traceback (most recent call last):
+  File "/app/venv_website/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/app/venv_website/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/app/venv_website/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/app/venv_website/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/app/website/./website/app.py", line 74, in visualize_image
+    filepath = appUtilities.upload_file(filename, app.config["UPLOAD_FOLDER"], session["id"], platform.system())
+  File "/app/website/./website/appUtilities.py", line 44, in upload_file
+    edit_logfile(filename, session_id, get_logfile_name(system), replacement_necessary)
+  File "/app/website/./website/appUtilities.py", line 30, in edit_logfile
+    with open(get_file_path(logfile_name), 'w', encoding='utf-8') as logfile:
+PermissionError: [Errno 13] Permission denied: 'website/temporaryImageFileLog.txt'
+[pid: 707183|app: 0|req: 3/5] 127.0.0.1 () {58 vars in 1093 bytes} [Wed Aug 17 14:57:29 2022] POST /visualize-image => generated 290 bytes in 84 msecs (HTTP/1.0 500) 3 headers in 175 bytes (2 switches on core 0)
+[pid: 707183|app: 0|req: 4/6] 127.0.0.1 () {58 vars in 1150 bytes} [Wed Aug 17 15:00:51 2022] GET /stylizer => generated 15578 bytes in 54 msecs (HTTP/1.0 200) 3 headers in 158 bytes (1 switches on core 1)
+[pid: 707183|app: 0|req: 5/7] 127.0.0.1 () {58 vars in 1041 bytes} [Wed Aug 17 15:00:54 2022] POST /visualize-palette => generated 953 bytes in 44 msecs (HTTP/1.0 200) 3 headers in 148 bytes (1 switches on core 0)
+[2022-08-17 15:01:00,405] ERROR in app: Exception on /visualize-image [POST]
+Traceback (most recent call last):
+  File "/app/venv_website/lib/python3.8/site-packages/flask/app.py", line 2073, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/app/venv_website/lib/python3.8/site-packages/flask/app.py", line 1518, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/app/venv_website/lib/python3.8/site-packages/flask/app.py", line 1516, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/app/venv_website/lib/python3.8/site-packages/flask/app.py", line 1502, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**req.view_args)
+  File "/app/website/./website/app.py", line 74, in visualize_image
+    filepath = appUtilities.upload_file(filename, app.config["UPLOAD_FOLDER"], session["id"], platform.system())
+  File "/app/website/./website/appUtilities.py", line 44, in upload_file
+    edit_logfile(filename, session_id, get_logfile_name(system), replacement_necessary)
+  File "/app/website/./website/appUtilities.py", line 30, in edit_logfile
+    with open(get_file_path(logfile_name), 'w', encoding='utf-8') as logfile:
+PermissionError: [Errno 13] Permission denied: 'website/temporaryImageFileLog.txt'
+[pid: 707183|app: 0|req: 6/8] 127.0.0.1 () {58 vars in 1093 bytes} [Wed Aug 17 15:01:00 2022] POST /visualize-image => generated 290 bytes in 47 msecs (HTTP/1.0 500) 3 headers in 175 bytes (2 switches on core 1)
+...brutally killing workers...

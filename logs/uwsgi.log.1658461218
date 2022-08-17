@@ -1,0 +1,256 @@
+worker 3 buried after 1 seconds
+worker 2 buried after 1 seconds
+worker 4 buried after 1 seconds
+binary reloading uWSGI...
+chdir() to /app/website
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 7 mapped to socket 0 (127.0.0.1:5000)
+running /app/venv_website/bin/uwsgi
+*** Starting uWSGI 2.0.20 (64bit) on [Thu Jul 21 22:02:36 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Jun 22 2022, 20:18:18)  [GCC 9.4.0]
+Python main interpreter initialized at 0x55f8418fe460
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55f8418fe460 pid: 633454 (default app)
+mountpoint  already configured. skip.
+gracefully (RE)spawned uWSGI master process (pid: 633454)
+sendmsg(): Transport endpoint is already connected [core/notify.c line 39]
+spawned uWSGI worker 1 (pid: 635628, cores: 2)
+spawned uWSGI worker 2 (pid: 635629, cores: 2)
+spawned uWSGI worker 3 (pid: 635630, cores: 2)
+spawned uWSGI worker 4 (pid: 635631, cores: 2)
+[pid: 635628|app: 0|req: 1/1] 127.0.0.1 () {30 vars in 470 bytes} [Thu Jul 21 22:02:39 2022] GET / => generated 5584 bytes in 33 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+*** Starting uWSGI 2.0.20 (64bit) on [Thu Jul 21 22:10:36 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Jun 22 2022, 20:18:18)  [GCC 9.4.0]
+Python main interpreter initialized at 0x55eef6834870
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 0 seconds on interpreter 0x55eef6834870 pid: 635652 (default app)
+mountpoint  already configured. skip.
+spawned uWSGI master process (pid: 635652)
+spawned uWSGI worker 1 (pid: 635664, cores: 2)
+spawned uWSGI worker 2 (pid: 635665, cores: 2)
+spawned uWSGI worker 3 (pid: 635666, cores: 2)
+spawned uWSGI worker 4 (pid: 635667, cores: 2)
+[pid: 635664|app: 0|req: 1/1] 127.0.0.1 () {56 vars in 1087 bytes} [Thu Jul 21 22:10:47 2022] GET / => generated 5584 bytes in 60 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635664|app: 0|req: 2/2] 127.0.0.1 () {54 vars in 1066 bytes} [Thu Jul 21 22:10:54 2022] GET /coursework => generated 9321 bytes in 8 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635667|app: 0|req: 1/3] 127.0.0.1 () {54 vars in 1072 bytes} [Thu Jul 21 22:10:57 2022] GET /stylizer => generated 14022 bytes in 69 msecs (HTTP/1.0 200) 2 headers in 82 bytes (1 switches on core 0)
+[pid: 635667|app: 0|req: 2/4] 127.0.0.1 () {54 vars in 1074 bytes} [Thu Jul 21 22:10:58 2022] GET /coursework => generated 9321 bytes in 8 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635667|app: 0|req: 3/5] 127.0.0.1 () {36 vars in 569 bytes} [Thu Jul 21 22:11:24 2022] POST / => generated 178 bytes in 2 msecs (HTTP/1.0 405) 3 headers in 123 bytes (1 switches on core 0)
+[pid: 635665|app: 0|req: 1/6] 127.0.0.1 () {32 vars in 507 bytes} [Thu Jul 21 22:11:25 2022] GET /.env => generated 232 bytes in 10 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 635665|app: 0|req: 2/7] 127.0.0.1 () {56 vars in 1105 bytes} [Thu Jul 21 22:11:45 2022] GET /coursework => generated 9321 bytes in 27 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635667|app: 0|req: 4/8] 127.0.0.1 () {56 vars in 1105 bytes} [Thu Jul 21 22:11:46 2022] GET /coursework => generated 9321 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635667|app: 0|req: 5/9] 127.0.0.1 () {54 vars in 1056 bytes} [Thu Jul 21 22:14:22 2022] GET / => generated 5584 bytes in 13 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635667|app: 0|req: 6/10] 127.0.0.1 () {54 vars in 1062 bytes} [Thu Jul 21 22:14:33 2022] GET /stylizer => generated 14022 bytes in 5 msecs (HTTP/1.0 200) 2 headers in 82 bytes (1 switches on core 0)
+[pid: 635666|app: 0|req: 1/11] 127.0.0.1 () {54 vars in 1074 bytes} [Thu Jul 21 22:14:49 2022] GET /coursework => generated 9321 bytes in 41 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635667|app: 0|req: 7/12] 127.0.0.1 () {54 vars in 1076 bytes} [Thu Jul 21 22:14:57 2022] GET /coursework => generated 9321 bytes in 9 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635666|app: 0|req: 2/13] 127.0.0.1 () {54 vars in 1056 bytes} [Thu Jul 21 22:15:41 2022] GET / => generated 5584 bytes in 9 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635667|app: 0|req: 8/14] 127.0.0.1 () {54 vars in 1056 bytes} [Thu Jul 21 22:15:51 2022] GET /about => generated 6794 bytes in 9 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635667|app: 0|req: 9/15] 127.0.0.1 () {54 vars in 1067 bytes} [Thu Jul 21 22:15:55 2022] GET /projects => generated 8816 bytes in 21 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635667|app: 0|req: 10/16] 127.0.0.1 () {54 vars in 1064 bytes} [Thu Jul 21 22:16:09 2022] GET /about => generated 6794 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635666|app: 0|req: 3/17] 127.0.0.1 () {54 vars in 1051 bytes} [Thu Jul 21 22:16:14 2022] GET / => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635667|app: 0|req: 11/18] 127.0.0.1 () {56 vars in 1082 bytes} [Thu Jul 21 22:16:56 2022] GET / => generated 5584 bytes in 4 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635666|app: 0|req: 4/19] 127.0.0.1 () {52 vars in 995 bytes} [Thu Jul 21 22:16:59 2022] GET / => generated 5584 bytes in 2 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635667|app: 0|req: 12/20] 127.0.0.1 () {52 vars in 995 bytes} [Thu Jul 21 22:17:10 2022] GET / => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635667|app: 0|req: 13/21] 127.0.0.1 () {32 vars in 604 bytes} [Thu Jul 21 22:19:17 2022] GET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635667|app: 0|req: 14/22] 127.0.0.1 () {44 vars in 819 bytes} [Thu Jul 21 22:33:15 2022] POST /boaform/admin/formLogin => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635666|app: 0|req: 5/23] 127.0.0.1 () {32 vars in 604 bytes} [Thu Jul 21 22:33:55 2022] GET /vendor/phpunit/phpunit/src/Util/PHP/eval-stdin.php => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635666|app: 0|req: 6/24] 127.0.0.1 () {30 vars in 543 bytes} [Thu Jul 21 22:48:17 2022] GET /solr/admin/info/system?wt=json => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635667|app: 0|req: 15/25] 127.0.0.1 () {30 vars in 543 bytes} [Thu Jul 21 22:48:45 2022] GET /solr/admin/info/system?wt=json => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 635667|app: 0|req: 16/26] 127.0.0.1 () {36 vars in 659 bytes} [Thu Jul 21 22:57:41 2022] GET /config/getuser?index=0 => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635667|app: 0|req: 17/27] 127.0.0.1 () {32 vars in 511 bytes} [Thu Jul 21 23:03:03 2022] GET /.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635666|app: 0|req: 7/28] 127.0.0.1 () {36 vars in 573 bytes} [Thu Jul 21 23:03:03 2022] POST / => generated 178 bytes in 1 msecs (HTTP/1.0 405) 3 headers in 123 bytes (1 switches on core 0)
+[pid: 635667|app: 0|req: 18/29] 127.0.0.1 () {44 vars in 819 bytes} [Thu Jul 21 23:06:01 2022] POST /boaform/admin/formLogin => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635667|app: 0|req: 19/30] 127.0.0.1 () {36 vars in 659 bytes} [Thu Jul 21 23:06:36 2022] GET /config/getuser?index=0 => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+worker 1 lifetime reached, it was running for 3601 second(s)
+worker 2 lifetime reached, it was running for 3601 second(s)
+worker 3 lifetime reached, it was running for 3601 second(s)
+worker 4 lifetime reached, it was running for 3601 second(s)
+Respawned uWSGI worker 1 (new pid: 635800)
+Respawned uWSGI worker 2 (new pid: 635801)
+Respawned uWSGI worker 4 (new pid: 635802)
+[pid: 635802|app: 0|req: 20/31] 127.0.0.1 () {54 vars in 1019 bytes} [Thu Jul 21 23:14:12 2022] GET / => generated 5584 bytes in 53 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635802|app: 0|req: 21/32] 127.0.0.1 () {38 vars in 835 bytes} [Thu Jul 21 23:14:27 2022] GET / => generated 5584 bytes in 2 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635802|app: 0|req: 22/33] 127.0.0.1 () {44 vars in 818 bytes} [Thu Jul 21 23:24:02 2022] POST /boaform/admin/formLogin => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635802|app: 0|req: 23/34] 127.0.0.1 () {30 vars in 470 bytes} [Thu Jul 21 23:25:09 2022] GET / => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635802|app: 0|req: 24/35] 127.0.0.1 () {30 vars in 707 bytes} [Thu Jul 21 23:28:39 2022] GET /index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=HelloThinkPHP21 => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635802|app: 0|req: 25/36] 127.0.0.1 () {36 vars in 569 bytes} [Thu Jul 21 23:29:37 2022] POST / => generated 178 bytes in 2 msecs (HTTP/1.0 405) 3 headers in 123 bytes (1 switches on core 1)
+[pid: 635802|app: 0|req: 26/37] 127.0.0.1 () {32 vars in 507 bytes} [Thu Jul 21 23:29:37 2022] GET /.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 635802|app: 0|req: 27/38] 127.0.0.1 () {36 vars in 659 bytes} [Thu Jul 21 23:39:59 2022] GET /config/getuser?index=0 => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 635802|app: 0|req: 28/39] 127.0.0.1 () {30 vars in 707 bytes} [Thu Jul 21 23:54:48 2022] GET /index.php?s=/Index/\think\app/invokefunction&function=call_user_func_array&vars[0]=md5&vars[1][]=HelloThinkPHP21 => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 635802|app: 0|req: 29/40] 127.0.0.1 () {34 vars in 603 bytes} [Thu Jul 21 23:58:17 2022] GET / => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635802|app: 0|req: 30/41] 127.0.0.1 () {34 vars in 625 bytes} [Thu Jul 21 23:58:18 2022] GET /favicon.ico => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 635802|app: 0|req: 31/42] 127.0.0.1 () {28 vars in 451 bytes} [Fri Jul 22 00:10:26 2022] GET / => generated 5584 bytes in 2 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+worker 1 lifetime reached, it was running for 3601 second(s)
+worker 2 lifetime reached, it was running for 3601 second(s)
+worker 4 lifetime reached, it was running for 3601 second(s)
+Respawned uWSGI worker 1 (new pid: 635926)
+Respawned uWSGI worker 2 (new pid: 635927)
+[pid: 635926|app: 0|req: 3/43] 127.0.0.1 () {36 vars in 569 bytes} [Fri Jul 22 00:16:30 2022] POST / => generated 178 bytes in 8 msecs (HTTP/1.0 405) 3 headers in 123 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 4/44] 127.0.0.1 () {32 vars in 507 bytes} [Fri Jul 22 00:16:30 2022] GET /.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 5/45] 127.0.0.1 () {32 vars in 619 bytes} [Fri Jul 22 00:26:54 2022] GET /?a=fetch&content=<php>die(@md5(HelloThinkCMF))</php> => generated 5584 bytes in 30 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 6/46] 127.0.0.1 () {32 vars in 500 bytes} [Fri Jul 22 00:41:30 2022] GET /.git/config => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 7/47] 127.0.0.1 () {32 vars in 499 bytes} [Fri Jul 22 00:41:31 2022] GET /.git/config => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 8/48] 127.0.0.1 () {36 vars in 611 bytes} [Fri Jul 22 00:48:45 2022] POST /mgmt/tm/util/bash => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 9/49] 127.0.0.1 () {30 vars in 370 bytes} [Fri Jul 22 00:48:45 2022] GET / => generated 5584 bytes in 2 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 10/50] 127.0.0.1 () {36 vars in 569 bytes} [Fri Jul 22 00:50:31 2022] POST / => generated 178 bytes in 1 msecs (HTTP/1.0 405) 3 headers in 123 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 11/51] 127.0.0.1 () {32 vars in 507 bytes} [Fri Jul 22 00:50:31 2022] GET /.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 12/52] 127.0.0.1 () {32 vars in 505 bytes} [Fri Jul 22 00:51:13 2022] GET / => generated 5584 bytes in 4 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 13/53] 127.0.0.1 () {32 vars in 619 bytes} [Fri Jul 22 00:58:41 2022] GET /?a=fetch&content=<php>die(@md5(HelloThinkCMF))</php> => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 14/54] 127.0.0.1 () {30 vars in 543 bytes} [Fri Jul 22 00:59:47 2022] GET /?XDEBUG_SESSION_START=phpstorm => generated 5584 bytes in 2 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 15/55] 127.0.0.1 () {54 vars in 1019 bytes} [Fri Jul 22 01:00:59 2022] GET / => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 16/56] 127.0.0.1 () {54 vars in 1062 bytes} [Fri Jul 22 01:01:02 2022] GET /stylizer => generated 14022 bytes in 40 msecs (HTTP/1.0 200) 2 headers in 82 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 17/57] 127.0.0.1 () {56 vars in 982 bytes} [Fri Jul 22 01:01:09 2022] POST /visualize-pallet => generated 965 bytes in 353 msecs (HTTP/1.0 200) 2 headers in 72 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 18/58] 127.0.0.1 () {56 vars in 978 bytes} [Fri Jul 22 01:01:10 2022] POST /stylize-button => generated 135553 bytes in 314 msecs (HTTP/1.0 200) 2 headers in 75 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 19/59] 127.0.0.1 () {56 vars in 982 bytes} [Fri Jul 22 01:01:15 2022] POST /visualize-pallet => generated 953 bytes in 24 msecs (HTTP/1.0 200) 2 headers in 72 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 20/60] 127.0.0.1 () {56 vars in 978 bytes} [Fri Jul 22 01:01:16 2022] POST /stylize-button => generated 116565 bytes in 215 msecs (HTTP/1.0 200) 2 headers in 75 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 21/61] 127.0.0.1 () {56 vars in 982 bytes} [Fri Jul 22 01:01:19 2022] POST /visualize-pallet => generated 953 bytes in 23 msecs (HTTP/1.0 200) 2 headers in 72 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 22/62] 127.0.0.1 () {56 vars in 978 bytes} [Fri Jul 22 01:01:20 2022] POST /stylize-button => generated 122149 bytes in 287 msecs (HTTP/1.0 200) 2 headers in 75 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 23/63] 127.0.0.1 () {56 vars in 982 bytes} [Fri Jul 22 01:01:23 2022] POST /visualize-pallet => generated 965 bytes in 22 msecs (HTTP/1.0 200) 2 headers in 72 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 24/64] 127.0.0.1 () {56 vars in 978 bytes} [Fri Jul 22 01:01:24 2022] POST /stylize-button => generated 135553 bytes in 224 msecs (HTTP/1.0 200) 2 headers in 75 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 25/65] 127.0.0.1 () {56 vars in 981 bytes} [Fri Jul 22 01:01:30 2022] POST /visualize-pallet => generated 965 bytes in 17 msecs (HTTP/1.0 200) 2 headers in 72 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 26/66] 127.0.0.1 () {56 vars in 978 bytes} [Fri Jul 22 01:01:32 2022] POST /stylize-button => generated 155973 bytes in 230 msecs (HTTP/1.0 200) 2 headers in 75 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 27/67] 127.0.0.1 () {56 vars in 978 bytes} [Fri Jul 22 01:01:45 2022] POST /stylize-button => generated 207559 bytes in 336 msecs (HTTP/1.0 200) 2 headers in 75 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 28/68] 127.0.0.1 () {56 vars in 982 bytes} [Fri Jul 22 01:01:49 2022] POST /visualize-pallet => generated 953 bytes in 23 msecs (HTTP/1.0 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 29/69] 127.0.0.1 () {56 vars in 978 bytes} [Fri Jul 22 01:01:49 2022] POST /stylize-button => generated 190769 bytes in 377 msecs (HTTP/1.0 200) 2 headers in 75 bytes (1 switches on core 1)
+[pid: 635926|app: 0|req: 30/70] 127.0.0.1 () {56 vars in 982 bytes} [Fri Jul 22 01:01:58 2022] POST /visualize-pallet => generated 965 bytes in 35 msecs (HTTP/1.0 200) 2 headers in 72 bytes (1 switches on core 0)
+[pid: 635926|app: 0|req: 31/71] 127.0.0.1 () {56 vars in 978 bytes} [Fri Jul 22 01:01:59 2022] POST /stylize-button => generated 164815 bytes in 368 msecs (HTTP/1.0 200) 2 headers in 75 bytes (1 switches on core 1)
+worker 1 lifetime reached, it was running for 3601 second(s)
+worker 2 lifetime reached, it was running for 3601 second(s)
+Respawned uWSGI worker 1 (new pid: 635977)
+Respawned uWSGI worker 2 (new pid: 635978)
+[pid: 635977|app: 0|req: 32/72] 127.0.0.1 () {30 vars in 543 bytes} [Fri Jul 22 01:41:17 2022] GET /?XDEBUG_SESSION_START=phpstorm => generated 5584 bytes in 37 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635977|app: 0|req: 33/73] 127.0.0.1 () {28 vars in 346 bytes} [Fri Jul 22 01:42:41 2022] GET / => generated 5584 bytes in 2 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635977|app: 0|req: 34/74] 127.0.0.1 () {36 vars in 659 bytes} [Fri Jul 22 01:43:59 2022] GET /config/getuser?index=0 => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635977|app: 0|req: 35/75] 127.0.0.1 () {32 vars in 505 bytes} [Fri Jul 22 01:44:41 2022] GET / => generated 5584 bytes in 4 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 635977|app: 0|req: 36/76] 127.0.0.1 () {30 vars in 500 bytes} [Fri Jul 22 01:58:29 2022] GET /console/ => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 635977|app: 0|req: 37/77] 127.0.0.1 () {32 vars in 511 bytes} [Fri Jul 22 02:03:02 2022] GET /.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 635977|app: 0|req: 38/78] 127.0.0.1 () {36 vars in 573 bytes} [Fri Jul 22 02:03:02 2022] POST / => generated 178 bytes in 2 msecs (HTTP/1.0 405) 3 headers in 123 bytes (1 switches on core 1)
+[pid: 635977|app: 0|req: 39/79] 127.0.0.1 () {32 vars in 550 bytes} [Fri Jul 22 02:08:57 2022] GET / => generated 5584 bytes in 2 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 635977|app: 0|req: 40/80] 127.0.0.1 () {28 vars in 373 bytes} [Fri Jul 22 02:08:57 2022] GET /robots.txt => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 635978|app: 0|req: 3/81] 127.0.0.1 () {28 vars in 375 bytes} [Fri Jul 22 02:08:58 2022] GET /sitemap.xml => generated 232 bytes in 13 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 635978|app: 0|req: 4/82] 127.0.0.1 () {28 vars in 401 bytes} [Fri Jul 22 02:08:58 2022] GET /.well-known/security.txt => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+Respawned uWSGI worker 3 (new pid: 636057)
+[pid: 636057|app: 0|req: 9/83] 127.0.0.1 () {38 vars in 550 bytes} [Fri Jul 22 02:09:06 2022] GET / => generated 5584 bytes in 45 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+worker 1 lifetime reached, it was running for 3601 second(s)
+worker 2 lifetime reached, it was running for 3601 second(s)
+Respawned uWSGI worker 1 (new pid: 636059)
+[pid: 636059|app: 0|req: 41/84] 127.0.0.1 () {32 vars in 505 bytes} [Fri Jul 22 02:16:08 2022] GET /owa/auth/logon.aspx?url=https%3a%2f%2f1%2fecp%2f => generated 232 bytes in 9 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 42/85] 127.0.0.1 () {32 vars in 504 bytes} [Fri Jul 22 02:16:39 2022] GET /owa/auth/logon.aspx?url=https%3a%2f%2f1%2fecp%2f => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636059|app: 0|req: 43/86] 127.0.0.1 () {44 vars in 819 bytes} [Fri Jul 22 02:21:55 2022] POST /boaform/admin/formLogin => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636059|app: 0|req: 44/87] 127.0.0.1 () {32 vars in 557 bytes} [Fri Jul 22 02:21:56 2022] GET /.git/config => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 45/88] 127.0.0.1 () {30 vars in 500 bytes} [Fri Jul 22 02:27:29 2022] GET /console/ => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 46/89] 127.0.0.1 () {32 vars in 410 bytes} [Fri Jul 22 02:32:02 2022] GET / => generated 5584 bytes in 54 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 636059|app: 0|req: 47/90] 127.0.0.1 () {30 vars in 476 bytes} [Fri Jul 22 02:34:17 2022] GET / => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 48/91] 127.0.0.1 () {36 vars in 556 bytes} [Fri Jul 22 02:37:10 2022] GET / => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 636059|app: 0|req: 49/92] 127.0.0.1 () {34 vars in 595 bytes} [Fri Jul 22 02:43:06 2022] POST /Autodiscover/Autodiscover.xml => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 50/93] 127.0.0.1 () {32 vars in 509 bytes} [Fri Jul 22 02:54:21 2022] GET /.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 51/94] 127.0.0.1 () {32 vars in 519 bytes} [Fri Jul 22 02:54:21 2022] GET /core/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636057|app: 0|req: 10/95] 127.0.0.1 () {32 vars in 523 bytes} [Fri Jul 22 02:54:21 2022] GET /public/.env => generated 232 bytes in 3 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636057|app: 0|req: 11/96] 127.0.0.1 () {32 vars in 517 bytes} [Fri Jul 22 02:54:21 2022] GET /app/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 52/97] 127.0.0.1 () {32 vars in 519 bytes} [Fri Jul 22 02:54:21 2022] GET /beta/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+Respawned uWSGI worker 4 (new pid: 636102)
+Respawned uWSGI worker 2 (new pid: 636103)
+[pid: 636102|app: 0|req: 33/98] 127.0.0.1 () {32 vars in 523 bytes} [Fri Jul 22 02:54:21 2022] GET /config/.env => generated 232 bytes in 9 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636102|app: 0|req: 34/99] 127.0.0.1 () {32 vars in 517 bytes} [Fri Jul 22 02:54:21 2022] GET /kyc/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636057|app: 0|req: 12/100] 127.0.0.1 () {32 vars in 521 bytes} [Fri Jul 22 02:54:21 2022] GET /admin/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 53/101] 127.0.0.1 () {32 vars in 519 bytes} [Fri Jul 22 02:54:21 2022] GET /prod/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636103|app: 0|req: 5/102] 127.0.0.1 () {32 vars in 517 bytes} [Fri Jul 22 02:54:21 2022] GET /api/.env => generated 232 bytes in 9 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636102|app: 0|req: 35/103] 127.0.0.1 () {32 vars in 525 bytes} [Fri Jul 22 02:54:21 2022] GET /.docker/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636057|app: 0|req: 13/104] 127.0.0.1 () {32 vars in 549 bytes} [Fri Jul 22 02:54:21 2022] GET /.docker/laravel/app/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636059|app: 0|req: 54/105] 127.0.0.1 () {32 vars in 523 bytes} [Fri Jul 22 02:54:21 2022] GET /.env.backup => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636059|app: 0|req: 55/106] 127.0.0.1 () {32 vars in 521 bytes} [Fri Jul 22 02:54:21 2022] GET /.env.local => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636103|app: 0|req: 6/107] 127.0.0.1 () {32 vars in 519 bytes} [Fri Jul 22 02:54:22 2022] GET /.env.prod => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636057|app: 0|req: 14/108] 127.0.0.1 () {32 vars in 531 bytes} [Fri Jul 22 02:54:22 2022] GET /.env.prod.local => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636102|app: 0|req: 36/109] 127.0.0.1 () {32 vars in 543 bytes} [Fri Jul 22 02:54:22 2022] GET /.env.production.local => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636057|app: 0|req: 15/110] 127.0.0.1 () {32 vars in 541 bytes} [Fri Jul 22 02:54:22 2022] GET /acme_challenges/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 56/111] 127.0.0.1 () {32 vars in 539 bytes} [Fri Jul 22 02:54:22 2022] GET /acme-challenge/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636057|app: 0|req: 16/112] 127.0.0.1 () {32 vars in 529 bytes} [Fri Jul 22 02:54:22 2022] GET /bootstrap/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636102|app: 0|req: 37/113] 127.0.0.1 () {32 vars in 519 bytes} [Fri Jul 22 02:54:22 2022] GET /conf/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 57/114] 127.0.0.1 () {32 vars in 523 bytes} [Fri Jul 22 02:54:22 2022] GET /config/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636103|app: 0|req: 7/115] 127.0.0.1 () {32 vars in 519 bytes} [Fri Jul 22 02:54:22 2022] GET /core/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636102|app: 0|req: 38/116] 127.0.0.1 () {32 vars in 527 bytes} [Fri Jul 22 02:54:22 2022] GET /core/app/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636103|app: 0|req: 8/117] 127.0.0.1 () {32 vars in 517 bytes} [Fri Jul 22 02:54:22 2022] GET /doc/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636057|app: 0|req: 17/118] 127.0.0.1 () {32 vars in 523 bytes} [Fri Jul 22 02:54:22 2022] GET /docker/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636059|app: 0|req: 58/119] 127.0.0.1 () {32 vars in 531 bytes} [Fri Jul 22 02:54:22 2022] GET /docker/app/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636057|app: 0|req: 18/120] 127.0.0.1 () {32 vars in 515 bytes} [Fri Jul 22 02:54:22 2022] GET /en/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636102|app: 0|req: 39/121] 127.0.0.1 () {32 vars in 527 bytes} [Fri Jul 22 02:54:22 2022] GET /dotfiles/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 59/122] 127.0.0.1 () {32 vars in 515 bytes} [Fri Jul 22 02:54:22 2022] GET /js/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636103|app: 0|req: 9/123] 127.0.0.1 () {32 vars in 517 bytes} [Fri Jul 22 02:54:22 2022] GET /lib/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636102|app: 0|req: 40/124] 127.0.0.1 () {32 vars in 519 bytes} [Fri Jul 22 02:54:22 2022] GET /libs/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636103|app: 0|req: 10/125] 127.0.0.1 () {32 vars in 517 bytes} [Fri Jul 22 02:54:22 2022] GET /pub/.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636057|app: 0|req: 19/126] 127.0.0.1 () {32 vars in 519 bytes} [Fri Jul 22 02:54:22 2022] GET /site/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636057|app: 0|req: 20/127] 127.0.0.1 () {32 vars in 521 bytes} [Fri Jul 22 02:54:22 2022] GET /sites/.env => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636102|app: 0|req: 41/128] 127.0.0.1 () {36 vars in 571 bytes} [Fri Jul 22 02:54:22 2022] POST / => generated 178 bytes in 2 msecs (HTTP/1.0 405) 3 headers in 123 bytes (1 switches on core 0)
+[pid: 636059|app: 0|req: 60/129] 127.0.0.1 () {32 vars in 535 bytes} [Fri Jul 22 02:54:22 2022] GET /_profiler/phpinfo => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636103|app: 0|req: 11/130] 127.0.0.1 () {32 vars in 523 bytes} [Fri Jul 22 02:54:22 2022] GET /phpinfo.php => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636059|app: 0|req: 61/131] 127.0.0.1 () {32 vars in 515 bytes} [Fri Jul 22 02:54:22 2022] GET /phpinfo => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636103|app: 0|req: 12/132] 127.0.0.1 () {32 vars in 517 bytes} [Fri Jul 22 02:54:22 2022] GET /info.php => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636102|app: 0|req: 42/133] 127.0.0.1 () {32 vars in 501 bytes} [Fri Jul 22 02:54:22 2022] GET / => generated 5584 bytes in 36 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 636102|app: 0|req: 43/134] 127.0.0.1 () {32 vars in 514 bytes} [Fri Jul 22 02:54:22 2022] GET /?pp=env => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 636102|app: 0|req: 44/135] 127.0.0.1 () {32 vars in 411 bytes} [Fri Jul 22 02:57:17 2022] GET / => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 636102|app: 0|req: 45/136] 127.0.0.1 () {32 vars in 411 bytes} [Fri Jul 22 03:02:47 2022] GET / => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+worker 3 lifetime reached, it was running for 3601 second(s)
+worker 1 lifetime reached, it was running for 3601 second(s)
+[pid: 636102|app: 0|req: 46/137] 127.0.0.1 () {30 vars in 468 bytes} [Fri Jul 22 03:11:15 2022] GET / => generated 5584 bytes in 4 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 636102|app: 0|req: 47/138] 127.0.0.1 () {44 vars in 820 bytes} [Fri Jul 22 03:15:07 2022] POST /boaform/admin/formLogin => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636102|app: 0|req: 48/139] 127.0.0.1 () {36 vars in 569 bytes} [Fri Jul 22 03:16:13 2022] POST / => generated 178 bytes in 1 msecs (HTTP/1.0 405) 3 headers in 123 bytes (1 switches on core 0)
+[pid: 636103|app: 0|req: 13/140] 127.0.0.1 () {32 vars in 507 bytes} [Fri Jul 22 03:16:13 2022] GET /.env => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636103|app: 0|req: 14/141] 127.0.0.1 () {34 vars in 595 bytes} [Fri Jul 22 03:17:49 2022] POST /Autodiscover/Autodiscover.xml => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636102|app: 0|req: 49/142] 127.0.0.1 () {30 vars in 362 bytes} [Fri Jul 22 03:25:23 2022] GET / => generated 5584 bytes in 2 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 636103|app: 0|req: 15/143] 127.0.0.1 () {42 vars in 774 bytes} [Fri Jul 22 03:25:32 2022] GET / => generated 5584 bytes in 29 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 0)
+[pid: 636103|app: 0|req: 16/144] 127.0.0.1 () {42 vars in 769 bytes} [Fri Jul 22 03:25:32 2022] GET / => generated 5584 bytes in 3 msecs (HTTP/1.0 200) 2 headers in 81 bytes (1 switches on core 1)
+[pid: 636102|app: 0|req: 50/145] 127.0.0.1 () {42 vars in 796 bytes} [Fri Jul 22 03:25:32 2022] GET /favicon.ico => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+Respawned uWSGI worker 3 (new pid: 636120)
+[pid: 636120|app: 0|req: 22/146] 127.0.0.1 () {32 vars in 568 bytes} [Fri Jul 22 03:26:35 2022] GET /_ignition/execute-solution => generated 232 bytes in 7 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636120|app: 0|req: 23/147] 127.0.0.1 () {32 vars in 568 bytes} [Fri Jul 22 03:29:12 2022] GET /_ignition/execute-solution => generated 232 bytes in 2 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+[pid: 636120|app: 0|req: 24/148] 127.0.0.1 () {32 vars in 502 bytes} [Fri Jul 22 03:36:29 2022] GET /.git/config => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 0)
+[pid: 636102|app: 0|req: 51/149] 127.0.0.1 () {32 vars in 501 bytes} [Fri Jul 22 03:36:30 2022] GET /.git/config => generated 232 bytes in 1 msecs (HTTP/1.0 404) 2 headers in 87 bytes (1 switches on core 1)
+...brutally killing workers...
+...brutally killing workers...
+...brutally killing workers...

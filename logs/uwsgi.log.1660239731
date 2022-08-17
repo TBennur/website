@@ -1,0 +1,79 @@
+worker 2 buried after 2 seconds
+worker 3 buried after 2 seconds
+worker 4 buried after 2 seconds
+binary reloading uWSGI...
+chdir() to /app/website
+closing all non-uwsgi socket fds > 2 (max_fd = 1024)...
+found fd 7 mapped to socket 0 (127.0.0.1:5000)
+running /app/venv_website/bin/uwsgi
+*** Starting uWSGI 2.0.20 (64bit) on [Thu Aug 11 17:33:14 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 inherited INET address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Jun 22 2022, 20:18:18)  [GCC 9.4.0]
+Python main interpreter initialized at 0x55a81be08460
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x55a81be08460 pid: 683309 (default app)
+mountpoint  already configured. skip.
+gracefully (RE)spawned uWSGI master process (pid: 683309)
+sendmsg(): Transport endpoint is already connected [core/notify.c line 39]
+spawned uWSGI worker 1 (pid: 683429, cores: 2)
+spawned uWSGI worker 2 (pid: 683430, cores: 2)
+spawned uWSGI worker 3 (pid: 683431, cores: 2)
+spawned uWSGI worker 4 (pid: 683432, cores: 2)
+*** Starting uWSGI 2.0.20 (64bit) on [Thu Aug 11 17:35:42 2022] ***
+compiled with version: 9.3.0 on 09 January 2022 02:23:52
+os: Linux-5.4.0-88-generic #99-Ubuntu SMP Thu Sep 23 17:29:00 UTC 2021
+nodename: ubuntu-s-1vcpu-1gb-nyc1-01-tanaywebsite
+machine: x86_64
+clock source: unix
+pcre jit disabled
+detected number of CPU cores: 1
+current working directory: /app/website
+detected binary path: /app/venv_website/bin/uwsgi
+setgid() to 33
+set additional group 27 (sudo)
+setuid() to 1000
+chdir() to /app/website/
+your processes number limit is 3789
+your memory page size is 4096 bytes
+ *** WARNING: you have enabled harakiri without post buffering. Slow upload could be rejected on post-unbuffered webservers *** 
+detected max file descriptor number: 1024
+lock engine: pthread robust mutexes
+thunder lock: disabled (you can enable it with --thunder-lock)
+uwsgi socket 0 bound to TCP address 127.0.0.1:5000 fd 7
+Python version: 3.8.10 (default, Jun 22 2022, 20:18:18)  [GCC 9.4.0]
+Python main interpreter initialized at 0x5600f2ff9870
+python threads support enabled
+your server socket listen backlog is limited to 100 connections
+your mercy for graceful operations on workers is 60 seconds
+mapped 416720 bytes (406 KB) for 8 cores
+*** Operational MODE: preforking+threaded ***
+added /app/venv_website/bin/ to pythonpath.
+WSGI app 0 (mountpoint='') ready in 1 seconds on interpreter 0x5600f2ff9870 pid: 683458 (default app)
+mountpoint  already configured. skip.
+spawned uWSGI master process (pid: 683458)
+spawned uWSGI worker 1 (pid: 683470, cores: 2)
+spawned uWSGI worker 2 (pid: 683471, cores: 2)
+spawned uWSGI worker 3 (pid: 683472, cores: 2)
+spawned uWSGI worker 4 (pid: 683473, cores: 2)
+...brutally killing workers...
