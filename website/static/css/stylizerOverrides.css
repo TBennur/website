@@ -67,5 +67,5 @@ input[type="file"] {
 }
 
 .stylizer-bottom-text {
-    margin-top: 1%;
+    margin-top: 1% !important;
 }

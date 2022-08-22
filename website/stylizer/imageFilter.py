@@ -44,5 +44,7 @@ def visualize_palette(palette_name, num_colors):
                 image_array[i][j][:3] = palette[width * int(i / 2) + int(j / 2)]
             elif j >= margin and j < 2 * width - margin:
                 image_array[i][j][:3] = palette[width * (height - 1) + int((j - margin) / 2)]
+            else:
+                image_array[i][j][3] = 0
                         
     return Image.fromarray(np.uint8(image_array), 'RGBA').resize((200, 200), resample=Image.BOX)
