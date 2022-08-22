@@ -3,6 +3,8 @@
   <head>
     <meta charset="utf-8">
     <title>Tanay Bennur: Stylizer</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',     filename='css/stylizerOverrides.css') }}">
   </head>
   <body>
     {% extends "template.html" %}
@@ -255,7 +257,7 @@
                 
             </div>
 
-            <div class="row" style="margin-top: 1%;">
+            <div class="row stylizer-bottom-text">
                 <p class = "text-center"> This tool allows you to render pictures in small color palettes reminiscent of 8-bit games. These palettes can be found online at 
                     <a href = "https://lospec.com/palette-list" class = "text-dark" style = "text-decoration: none"> 
                         https://lospec.com/palette-list.

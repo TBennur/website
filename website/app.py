@@ -1,30 +1,26 @@
-from flask import Flask, render_template, request, jsonify, session, url_for
+from flask import Flask, render_template, request, jsonify, session
 from flask_session import Session
 import yaml
 import platform
 import uuid
-import os
 from werkzeug import utils, exceptions
 from datetime import timedelta
 import base64
 
-# Import Image Filter Module
+# Import Modules
 if platform.system() == "Windows":
     import stylizer.imageFilter as imageFilter
     import appUtilities
-    UPLOAD_FOLDER = 'temporaryImageFiles'
 else:
     from website.stylizer import imageFilter
     from website import appUtilities
-    UPLOAD_FOLDER = 'website/temporaryImageFiles'
-
 
 # Setup webpage and import constants
 app = Flask(__name__)
 app.config["SESSION_PERMANENT"] = False
 app.config["SESSION_TYPE"] = "filesystem"
 app.config["PERMANENT_SESSION_LIFETIME"] = timedelta(minutes = 30)
-app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.config['UPLOAD_FOLDER'] = appUtilities.get_file_path('temporaryImageFiles')
 app.config['MAX_CONTENT_LENGTH'] = 500 * 1000
 Session(app)
 
@@ -65,7 +61,7 @@ def visualize_palette():
 @app.route('/visualize-image', methods = ["GET", "POST"])
 def visualize_image():
     if 'file' not in request.files:
-        return jsonify({'Status' : 'Failure', 'Reason' : ''})
+        return jsonify({'Status' : 'Failure', 'Reason' : 'File Doesn\'t Exist'})
     file = request.files['file']
     if file.filename == '':
         return jsonify({'Status' : 'Failure', 'Reason' : 'Please Upload a Named File'})

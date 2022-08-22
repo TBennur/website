@@ -1,0 +1,19 @@
+/* Custom CSS Overrides - General */
+
+* {
+    font-family: Georgia;
+}
+
+.navbar-brand {
+    margin-left: 2%;
+}
+
+.webpage-render {
+    margin-top: 5%;
+    padding-bottom: 1%;
+}
+
+.nav-opacity {
+    --bs-bg-opacity : 0.95;
+    background-color: rgb(202, 194, 186);
+}

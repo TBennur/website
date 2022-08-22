@@ -1,36 +1,4 @@
-/* Custom CSS Overrides */
-
-.navbar-brand {
-    margin-left: 2%;
-}
-
-.webpage-render {
-    margin-top: 5%;
-    padding-bottom: 1%;
-}
-
-.project-card {
-    border-radius: 25px;
-    background-color: rgb(225, 216, 207)
-}
-
-.card-img-left {
-    width: 100%;
-    border: 1px solid;
-}
-
-.project-card-body {
-    padding-top: 1%;
-    padding-bottom: 1%;
-    margin-left: 0.1%;
-    margin-right: 0.1%;
-    display: table;
-}
-
-.nav-opacity {
-    --bs-bg-opacity : 0.95;
-    background-color: rgb(202, 194, 186)
-}
+/* Custom CSS Overrides - Stylizer Widget */
 
 .stylizer-image {
     max-height: 100%;
@@ -95,4 +63,9 @@ input[type="file"] {
 .upload-primary:hover{
     color:#fff;
     background-color:#0b5ed7;
-    border-color:#0a58ca}
+    border-color:#0a58ca
+}
+
+.stylizer-bottom-text {
+    margin-top: 1%;
+}

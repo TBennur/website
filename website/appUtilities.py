@@ -44,8 +44,6 @@ def upload_file(filename, upload_folder, session_id, system):
     edit_logfile(filename, session_id, get_logfile_name(system), replacement_necessary)
     return filepath
 
-        
-
 def get_image_info(query, conversion_dictionary):
     request_info = query.get_data().decode('UTF-8').split("|")
     image_name = request_info[0][1:]

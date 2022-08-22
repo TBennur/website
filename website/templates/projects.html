@@ -2,7 +2,9 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
-    <title>Tanay Bennur: About</title>
+    <title>Tanay Bennur: Projects</title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static',     filename='css/projectOverrides.css') }}">
   </head>
   <body>
     {% extends "template.html" %}
@@ -13,16 +15,16 @@
         <div class="col-6">
           <div class="vstack gap-4">
             <div class="card project-card">
-              <h2 class="card-title text-center" style="margin-top:3%"> Jigsaw Puzzle Solver </h2>
+              <h2 class="card-title text-center project-card-title"> Jigsaw Puzzle Solver </h2>
               <div class="card-body" style="flex-direction: row;">
                 <div class="row project-card-body">
-                  <div class="col-6" style = "vertical-align: middle; display: table-cell;">
+                  <div class="col-6 project-card-column">
                     <img class="card-img-left text-center" src="{{ url_for('static',     filename='defaultFiles/portfolioPictures/solverScreenshot.jpg') }}">
                     <div class = "text-center">
                       <a href="https://gitlab.com/TBennur/puzzle-solver" class="btn btn-primary-outline">Go to Project</a>              
                     </div>
                   </div>
-                  <div class="col-6" style = "vertical-align: middle; display: table-cell;">
+                  <div class="col-6 project-card-column">
                     <p class="card-text"> <b> Description: </b> This project uses custom image recognition algorithms to solve jigsaw puzzles. The original version uses selenium to solve puzzles on thejigsawpuzzles.com, while the main version converts pictures of physical puzzles into images of the solved version. </p>
                     <p class="card-text"> <b> Timeline: </b> March 2019 - February 2020 </p>
                     <p class="card-text"> <b> Technologies: </b> Python, Numpy, PIL, Selenium </p>
@@ -31,16 +33,16 @@
               </div>
             </div>    
             <div class="card project-card">
-              <h2 class="card-title text-center" style="margin-top:3%"> SIAM M3 Challenge Submission </h2>
+              <h2 class="card-title text-center project-card-title"> SIAM M3 Challenge Submission </h2>
               <div class="card-body" style="flex-direction: row;">
-                <div class="row project-card-body" style = "display: table;">
-                  <div class="col-6" style = "vertical-align: middle; display: table-cell;">
+                <div class="row project-card-body">
+                  <div class="col-6 project-card-column">
                     <img class="card-img-left text-center" src="{{ url_for('static',     filename='defaultFiles/portfolioPictures/modellingScreenshot.jpg') }}">
                     <div class = "text-center">
                       <a href="https://m3challenge.siam.org/sites/default/files/uploads/FINALIST_14665.pdf" class="btn btn-primary-outline">Go to Project</a>              
                     </div>    
                   </div>
-                  <div class="col-6" style = "vertical-align: middle; display: table-cell;">
+                  <div class="col-6 project-card-column">
                     <p class="card-text"> <b> Description: </b> A paper modelling the economics, necessity and allocation of cellular data infrastructure in the United States. This paper was a finalist in SIAM's M3 Modelling Competition (top 1% of submissions) and also recieved an honorable mention for technical computing.</p>
                     <p class="card-text"> <b> Collaborators: </b> Tobias Beidler-Shenk, Owen Moss, Ethan Soloway, Hayden Gold </p>
                     <p class="card-text"> <b> Timeline: </b> February 27th, 2021 </p>
@@ -55,16 +57,16 @@
         <div class="col-6">
           <div class="vstack gap-4">
             <div class="card project-card">
-              <h2 class="card-title text-center" style="margin-top:3%"> Recollections: The Game </h2>
+              <h2 class="card-title text-center project-card-title"> Recollections: The Game </h2>
               <div class="card-body" style="flex-direction: row;">
-                <div class="row project-card-body" style = "display: table;">
-                  <div class="col-6" style = "vertical-align: middle; display: table-cell;">
+                <div class="row project-card-body">
+                  <div class="col-6 project-card-column">
                     <img class="card-img-left text-center" src="{{ url_for('static',     filename='defaultFiles/portfolioPictures/recollectionsScreenshot.jpg') }}">
                     <div class = "text-center">
                       <a href="https://gitlab.com/TBennur/rpg" class="btn btn-primary-outline">Go to Project</a>              
                     </div>              
                   </div>
-                  <div class="col-6" style = "vertical-align: middle; display: table-cell;">
+                  <div class="col-6 project-card-column">
                     <p class="card-text"> <b> Description: </b> This attempted game was a turn based RPG akin to the Fire Emblem series. The game was never finished due to time constraints, but it was a valuable learning experience. </p>
                     <p class="card-text"> <b> Collaborators: </b> Rowen Slepian, Marko Melishchuk, Jacob Luterman, Virginia Yu, Tobias Beidler-Shenk, Brian Lu, Kyle Holm, Miranda Pan, Henry Leighton, Vilnis Chakars </p>
                     <p class="card-text"> <b> Timeline: </b> July 2020 - April 2021 </p>
@@ -75,16 +77,16 @@
               </div>
             </div>    
             <div class="card project-card">
-              <h2 class="card-title text-center" style="margin-top:3%"> Website and Stylizer </h2>
+              <h2 class="card-title text-center project-card-title"> Website and Stylizer </h2>
               <div class="card-body" style="flex-direction: row;">
-                <div class="row project-card-body" style = "display: table;">
-                  <div class="col-6" style = "vertical-align: middle; display: table-cell;">
+                <div class="row project-card-body">
+                  <div class="col-6 project-card-column">
                     <img class="card-img-left text-center" src="{{ url_for('static',     filename='defaultFiles/portfolioPictures/stylizerScreenshot.jpg') }}">
                     <div class="text-center">
                       <a href="https://www.tanaybennur.com/stylizer" class="btn btn-primary-outline">Go to Project</a>              
                     </div>              
                   </div>
-                  <div class="col-6" style = "vertical-align: middle; display: table-cell;">
+                  <div class="col-6 project-card-column">
                     <p class="card-text"> <b> Description: </b> This is my personal website! The website was built around the stylizer widget, a tool that allows users to render their pictures in small color palettes reminiscent of 8-bit games. </p>
                     <p class="card-text"> <b> Timeline: </b> January 2022 - Present </p>
                     <p class="card-text"> <b> Technologies: </b> C, Python, Numpy, Flask, Bootstrap, Javascript, HTML, CSS</p>

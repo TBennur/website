@@ -53,7 +53,8 @@ def convert_palette(palette_list):
     return palette
 
 def get_palette(palette_name, num_colors):
-    if (not is_valid_palette(palette_name)): raise Exception("Invalid palette Format")
+    if (not is_valid_palette(palette_name)):
+        raise Exception("Invalid palette Format")
     if palette_name == "temp_results.hex":
         colorList = open(get_file_path("*/Palettes/paletteCustom/" + palette_name))        
     else:
@@ -70,7 +71,8 @@ def get_palette(palette_name, num_colors):
     return convert_palette(paletteList)
 
 def get_image(image_name, is_custom, session_id):
-    if (not is_valid_image(image_name)): raise Exception("Invalid Image Format")
+    if (not is_valid_image(image_name)):
+        raise Exception("Invalid Image Format")
     if is_custom:
         try:
             img = Image.open(get_file_path(str(session_id) + "-file-" + image_name))
