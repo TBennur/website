@@ -56,10 +56,10 @@ def get_palette(palette_name, num_colors):
     if (not is_valid_palette(palette_name)):
         raise Exception("Invalid palette Format")
     if palette_name == "temp_results.hex":
-        colorList = open(get_file_path("*/Palettes/paletteCustom/" + palette_name))        
+        colorList = open(get_file_path("*/palettes/paletteCustom/" + palette_name))        
     else:
         try:
-            colorList = open(get_file_path("*/Palettes/" + palette_folder(num_colors) + palette_name))
+            colorList = open(get_file_path("*/palettes/" + palette_folder(num_colors) + palette_name))
         except FileNotFoundError:
             raise Exception("Non-Existent palette File")
     

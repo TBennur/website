@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Cipher Game</title>
+
+    </head>
+  <body>
+    {% extends "template.html" %}
+    {% block content %}
+    <script type=text/javascript>
+        
+        var l1 = "#"
+        var l2 = "#"
+        
+        function replace() {
+            var text = document.getElementById("text-content");
+            var rules = document.getElementById("rules-content");
+            var hints = document.getElementById("hints-content");
+            var raw = document.getElementById("raw-content");
+            var win = document.getElementById("win-button");
+            fetch("{{ url_for('replace_button') }}", 
+                    {method: "POST", 
+                    headers: {'content-type': 'application/json'},
+                    body: JSON.stringify(l1 + "|" + l2)})
+                .then(response => response.json())
+                .then(data => {
+                    if (data.Status == "Success") {
+                        text.innerText = data.text;
+                        rules.innerText = data.rules;
+                        hints.innerText = data.hints;
+                        raw.innerText = data.raw;
+                        win.hidden = true;
+                        if (data.win == 'True') {
+                            win.hidden = false;
+                        }
+                    }
+                });
+        }
+
+        function hint() {
+            var text = document.getElementById("text-content");
+            var rules = document.getElementById("rules-content");
+            var hints = document.getElementById("hints-content");
+            var raw = document.getElementById("raw-content");
+            var win = document.getElementById("win-button");
+            fetch("{{ url_for('hint_button') }}", 
+                    {method: "POST", 
+                    headers: {'content-type': 'application/json'}})
+                .then(response => response.json())
+                .then(data => {
+                    if (data.Status == "Success") {
+                        text.innerText = data.text;
+                        rules.innerText = data.rules;
+                        hints.innerText = data.hints;
+                        raw.innerText = data.raw;
+                        win.hidden = true;
+                        if (data.win == 'True') {
+                            win.hidden = false;
+                        }
+                    }
+                });
+        }
+
+        function again() {
+            var text = document.getElementById("text-content");
+            var rules = document.getElementById("rules-content");
+            var hints = document.getElementById("hints-content");
+            var raw = document.getElementById("raw-content");
+            var win = document.getElementById("win-button");
+            text.innerText = "Hit Hint or Go To Begin!";
+            rules.innerText = "";
+            hints.innerText = "";
+            raw.innerText = "Hit Hint or Go To Begin!";
+            win.hidden = true;  
+            fetch("{{ url_for('cipher') }}");
+        }
+
+        function l1Change() {
+            var l1_elem = document.getElementById("l1-form");
+            l1 = l1_elem.value;
+        }
+        
+        function l2Change() {
+            var l2_elem = document.getElementById("l2-form");
+            l2 = l2_elem.value;
+        }
+    </script>
+    
+    <div class="container-fluid webpage-render">
+        <div class="container-fluid">
+            
+            <div class="row">
+                <div class = "col-5">
+                    <h1 class = "text-center">Original Text</h1>
+                </div>
+                <div class = "col-2">
+                    <div class='container align-top stylize-button position-relative text-center' style = 'margin-top: 2%;'>
+                        <form>
+                            <button onclick="again()" class='btn btn-primary' type="button" id = "win-button" hidden>Play Again?</button>
+                        </form>
+                    </div>
+                </div>
+                <div class = "col-5">
+                    <h1 class = "text-center">Decoded Text</h1>
+                </div>
+            </div>
+
+            <div class="row">
+                
+                <div class = "col-5">
+                    <p id = "raw-content" class = "text-center"> Hit Hint or Go to Begin! </p>
+                </div>
+
+                <div class="col-2">
+                    <p id = "hints-content" class = "text-center"></p>
+                    <p class = "text-center">Replace</p>
+                    <div class='container-fluid align-top d-flex justify-content-center' style = 'margin-top: -7%;'>
+                        <form>
+                            <select onchange="l1Change()" id="l1-form" class="form-select-sm" >
+                                <option selected>Select Letter To Replace</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                                <option value="F">F</option>
+                                <option value="G">G</option>
+                                <option value="H">H</option>
+                                <option value="I">I</option>
+                                <option value="J">J</option>
+                                <option value="K">K</option>
+                                <option value="L">L</option>
+                                <option value="M">M</option>
+                                <option value="N">N</option>
+                                <option value="O">O</option>
+                                <option value="P">P</option>
+                                <option value="Q">Q</option>
+                                <option value="R">R</option>
+                                <option value="S">S</option>
+                                <option value="T">T</option>
+                                <option value="U">U</option>
+                                <option value="V">V</option>
+                                <option value="W">W</option>
+                                <option value="X">X</option>
+                                <option value="Y">Y</option>
+                                <option value="Z">Z</option>
+                            </select>
+                        </form>
+                    </div>
+                    <p class = "text-center">With</p>
+                    <div class='container-fluid align-top d-flex justify-content-center' style = 'margin-top: -7%;'>
+                        <form>
+                            <select onchange="l2Change()" id="l2-form" class="form-select-sm" >
+                                <option selected>Select Letter To Replace With</option>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                                <option value="E">E</option>
+                                <option value="F">F</option>
+                                <option value="G">G</option>
+                                <option value="H">H</option>
+                                <option value="I">I</option>
+                                <option value="J">J</option>
+                                <option value="K">K</option>
+                                <option value="L">L</option>
+                                <option value="M">M</option>
+                                <option value="N">N</option>
+                                <option value="O">O</option>
+                                <option value="P">P</option>
+                                <option value="Q">Q</option>
+                                <option value="R">R</option>
+                                <option value="S">S</option>
+                                <option value="T">T</option>
+                                <option value="U">U</option>
+                                <option value="V">V</option>
+                                <option value="W">W</option>
+                                <option value="X">X</option>
+                                <option value="Y">Y</option>
+                                <option value="Z">Z</option>
+                            </select>
+                        </form>
+                    </div>
+                    <div class='container align-top stylize-button position-relative text-center' style = 'margin-top: 2%;'>
+                        <form>
+                            <button onclick="replace()" class='btn btn-primary' type="button">Go!</button>
+                            <button onclick="hint()" class='btn btn-primary' type="button">Hint!</button>
+                        </form>
+                    </div>
+                    <p id = "rules-content" class = "text-center"></p>
+                </div>
+
+                <div class = "col-5">                    
+                    <p id = "text-content" class = "text-center">Hit Hint or Go To Begin!</p>
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+
+    {% endblock %}
+  </body>
+</html>

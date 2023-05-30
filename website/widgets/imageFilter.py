@@ -7,12 +7,12 @@ from PIL import Image
 import platform
 
 if platform.system() == "Windows":
-    import stylizer.filterUtilities as filterUtilities
+    import widgets.widgetUtilities as widgetUtilities
 else:
-    import website.stylizer.filterUtilities as filterUtilities
+    import website.widgets.widgetUtilities as widgetUtilities
 
 # Import C-based stylization function, setup formatting
-stylize = ctypes.CDLL(filterUtilities.get_file_path("website/stylizer/stylize" + filterUtilities.get_file_type())).stylize
+stylize = ctypes.CDLL(widgetUtilities.get_file_path("website/widgets/stylize" + widgetUtilities.get_file_type())).stylize
 stylize.restype = None
 stylize.argtypes = [np.ctypeslib.ndpointer(ctypes.c_int16),
                     np.ctypeslib.ndpointer(ctypes.c_int16), 
@@ -21,15 +21,15 @@ stylize.argtypes = [np.ctypeslib.ndpointer(ctypes.c_int16),
 
 # Main stylization function, called from Flask
 def convert_image(image_name, palette_name, num_colors, is_custom, session_id):
-    data, dimensions = filterUtilities.get_image(image_name, is_custom, session_id)
-    palette = filterUtilities.get_palette(palette_name, num_colors)
+    data, dimensions = widgetUtilities.get_image(image_name, is_custom, session_id)
+    palette = widgetUtilities.get_palette(palette_name, num_colors)
     stylize(data, palette, dimensions[0], dimensions[1], num_colors, image_name.endswith(".jpg"))
     return Image.fromarray(np.uint8(data), 'RGB')
 
 # Palette Visualization Function
 def visualize_palette(palette_name, num_colors):
     
-    palette = filterUtilities.get_palette(palette_name, num_colors)
+    palette = widgetUtilities.get_palette(palette_name, num_colors)
     
     width = int(np.ceil(num_colors**0.5))
     height = int(np.ceil(num_colors / width))

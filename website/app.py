@@ -9,10 +9,12 @@ import base64
 
 # Import Modules
 if platform.system() == "Windows":
-    import stylizer.imageFilter as imageFilter
+    import widgets.imageFilter as stylizerWidget
+    import widgets.cipherGame as cipherWidget
     import appUtilities
 else:
-    from website.stylizer import imageFilter
+    from website.widgets import imageFilter as stylizerWidget
+    from website.widgets import cipherGame as cipherWidget
     from website import appUtilities
 
 # Setup webpage and import constants
@@ -24,7 +26,7 @@ app.config['UPLOAD_FOLDER'] = appUtilities.get_file_path('temporaryImageFiles')
 app.config['MAX_CONTENT_LENGTH'] = 500 * 1000
 Session(app)
 
-conversion_stream = open(appUtilities.get_file_path("stylizer/stylizeNameConversion.yaml"), 'r')
+conversion_stream = open(appUtilities.get_file_path("widgets/stylizeNameConversion.yaml"), 'r')
 conversion_dictionary = yaml.safe_load(conversion_stream)
 
 # Homepage route
@@ -43,19 +45,50 @@ def stylizer():
 def stylize_button():
     image, palette_info, is_custom = appUtilities.get_image_info(request, conversion_dictionary)
     try:
-        img = imageFilter.convert_image(image, palette_info['filename'], palette_info['size'], is_custom, session["id"])    
+        img = stylizerWidget.convert_image(image, palette_info['filename'], palette_info['size'], is_custom, session["id"])    
         encoded_img = appUtilities.get_image(img)
         return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
     except AttributeError:
         return jsonify({'Status' : 'Failure', 'Reason' : 'You recently uploaded a different file. Due to space constraints, only 1 user file can be processed at a time. Please reupload this file.'})
 
-# Visualizes Current palette
+# Visualizes current palette
 @app.route('/visualize-palette', methods = ["GET", "POST"])
 def visualize_palette():
     palette_info = appUtilities.get_palette_info(request, conversion_dictionary)
-    img = imageFilter.visualize_palette(palette_info['filename'], palette_info['size'])
+    img = stylizerWidget.visualize_palette(palette_info['filename'], palette_info['size'])
     encoded_img = appUtilities.get_palette(img)
     return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
+
+# Cipher Game route
+@app.route("/cipher")
+def cipher():
+    session["raw_text"], session["cipher_rules"], session["cipher_text"], session["user_rules"], session["user_hints"], session["user_text"] = cipherWidget.reset_decoder()
+    return render_template("cipher.html")
+
+# Hint button for cipher game
+@app.route('/hint-button', methods = ["GET", "POST"])
+def hint_button():
+    cipherWidget.update_hints(session["user_hints"], session["user_rules"], session["cipher_rules"])
+    session["user_text"] = cipherWidget.replace_text(session["cipher_text"], session["user_rules"] + session["user_hints"])
+    return jsonify({ 'Status' : 'Success', 
+                    'text': session["user_text"], 
+                    'rules': cipherWidget.format_rules(session["user_rules"]),
+                    'hints': cipherWidget.format_hints(session["user_hints"]), 
+                    'raw': session["cipher_text"],
+                    'win': str(session["user_text"] == session["raw_text"])})
+
+# Replacement button for cipher game
+@app.route('/replace-button', methods = ["GET", "POST"])
+def replace_button():
+    [l1, l2] = request.get_data().decode('UTF-8').split("|")
+    cipherWidget.update_rules(l1, l2, session["user_rules"], session["user_hints"])
+    session["user_text"] = cipherWidget.replace_text(session["cipher_text"], session["user_rules"] + session["user_hints"])
+    return jsonify({ 'Status' : 'Success', 
+                    'text': session["user_text"], 
+                    'rules': cipherWidget.format_rules(session["user_rules"]),
+                    'hints': cipherWidget.format_hints(session["user_hints"]), 
+                    'raw': session["cipher_text"],
+                    'win': str(session["user_text"] == session["raw_text"])})
 
 # Visualizes Uploaded Image
 @app.route('/visualize-image', methods = ["GET", "POST"])
