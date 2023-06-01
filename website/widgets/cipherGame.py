@@ -50,15 +50,15 @@ def format_hints(hs):
     return s[:-2]
 
 def update_rules(l1, l2, rs, hs):
-    if l1[1] == NULL or l2[0] == NULL:
+    if l1 == NULL or l2 == NULL:
         return
     for hint in hs:
-        if l1[1] == hint[0]:
+        if l1 == hint[0]:
             return
-    formatted = l1[1] + SPLIT + l2[0]
+    formatted = l1 + SPLIT + l2
     p = -1
     for i in range(len(rs)):
-        if rs[i][0] == l1[1]:
+        if rs[i][0] == l1:
             p = i
     if p != -1:
         rs.pop(p)
@@ -93,9 +93,19 @@ def generate_message(o):
         o = o[:u] + o[u].upper() + o[u+1:]  
     return o, rs
 
-def reset_decoder():
+def setup():
     f = open(widgetUtilities.get_file_path(random.choice(os.listdir(widgetUtilities.get_file_path("cipherTexts")))), "r")
     raw = f.read()
     cipher, rules = generate_message(raw)
-    return raw, rules, cipher, [], [], cipher
+    cipher_settings = {
+        "raw_text": raw,
+        "cipher_rules": rules,
+        "cipher_text": cipher,
+        "user_rules": [],
+        "user_hints": [],
+        "user_text": cipher,
+        "old_letter": "A",
+        "new_letter": "A",
+    }
+    return cipher_settings
     

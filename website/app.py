@@ -60,46 +60,39 @@ def visualize_palette():
     encoded_img = appUtilities.get_palette(img)
     return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
 
-# Cipher Game route
-@app.route("/cipher")
+# Cipher Game
+@app.route("/cipher", methods = ["GET", "POST"])
 def cipher():
-    session["raw_text"], session["cipher_rules"], session["cipher_text"], session["user_rules"], session["user_hints"], session["user_text"] = cipherWidget.reset_decoder()
-    session["user_text"] = cipherWidget.replace_text(session["cipher_text"], session["user_rules"] + session["user_hints"])
-    context = {'win': session["user_text"] == session["raw_text"],
-               'cipher_text': session["cipher_text"],
-               'user_text': session["user_text"],
-               'hints': cipherWidget.format_hints(session["user_hints"]), 
-               'rules': cipherWidget.format_rules(session["user_rules"]),}
-    print(context)
-    return render_template("cipher.html", **context)
-
-# Hint button for cipher game
-@app.route('/hint-button', methods = ["GET", "POST"])
-def hint_button():
-    print("Hint!")
-    cipherWidget.update_hints(session["user_hints"], session["user_rules"], session["cipher_rules"])
-    session["user_text"] = cipherWidget.replace_text(session["cipher_text"], session["user_rules"] + session["user_hints"])
-    context = {'win': session["user_text"] == session["raw_text"],
-               'cipher_text': session["cipher_text"],
-               'user_text': session["user_text"],
-               'hints': cipherWidget.format_hints(session["user_hints"]), 
-               'rules': cipherWidget.format_rules(session["user_rules"]),}
-    print(context)
-    return render_template("cipher.html", **context)
-
-# Replacement button for cipher game
-@app.route('/replace-button', methods = ["GET", "POST"])
-def replace_button():
-    print("Replace!")
-    [l1, l2] = request.get_data().decode('UTF-8').split("|")
-    cipherWidget.update_rules(l1, l2, session["user_rules"], session["user_hints"])
-    session["user_text"] = cipherWidget.replace_text(session["cipher_text"], session["user_rules"] + session["user_hints"])
-    context = {'win': session["user_text"] == session["raw_text"],
-               'cipher_text': session["cipher_text"],
-               'user_text': session["user_text"],
-               'hints': cipherWidget.format_hints(session["user_hints"]), 
-               'rules': cipherWidget.format_rules(session["user_rules"]),}
-    print(context)
+    
+    if request.method == 'POST':
+        if "hint" in request.form:
+            cipher_data = session["cipher"]
+            cipherWidget.update_hints(cipher_data["user_hints"], cipher_data["user_rules"], cipher_data["cipher_rules"])
+        elif "replace" in request.form:
+            cipher_data = session["cipher"]
+            cipherWidget.update_rules(cipher_data["old_letter"], cipher_data["new_letter"], cipher_data["user_rules"], cipher_data["user_hints"])
+        elif "old_letter" in request.form:
+            session["cipher"]["old_letter"] = request.form["old_letter"]
+        elif "new_letter" in request.form:
+            session["cipher"]["new_letter"] = request.form["new_letter"]
+        else:
+            session["cipher"] = cipherWidget.setup()
+    else:
+        session["cipher"] = cipherWidget.setup()
+    
+    cipher_data = session["cipher"]
+    session["cipher"]["user_text"] = cipherWidget.replace_text(cipher_data["cipher_text"], cipher_data["user_rules"] + cipher_data["user_hints"])
+    
+    context = {
+        'win': cipher_data["user_text"] == cipher_data["raw_text"],
+        'cipher_text': cipher_data["cipher_text"],
+        'user_text': cipher_data["user_text"],
+        'hints': cipherWidget.format_hints(cipher_data["user_hints"]), 
+        'rules': cipherWidget.format_rules(cipher_data["user_rules"]),
+        'old_letter': cipher_data["old_letter"],
+        'new_letter': cipher_data["new_letter"],
+        'letters': [str(chr(i)) for i in range(65, 91)]
+    }
     return render_template("cipher.html", **context)
 
 # Visualizes Uploaded Image
