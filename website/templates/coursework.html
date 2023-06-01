@@ -8,110 +8,36 @@
     {% extends "template.html" %}
     {% block content %}
     <div class="container-fluid webpage-render">
-        <p> I'm currently double majoring in Computer Science and Artificial Intellligence. My current GPA is 3.62. </p>
-        <div class ="row">
-            <div class = "col-xxl-6">
-                <h3> Fall 2021 </h3>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 15-151: Concepts of Mathematics </p>
-                    <a link href = "https://www.math.cmu.edu/~jmackey/151_128/welcome.html"> https://www.math.cmu.edu/~jmackey/151_128/welcome.html </a> 
-                    <p> Grade Received - A</p>       
+        {% for year in years %}
+            <div class ="row" style = "margin-top: 1%;">
+                <div class = "col-xxl-6">
+                    <h3> {{ year.fall_name }} </h3>
+                    {% for class in year.fall_classes %}
+                        <div>
+                            <p style = "margin-bottom: 0%;"> {{ class.number }}: {{ class.name }}</p>
+                            {% if class.technical %}
+                                <a link href = "{{class.link}}">{{class.link}}</a>
+                                <p> Grade Received - {{ class.grade }}</p>
+                            {% endif %}
+                        </div>
+                    {% endfor %}
                 </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 15-122: Introduction to Imperative Programming </p>
-                    <a link href = "https://www.cs.cmu.edu/~15122/"> https://www.cs.cmu.edu/~15122/ </a> 
-                    <p> Grade Received - A</p>       
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 07-131: Great Practical Ideas in Computer Science </p>
-                    <a link href = "https://www.cs.cmu.edu/~07131/f21/"> https://www.cs.cmu.edu/~07131/f21/ </a> 
-                    <p> Grade Received - A</p>       
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 07-128: Freshman Immigration Course </p>       
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 21-241: Matrices and Linear Transformations </p>
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 24-104: Introduction to Modern Making </p>
-                </div>
-                <div>
-                    <p> 85-219: Biological Foundations of Behavior </p>
+                <div class = "col-xxl-6">
+                    {% if year.has_spring %}
+                        <h3> {{ year.spring_name }} </h3>
+                        {% for class in year.spring_classes %}
+                            <div>
+                                <p style = "margin-bottom: 0%;"> {{ class.number }}: {{ class.name }}</p>
+                                {% if class.technical %}
+                                    <a link href = "{{class.link}}">{{class.link}}</a>
+                                    <p> Grade Received - {{ class.grade }}</p>
+                                {% endif %}
+                            </div>
+                        {% endfor %}   
+                    {% endif %}
                 </div>
             </div>
-            <div class = "col-xxl-6">
-                <h3> Spring 2022 </h3>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 15-150: Introduction to Functional Programming </p>
-                    <a link href = "http://www.cs.cmu.edu/~15150/"> http://www.cs.cmu.edu/~15150/ </a> 
-                    <p> Grade Received - B</p>       
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 15-251: Great Theoretical Ideas in Computer Science </p>
-                    <a link href = "https://s22.cs251.com/index.html"> https://s22.cs251.com/index.html </a> 
-                    <p> Grade Received - A</p>       
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 07-180: Concepts in Artificial Intelligence </p>
-                    <a link href = "https://www.coursicle.com/cmu/courses/SCS/07180/"> https://www.coursicle.com/cmu/courses/SCS/07180/ </a> 
-                    <p> Grade Received - A</p>       
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 80-180: Nature of Language </p>
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 76-107: Writing about Data </p>
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 76-108: Writing About Public Problems </p>
-                </div>
-            </div>
-        </div>
-        <div class ="row">
-            <div class = "col-xxl-6">
-                <h3> Fall 2022 </h3>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 11-411: Natural Language Processing </p>
-                    <a link href = "http://demo.clab.cs.cmu.edu/NLP/"> http://demo.clab.cs.cmu.edu/NLP/ </a> 
-                    <p> Grade Received - A</p> 
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 15-281: Artificial Intelligence, Problem Solving and Representation </p>
-                    <a link href = "https://www.cs.cmu.edu/~15281-s20/"> https://www.cs.cmu.edu/~15281-s20/ </a> 
-                    <p> Grade Received - B</p> 
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 15-213: Introduction to Computer Systems </p>
-                    <a link href = "https://www.cs.cmu.edu/~213/"> https://www.cs.cmu.edu/~213/ </a> 
-                    <p> Grade Received - B</p> 
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 76-270: Writing for the Professions </p>
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > Teaching Assistant for 21-241: Matrices and Linear Transformations </p>
-                </div>
-            </div>
-            <div class = "col-xxl-6">
-                <h3> Spring 2023 </h3>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 15-210: Parallel and Sequential Data Structures and Algorithms </p>
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 15-259: Probability and Computing </p>
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 15-260: Statistics and Computing </p>
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 10-335: Art and Machine Learning </p>
-                </div>
-                <div>
-                    <p style = "margin-bottom: 0%;" > 84-275: Comparative Politics </p>
-                </div>
-            </div>
-        </div>
+        {% endfor %}
     </div>
     {% endblock %}
   </body>

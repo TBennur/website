@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request, jsonify, session
 from flask_session import Session
-import jinja2
 import yaml
 import platform
 import uuid
@@ -27,7 +26,7 @@ app.config['UPLOAD_FOLDER'] = appUtilities.get_file_path('temporaryImageFiles')
 app.config['MAX_CONTENT_LENGTH'] = 500 * 1000
 Session(app)
 
-conversion_stream = open(appUtilities.get_file_path("widgets/stylizeNameConversion.yaml"), 'r')
+conversion_stream = open(appUtilities.get_file_path("stylizeNameConversion.yaml"), 'r')
 conversion_dictionary = yaml.safe_load(conversion_stream)
 
 # Homepage route
@@ -59,6 +58,21 @@ def visualize_palette():
     img = stylizerWidget.visualize_palette(palette_info['filename'], palette_info['size'])
     encoded_img = appUtilities.get_palette(img)
     return jsonify({ 'Status' : 'Success', 'ImageBytes': encoded_img})
+
+# Visualizes Uploaded Image
+@app.route('/visualize-image', methods = ["GET", "POST"])
+def visualize_image():
+    if 'file' not in request.files:
+        return jsonify({'Status' : 'Failure', 'Reason' : 'File Doesn\'t Exist'})
+    file = request.files['file']
+    if file.filename == '':
+        return jsonify({'Status' : 'Failure', 'Reason' : 'Please Upload a Named File'})
+    if file and appUtilities.allowed_file(file.filename):
+        filename = str(session["id"]) + "-file-" + utils.secure_filename(file.filename)
+        filepath = appUtilities.upload_file(filename, app.config["UPLOAD_FOLDER"], session["id"], platform.system())
+        file.save(filepath)
+        return jsonify({ 'Status' : 'Success', 'ImageBytes': base64.encodebytes(file.getvalue()).decode('ascii')})
+    return jsonify({'Status' : 'Failure', 'Reason' : 'Please Upload a JPEG or PNG'})
 
 # Cipher Game
 @app.route("/cipher", methods = ["GET", "POST"])
@@ -95,20 +109,6 @@ def cipher():
     }
     return render_template("cipher.html", **context)
 
-# Visualizes Uploaded Image
-@app.route('/visualize-image', methods = ["GET", "POST"])
-def visualize_image():
-    if 'file' not in request.files:
-        return jsonify({'Status' : 'Failure', 'Reason' : 'File Doesn\'t Exist'})
-    file = request.files['file']
-    if file.filename == '':
-        return jsonify({'Status' : 'Failure', 'Reason' : 'Please Upload a Named File'})
-    if file and appUtilities.allowed_file(file.filename):
-        filename = str(session["id"]) + "-file-" + utils.secure_filename(file.filename)
-        filepath = appUtilities.upload_file(filename, app.config["UPLOAD_FOLDER"], session["id"], platform.system())
-        file.save(filepath)
-        return jsonify({ 'Status' : 'Success', 'ImageBytes': base64.encodebytes(file.getvalue()).decode('ascii')})
-    return jsonify({'Status' : 'Failure', 'Reason' : 'Please Upload a JPEG or PNG'})
 
 @app.errorhandler(exceptions.RequestEntityTooLarge)
 def handle_bad_request(e):
@@ -122,7 +122,9 @@ def about():
 # Coursework page route
 @app.route("/coursework")
 def coursework():
-    return render_template("coursework.html")
+    coursework_stream = open(appUtilities.get_file_path("coursework.yaml"), 'r')
+    context = yaml.safe_load(coursework_stream)
+    return render_template("coursework.html", **context)
 
 # Projects page route
 @app.route("/projects")

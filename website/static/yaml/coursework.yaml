@@ -1,0 +1,120 @@
+years:
+  - fall_name: Fall 2021
+    fall_classes: 
+      - number: 15-151
+        name: Concepts of Mathematics
+        technical: True
+        link: https://www.math.cmu.edu/~jmackey/151_128/welcome.html
+        grade: A
+      - number: 15-122                                    
+        name: Introduction to Imperative Programming
+        technical: True
+        link: https://www.cs.cmu.edu/~15122/
+        grade: A                                    
+      - number: 07-131
+        name: Great Practical Ideas in Computer Science
+        technical: True
+        link: https://www.cs.cmu.edu/~07131/f21/
+        grade: A
+      - number: 07-128
+        name: Freshman Immigration Course
+        technical: False
+      - number: 21-241
+        name: Matrices and Linear Transformations
+        technical: False
+      - number: 24-104
+        name: Introduction to Modern Making
+        technical: False
+      - number: 85-219
+        name: Biological Foundations of Behavior
+        technical: False
+    has_spring: True
+    spring_name: Spring 2022
+    spring_classes: 
+      - number: 15-150
+        name: Introduction to Functional Programming
+        technical: True
+        link: http://www.cs.cmu.edu/~15150/
+        grade: B
+      - number: 15-251
+        name: Great Theoretical Ideas in Computer Science
+        technical: True
+        link: https://s22.cs251.com/index.html
+        grade: A
+      - number: 07-180
+        name: Concepts in Artificial Intelligence
+        technical: True
+        link: https://www.coursicle.com/cmu/courses/SCS/07180/
+        grade: A
+      - number: 80-180
+        name: Nature of Language
+        technical: False
+      - number: 76-107
+        name: Writing about Data
+        technical: False
+      - number: 76-108
+        name: Writing about Public Problems
+        technical: False                       
+  - fall_name: Fall 2022
+    fall_classes: 
+      - number: 11-411
+        name: Natural Language Processing
+        technical: True
+        link: http://demo.clab.cs.cmu.edu/NLP/
+        grade: A
+      - number: 15-281
+        name: Artificial Intelligence Problem Solving and Representation
+        technical: True
+        link: https://www.cs.cmu.edu/~15281-s20/
+        grade: B
+      - number: 15-213
+        name: Introduction to Computer Systems
+        technical: True
+        link: https://www.cs.cmu.edu/~213/
+        grade: B
+      - number: 76-270
+        name: Writing for the Professions
+        technical: False
+      - number: TA for 21-241
+        name: Matrices and Linear Transformations
+        technical: False
+    has_spring: True
+    spring_name: Spring 2023
+    spring_classes: 
+      - number: 15-210
+        name: Parallel and Sequential Data Structures and Algorithms
+        technical: True
+        link: https://www.cs.cmu.edu/~15210/
+        grade: A
+      - number: 10-335
+        name: Art and Machine Learning
+        technical: True
+        link: https://sites.google.com/view/artml23s/material?authuser=0
+        grade: B
+      - number: 15-259
+        name: Probability and Computing
+        technical: False
+      - number: 15-260
+        name: Statistics and Computing
+        technical: False
+      - number: 84-275
+        name: Comparative Politics
+        technical: False                     
+  - fall_name: Fall 2023
+    fall_classes: 
+      - number: 36-401
+        name: Modern Regression
+        technical: False
+      - number: 17-313
+        name: Foundations of Software Engineering
+        technical: False
+      - number: 10-315
+        name: Introduction to Machine Learning
+        technical: False
+      - number: 85-211
+        name: Cognitive Psychology
+        technical: False
+      - number: 80-249
+        name: AI Society and Humanity
+        technical: False
+    has_spring: False
