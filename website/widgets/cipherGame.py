@@ -47,7 +47,7 @@ def format_hints(hs):
         s += "Current Hints: \n"
     for hint in hs:
         s += hint + ", "
-    return s[:-2] + "\n"
+    return s[:-2]
 
 def update_rules(l1, l2, rs, hs):
     if l1[1] == NULL or l2[0] == NULL:
@@ -71,7 +71,7 @@ def format_rules(rs):
         s += "Current Substitutions: \n"
     for rule in rs:
         s += rule + ", "
-    return s[:-2] + "\n"
+    return s[:-2]
 
 def generate_message(o):
     upper = []

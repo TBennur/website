@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request, jsonify, session
 from flask_session import Session
+import jinja2
 import yaml
 import platform
 import uuid
@@ -63,32 +64,43 @@ def visualize_palette():
 @app.route("/cipher")
 def cipher():
     session["raw_text"], session["cipher_rules"], session["cipher_text"], session["user_rules"], session["user_hints"], session["user_text"] = cipherWidget.reset_decoder()
-    return render_template("cipher.html")
+    session["user_text"] = cipherWidget.replace_text(session["cipher_text"], session["user_rules"] + session["user_hints"])
+    context = {'win': session["user_text"] == session["raw_text"],
+               'cipher_text': session["cipher_text"],
+               'user_text': session["user_text"],
+               'hints': cipherWidget.format_hints(session["user_hints"]), 
+               'rules': cipherWidget.format_rules(session["user_rules"]),}
+    print(context)
+    return render_template("cipher.html", **context)
 
 # Hint button for cipher game
 @app.route('/hint-button', methods = ["GET", "POST"])
 def hint_button():
+    print("Hint!")
     cipherWidget.update_hints(session["user_hints"], session["user_rules"], session["cipher_rules"])
     session["user_text"] = cipherWidget.replace_text(session["cipher_text"], session["user_rules"] + session["user_hints"])
-    return jsonify({ 'Status' : 'Success', 
-                    'text': session["user_text"], 
-                    'rules': cipherWidget.format_rules(session["user_rules"]),
-                    'hints': cipherWidget.format_hints(session["user_hints"]), 
-                    'raw': session["cipher_text"],
-                    'win': str(session["user_text"] == session["raw_text"])})
+    context = {'win': session["user_text"] == session["raw_text"],
+               'cipher_text': session["cipher_text"],
+               'user_text': session["user_text"],
+               'hints': cipherWidget.format_hints(session["user_hints"]), 
+               'rules': cipherWidget.format_rules(session["user_rules"]),}
+    print(context)
+    return render_template("cipher.html", **context)
 
 # Replacement button for cipher game
 @app.route('/replace-button', methods = ["GET", "POST"])
 def replace_button():
+    print("Replace!")
     [l1, l2] = request.get_data().decode('UTF-8').split("|")
     cipherWidget.update_rules(l1, l2, session["user_rules"], session["user_hints"])
     session["user_text"] = cipherWidget.replace_text(session["cipher_text"], session["user_rules"] + session["user_hints"])
-    return jsonify({ 'Status' : 'Success', 
-                    'text': session["user_text"], 
-                    'rules': cipherWidget.format_rules(session["user_rules"]),
-                    'hints': cipherWidget.format_hints(session["user_hints"]), 
-                    'raw': session["cipher_text"],
-                    'win': str(session["user_text"] == session["raw_text"])})
+    context = {'win': session["user_text"] == session["raw_text"],
+               'cipher_text': session["cipher_text"],
+               'user_text': session["user_text"],
+               'hints': cipherWidget.format_hints(session["user_hints"]), 
+               'rules': cipherWidget.format_rules(session["user_rules"]),}
+    print(context)
+    return render_template("cipher.html", **context)
 
 # Visualizes Uploaded Image
 @app.route('/visualize-image', methods = ["GET", "POST"])

@@ -1,90 +1,43 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title>Cipher Game</title>
-
+    <head>
+        <meta charset="utf-8">
+        <title>Cipher Game</title>
     </head>
-  <body>
-    {% extends "template.html" %}
-    {% block content %}
-    <script type=text/javascript>
-        
-        var l1 = "#"
-        var l2 = "#"
-        
-        function replace() {
-            var text = document.getElementById("text-content");
-            var rules = document.getElementById("rules-content");
-            var hints = document.getElementById("hints-content");
-            var raw = document.getElementById("raw-content");
-            var win = document.getElementById("win-button");
-            fetch("{{ url_for('replace_button') }}", 
-                    {method: "POST", 
-                    headers: {'content-type': 'application/json'},
-                    body: JSON.stringify(l1 + "|" + l2)})
-                .then(response => response.json())
-                .then(data => {
-                    if (data.Status == "Success") {
-                        text.innerText = data.text;
-                        rules.innerText = data.rules;
-                        hints.innerText = data.hints;
-                        raw.innerText = data.raw;
-                        win.hidden = true;
-                        if (data.win == 'True') {
-                            win.hidden = false;
-                        }
-                    }
-                });
-        }
+    <body>
+        {% extends "template.html" %}
+        {% block content %}
+        <script type=text/javascript>
+            
+            var l1 = "#";
+            var l2 = "#";
+            
+            function replace() {
+                fetch("{{ url_for('replace_button') }}", 
+                        {method: "POST", 
+                        headers: {'content-type': 'application/json'},
+                        body: JSON.stringify(l1 + "|" + l2)});
+            }
 
-        function hint() {
-            var text = document.getElementById("text-content");
-            var rules = document.getElementById("rules-content");
-            var hints = document.getElementById("hints-content");
-            var raw = document.getElementById("raw-content");
-            var win = document.getElementById("win-button");
-            fetch("{{ url_for('hint_button') }}", 
-                    {method: "POST", 
-                    headers: {'content-type': 'application/json'}})
-                .then(response => response.json())
-                .then(data => {
-                    if (data.Status == "Success") {
-                        text.innerText = data.text;
-                        rules.innerText = data.rules;
-                        hints.innerText = data.hints;
-                        raw.innerText = data.raw;
-                        win.hidden = true;
-                        if (data.win == 'True') {
-                            win.hidden = false;
-                        }
-                    }
-                });
-        }
+            function hint() {
+                fetch("{{ url_for('hint_button') }}", 
+                        {method: "POST", 
+                        headers: {'content-type': 'application/json'}});
+            }
 
-        function again() {
-            var text = document.getElementById("text-content");
-            var rules = document.getElementById("rules-content");
-            var hints = document.getElementById("hints-content");
-            var raw = document.getElementById("raw-content");
-            var win = document.getElementById("win-button");
-            text.innerText = "Hit Hint or Go To Begin!";
-            rules.innerText = "";
-            hints.innerText = "";
-            raw.innerText = "Hit Hint or Go To Begin!";
-            win.hidden = true;  
-            fetch("{{ url_for('cipher') }}");
-        }
+            function again() {  
+                fetch("{{ url_for('cipher') }}");
+            }
 
-        function l1Change() {
-            var l1_elem = document.getElementById("l1-form");
-            l1 = l1_elem.value;
-        }
-        
-        function l2Change() {
-            var l2_elem = document.getElementById("l2-form");
-            l2 = l2_elem.value;
-        }
+            function l1Change() {
+                var l1_elem = document.getElementById("l1-form");
+                l1 = l1_elem.value;
+            }
+            
+            function l2Change() {
+                var l2_elem = document.getElementById("l2-form");
+                l2 = l2_elem.value;
+            }
     </script>
     
     <div class="container-fluid webpage-render">
@@ -95,11 +48,13 @@
                     <h1 class = "text-center">Original Text</h1>
                 </div>
                 <div class = "col-2">
+                    {% if win %}
                     <div class='container align-top stylize-button position-relative text-center' style = 'margin-top: 2%;'>
                         <form>
-                            <button onclick="again()" class='btn btn-primary' type="button" id = "win-button" hidden>Play Again?</button>
+                            <button onclick="again()" class='btn btn-primary' type="button" id = "win-button">Play Again?</button>
                         </form>
                     </div>
+                    {% endif %}
                 </div>
                 <div class = "col-5">
                     <h1 class = "text-center">Decoded Text</h1>
@@ -109,11 +64,11 @@
             <div class="row">
                 
                 <div class = "col-5">
-                    <p id = "raw-content" class = "text-center"> Hit Hint or Go to Begin! </p>
+                    <p id = "raw-content" class = "text-center"> {{cipher_text}} </p>
                 </div>
 
                 <div class="col-2">
-                    <p id = "hints-content" class = "text-center"></p>
+                    <p id = "hints-content" class = "text-center">{{ hints }}</p>
                     <p class = "text-center">Replace</p>
                     <div class='container-fluid align-top d-flex justify-content-center' style = 'margin-top: -7%;'>
                         <form>
@@ -188,11 +143,11 @@
                             <button onclick="hint()" class='btn btn-primary' type="button">Hint!</button>
                         </form>
                     </div>
-                    <p id = "rules-content" class = "text-center"></p>
+                    <p id = "rules-content" class = "text-center"> {{ rules }} </p>
                 </div>
 
                 <div class = "col-5">                    
-                    <p id = "text-content" class = "text-center">Hit Hint or Go To Begin!</p>
+                    <p id = "text-content" class = "text-center"> {{ user_text }} </p>
                 </div>
                 
             </div>
