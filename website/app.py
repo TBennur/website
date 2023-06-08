@@ -129,7 +129,9 @@ def coursework():
 # Projects page route
 @app.route("/projects")
 def projects():
-    return render_template("projects.html")
+    projects_stream = open(appUtilities.get_file_path("projects.yaml"), 'r')
+    context = yaml.safe_load(projects_stream)
+    return render_template("projects.html", **context)
 
 if __name__ == "__main__":
     app.run()

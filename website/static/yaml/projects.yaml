@@ -1,0 +1,24 @@
+left_projects:
+  - title: Jigsaw Puzzle Solver
+    thumbnail: "portfolioPictures/solverScreenshot.jpg"
+    has_link: True
+    link: https://gitlab.com/TBennur/puzzle-solver
+    description: This project uses custom image recognition algorithms to solve jigsaw puzzles. The original version uses selenium to solve puzzles on thejigsawpuzzles.com, while the main version converts pictures of physical puzzles into images of the solved version.
+    has_collaborators: False
+    timeline: March 2019 - February 2020
+    technologies: Python, Numpy, PIL, Selenium
+    has_skills: False
+
+right_projects:
+  - title: "Recollections: The Game"
+    thumbnail: "portfolioPictures/recollectionsScreenshot.jpg"
+    has_link: True
+    link: https://gitlab.com/TBennur/puzzle-solver
+    description: This attempted game was a turn based RPG akin to the Fire Emblem series. The game was never finished due to time constraints, but it was a valuable learning experience.
+    has_collaborators: True
+    collaborators: Rowen Slepian, Marko Melishchuk, Jacob Luterman, Virginia Yu, Tobias Beidler-Shenk, Brian Lu, Kyle Holm, Miranda Pan, Henry Leighton, Vilnis Chakars
+    timeline: July 2020 - April 2021
+    technologies: Godot
+    has_skills: True
+    skills: Team Management, Game Design
+
