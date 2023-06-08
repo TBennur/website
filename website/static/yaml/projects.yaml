@@ -1,24 +1,66 @@
 left_projects:
   - title: Jigsaw Puzzle Solver
-    thumbnail: "portfolioPictures/solverScreenshot.jpg"
+    thumbnail: portfolioPictures/solverScreenshot.jpg
     has_link: True
-    link: https://gitlab.com/TBennur/puzzle-solver
-    description: This project uses custom image recognition algorithms to solve jigsaw puzzles. The original version uses selenium to solve puzzles on thejigsawpuzzles.com, while the main version converts pictures of physical puzzles into images of the solved version.
+    link: "https://gitlab.com/TBennur/puzzle-solver"
+    description: "This project uses custom image recognition algorithms to solve jigsaw puzzles. The original version uses Selenium to solve puzzles on thejigsawpuzzles.com, while the main version converts pictures of physical puzzles into images of the solved version."
     has_collaborators: False
-    timeline: March 2019 - February 2020
+    timeline: "March 2019 - February 2020"
     technologies: Python, Numpy, PIL, Selenium
     has_skills: False
+  - title: SIAM M3 Challenge Submission
+    thumbnail: portfolioPictures/modellingScreenshot.jpg
+    has_link: True
+    link: "https://m3challenge.siam.org/sites/default/files/uploads/FINALIST_14665.pdf"
+    description: "A paper modelling the economics, necessity and allocation of cellular data infrastructure in the United States. This paper was a finalist in SIAM's M3 Modelling Competition (top 1% of submissions) and also recieved an honorable mention for technical computing."
+    has_collaborators: True
+    collaborators: Tobias Beidler-Shenk, Owen Moss, Ethan Soloway, Hayden Gold
+    timeline: February 27th, 2021
+    technologies: Python, MATLAB, Numpy, Matplotlib
+    has_skills: True
+    skills: Mathematical Modelling
+  - title: ProxyLab
+    thumbnail: portfolioPictures/proxyStockScreenshot.jpg
+    has_link: False
+    description: "This project was built as part of the course 15-213: Introduction to Computer Systems. In this project, I built a multi-threaded proxy server that handles GET requests. I also created (and integrated) parsing, error handling and caching systems for this server."
+    has_collaborators: False
+    timeline: "November 17th - December 9th, 2022"
+    technologies: C, GDB
+    has_skills: True
+    skills: Parsing, System Design, Caching, Concurrency, Multithreading
 
 right_projects:
   - title: "Recollections: The Game"
-    thumbnail: "portfolioPictures/recollectionsScreenshot.jpg"
+    thumbnail: portfolioPictures/recollectionsScreenshot.jpg
     has_link: True
-    link: https://gitlab.com/TBennur/puzzle-solver
-    description: This attempted game was a turn based RPG akin to the Fire Emblem series. The game was never finished due to time constraints, but it was a valuable learning experience.
+    link: "https://gitlab.com/TBennur/rpg"
+    description: "This attempted game was a turn based RPG akin to the Fire Emblem series. The game was never finished due to time constraints, but it was a valuable learning experience."
     has_collaborators: True
     collaborators: Rowen Slepian, Marko Melishchuk, Jacob Luterman, Virginia Yu, Tobias Beidler-Shenk, Brian Lu, Kyle Holm, Miranda Pan, Henry Leighton, Vilnis Chakars
-    timeline: July 2020 - April 2021
+    timeline: "July 2020 - April 2021"
     technologies: Godot
     has_skills: True
     skills: Team Management, Game Design
+  - title:  Website and Stylizer
+    thumbnail: portfolioPictures/stylizerScreenshot.jpg
+    has_link: True
+    link: "https://github.com/TBennur/website"
+    description: "This is my personal website! It showcases my portfolio and hosts two widgets. The stylizer widget is a tool that allows users to render their pictures in small color palettes reminiscent of 8-bit games. The cipher widget lets users play a simple cryptography game."
+    has_collaborators: False
+    timeline: "January 2022 - Present"
+    technologies: C, Python, Numpy, Flask, Bootstrap, Jinja, Javascript, HTML, CSS
+    has_skills: True
+    skills: Web Development
+  - title: Question Generation/Question Answering
+    thumbnail: portfolioPictures/questionStockScreenshot.jpg
+    has_link: True
+    link: "https://github.com/TBennur/11411FinalProject"
+    description: "This project was built for the course 11-411: Natural Language Processing. My team built a fully functional question answering and question generation system using a mixture of Huggingface models, the spaCy library and our own linguistic functions. We also built our own evaluation and testing suite to assess our system."
+    has_collaborators: True
+    collaborators: Alexandra Knox, Kevin Ren
+    timeline: "September 2022 - December 2022"
+    technologies: Python, spaCy, PyTorch, Huggingface, Transformers, Git, Docker
+    has_skills: True
+    skills: Project Management, Unit Testing, System Design, System Evaluation
+
 
