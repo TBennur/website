@@ -11,88 +11,95 @@ else:
 SPLIT = "-"
 NULL = "#"
 
-def replace_text(o, rs):
-    upper = []
-    for i in range(len(o)):
-        if o[i].isupper():
-            upper.append(i)
-    o = o.upper()
-    for r in rs:
-        [l1, l2] = r.split(SPLIT)
+# Edits original ciphertext with rules
+def replace_text(original, rules):
+    uppercase_letters = []
+    for i in range(len(original)):
+        if original[i].isupper():
+            uppercase_letters.append(i)
+    original = original.upper()
+    for rule in rules:
+        [l1, l2] = rule.split(SPLIT)
         l1 = l1.upper()
         l2 = l2.lower()
-        o = o.replace(l1, l2)
-    o = o.lower()
-    for u in upper:
-        o = o[:u] + o[u].upper() + o[u+1:]  
-    return o
+        original = original.replace(l1, l2)
+    original_list = list(original.lower())
+    for u in uppercase_letters:
+        original_list[u] = original_list[u].upper()
+    return "".join(original_list)
 
-def update_hints(hs, rs, cs):
-    if len(hs) == len(cs):
+# Adds an additional hint based on pre-existing rules
+def update_hints(hints, user_rules, cipher_rules):
+    if len(hints) == len(cipher_rules):
         return
-    cipher = random.choice(cs)
+    cipher = random.choice(cipher_rules)
     hint = cipher[::-1].upper()
-    while hint in hs:
-        cipher = random.choice(cs)
+    while hint in hints:
+        cipher = random.choice(cipher_rules)
         hint = cipher[::-1].upper()
-    hs.append(hint)
-    for i in range(len(rs)):
-        if rs[i][0] == hint[0]:
-            rs.pop(i)
+    hints.append(hint)
+    for i in range(len(user_rules)):
+        if user_rules[i][0] == hint[0]:
+            user_rules.pop(i)
             return
 
-def format_hints(hs):
+# Formats hints for display
+def format_hints(hints):
     s = ""
-    if hs != []:
+    if hints != []:
         s += "Current Hints: \n"
-    for hint in hs:
+    for hint in hints:
         s += hint + ", "
     return s[:-2]
 
-def update_rules(l1, l2, rs, hs):
+# Updates existing rules after user input
+def update_rules(l1, l2, rules, hints):
     if l1 == NULL or l2 == NULL:
         return
-    for hint in hs:
+    for hint in hints:
         if l1 == hint[0]:
             return
     formatted = l1 + SPLIT + l2
     p = -1
-    for i in range(len(rs)):
-        if rs[i][0] == l1:
+    for i in range(len(rules)):
+        if rules[i][0] == l1:
             p = i
     if p != -1:
-        rs.pop(p)
+        rules.pop(p)
     if formatted[0] != formatted[-1]:
-        rs.append(formatted)
+        rules.append(formatted)
 
-def format_rules(rs):
+# Format rules for display
+def format_rules(rules):
     s = ""
-    if rs != []:
+    if rules != []:
         s += "Current Substitutions: \n"
-    for rule in rs:
+    for rule in rules:
         s += rule + ", "
     return s[:-2]
 
-def generate_message(o):
-    upper = []
-    for i in range(len(o)):
-        if o[i].isupper():
-            upper.append(i)
-    o = o.upper()
+# Generates ciphertext and rules from passage
+def generate_message(original):
+    uppercase_letters = []
+    for i in range(len(original)):
+        if original[i].isupper():
+            uppercase_letters.append(i)
+    original = original.upper()
     l1 = [chr(x) for x in range(97, 123)]
     l2 = l1.copy()
     random.shuffle(l2)
-    rs = [(l1[x] + SPLIT + l2[x]) for x in range(26)]
-    for r in rs:
-        [l1, l2] = r.split(SPLIT)
+    cipher_rules = [(l1[x] + SPLIT + l2[x]) for x in range(26)]
+    for rule in cipher_rules:
+        [l1, l2] = rule.split(SPLIT)
         l1 = l1.upper()
         l2 = l2.lower()
-        o = o.replace(l1, l2)
-    o = o.lower()
-    for u in upper:
-        o = o[:u] + o[u].upper() + o[u+1:]  
-    return o, rs
+        original = original.replace(l1, l2)
+    original_list = list(original.lower())
+    for u in uppercase_letters:
+        original_list[u] = original_list[u].upper()  
+    return "".join(original_list), cipher_rules
 
+# Sets up cipher game
 def setup():
     f = open(widgetUtilities.get_file_path(random.choice(os.listdir(widgetUtilities.get_file_path("cipherTexts")))), "r")
     raw = f.read()
@@ -108,4 +115,3 @@ def setup():
         "new_letter": "A",
     }
     return cipher_settings
-    
