@@ -40,13 +40,7 @@
         }
 
         // Palette size hierarchy
-        palettes = {
-            "Small" : ["Carpet Rose", "Monometalic", "Stormy"], 
-            "8-Color" : ["Ammo", "Dawnbringers", "Dreamscape", "Just Parchment", "Paper", "Rust Gold"],
-            "16-Color" : ["Dawnbringer", "Endesgas", "Feel The Sun", "Galaxy Flame", "Lost Century", "Ramp Rainbow", "Steam Lords"],
-            "32-Color" : ["AFR", "Endesga", "Fantasy", "Hept", "Marshmellow", "Nanner"],
-            "Large" : ["Comicscapes", "Resurrect", "Shido"]
-        }
+
 
         // Status variables
         var palette_selected = false;     
@@ -57,24 +51,22 @@
         // Main function, runs on stylize button press
         async function stylize() {
             
-            if (palette_selected) {
-                var image = document.getElementById("styled-image");
-                var error_text = document.getElementById("file-error");
-                fetch("{{ url_for('stylize_button') }}", 
-                    {method: "POST", 
-                    headers: {'content-type': 'application/json'},
-                    body: JSON.stringify(current_image + "|" + current_palette + "|" + image_custom)})
-                .then(response => response.json())
-                .then(data => {
-                    if (data.Status == "Success") {
-                        image.src = "data:image/png;base64," + data.ImageBytes;
-                    }
-                    else {
-                        error_text.hidden = false;
-                        error_text.innerHTML = data.Reason;
-                    }
-                });
-            }; 
+            var image = document.getElementById("styled-image");
+            var error_text = document.getElementById("file-error");
+            fetch("{{ url_for('stylize_button') }}", 
+                {method: "POST", 
+                headers: {'content-type': 'application/json'},
+                body: JSON.stringify(current_image + "|" + image_custom)})
+            .then(response => response.json())
+            .then(data => {
+                if (data.Status == "Success") {
+                    image.src = "data:image/png;base64," + data.ImageBytes;
+                }
+                else {
+                    error_text.hidden = false;
+                    error_text.innerHTML = data.Reason;
+                }
+            });
         
         }
         
@@ -95,63 +87,6 @@
             image_custom = false;
 
         }
-
-        // Updates cascading dropdown
-        function generate_secondary_dropdown() {
-            
-            var palette_primary = document.getElementById("palette-primary");
-            var palette_size = palette_primary.value;
-            var palette_secondary = document.getElementById("palette-secondary");
-            var palette_image = document.getElementById("palette-image");
-
-            if (palette_size == "Please Select a Palette Size") {
-                palette_secondary.style.display = "none";        
-                palette_image.style.visibility = "hidden";        
-                palette_selected = false;
-                current_palette = null;
-            }
-            else {
-                palette_secondary.style.display = "block";
-                palette_image.style.visiblity = "hidden";
-            }
-
-            palette_secondary.length = 1;
-
-            for (var y in palettes[palette_size]) {
-                palette_secondary.options[palette_secondary.options.length] = new Option(palettes[palette_size][y], palettes[palette_size][y]);
-            }
-
-        }
-
-        // Updates palette selection
-        function select_palette() {
-            
-            var palette_primary = document.getElementById("palette-primary");
-            var palette_size = palette_primary.value;
-            var palette_secondary = document.getElementById("palette-secondary");
-            var palette_image = document.getElementById("palette-image");
-
-            if (palette_secondary.value == "Please Select a palette") {
-                palette_selected = false;
-                current_palette = null;
-                palette_image.style.visibility = "hidden";        
-            }
-            else {
-                palette_secondary.style.display = "block";
-                palette_selected = true;
-                current_palette = palette_secondary.value; 
-                palette_image.style.visibility = "visible";
-                fetch("{{ url_for('visualize_palette') }}", 
-                    {method: "POST", 
-                    headers: {'content-type': 'application/json'},
-                    body: JSON.stringify(current_palette)})
-                .then(response => response.json())
-                .then(data => {
-                    palette_image.src = "data:image/png;base64," + data.ImageBytes;
-                });            
-            }
-
-            }
 
         async function upload() {
             var upload_button = document.getElementById("image-upload");
@@ -223,18 +158,27 @@
 
                 <div class="col-2">
                     <div class='container-fluid align-top d-flex justify-content-center'>
-                        <form>
-                            <select onchange="generate_secondary_dropdown()" id="palette-primary" class="form-select-sm primary-palette" aria-label="Default select example">
-                                <option selected>Please Select a Palette Size</option>
-                                <option value="Small">Small</option>
-                                <option value="8-Color">8-Color</option>
-                                <option value="16-Color">16-Color</option>
-                                <option value="32-Color">32-Color</option>
-                                <option value="Large">Large</option>
+                        <form method="post">
+                            <select onchange="this.form.submit()" name="palette-primary" class="form-select-sm primary-palette">
+                                {% for palette in primary_palettes %}
+                                    {% if palette == primary_palette %}
+                                        <option value = "{{ palette }}" selected> {{ palette }}</option>
+                                    {% else %}
+                                        <option value = "{{ palette }}"> {{ palette }}</option>
+                                    {% endif %}
+                                {% endfor %}
                             </select>
-                            <select onchange="select_palette()" id="palette-secondary" class="form-select-sm secondary-palette" aria-label="Default select example">
-                                <option selected>Please Select a palette</option>
-                            </select>
+                            {% if primary_selected %}
+                                <select onchange="this.form.submit()" name="palette-secondary" class="form-select-sm secondary-palette">
+                                    {% for palette in secondary_palettes %}
+                                        {% if palette == secondary_palette %}
+                                            <option value = "{{ palette }}" selected> {{ palette }}</option>
+                                        {% else %}
+                                            <option value = "{{ palette }}"> {{ palette }}</option>
+                                        {% endif %}
+                                    {% endfor %}
+                                </select>
+                            {% endif %}
                         </form>
                     </div>
                 
@@ -244,8 +188,10 @@
                         </form>
                     </div>
 
-                    <div class='container-fluid align-top palette-image text-center'>
-                        <img id = "palette-image" class="img-fluid styled-image center">
+                    <div class='container-fluid align-top text-center'>
+                        {% if secondary_selected %}
+                            <img id = "palette-image" class="img-fluid styled-image center" src="{{palette_image}}">
+                        {% endif %}
                     </div>
                 </div>
 
