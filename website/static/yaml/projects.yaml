@@ -28,6 +28,16 @@ left_projects:
     technologies: C, GDB
     has_skills: True
     skills: Parsing, System Design, Caching, Concurrency, Multithreading
+  - title: Pixelize
+    thumbnail: portfolioPictures/pixelizeScreenshot.jpg
+    has_link: True
+    link: "https://github.com/TBennur/Pixelize"
+    description: "This pixel art generator was built as part of 10-335: Art and Machine Learning. This model combines generative AI, Selenium web scraping and traditional image stylizing techniques to automatically convert user text input into stylized pixel art."
+    has_collaborators: False
+    timeline: "April - May 2023"
+    technologies: C, Python, PyTorch, Numpy, Selenium 
+    has_skills: True
+    skills: Web Scraping, Generative AI, Machine Learning, Image Processing
 
 right_projects:
   - title: "Recollections: The Game"
