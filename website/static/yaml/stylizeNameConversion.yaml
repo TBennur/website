@@ -10,6 +10,43 @@ Sunset: sunset.jpg
 Train: train.jpg
 Wasteland: wasteland.jpg
 
+Please Select a Palette Size:
+Small:
+  - "Please Select a Palette"
+  - "Carpet Rose"
+  - "Monometalic"
+  - "Stormy" 
+8-Color: 
+  - "Please Select a Palette"
+  - "Ammo"
+  - "Dawnbringers"
+  - "Dreamscape"
+  - "Just Parchment"
+  - "Paper"
+  - "Rust Gold"
+16-Color:
+  - "Please Select a Palette"
+  - "Dawnbringer"
+  - "Endesgas"
+  - "Feel The Sun"
+  - "Galaxy Flame"
+  - "Lost Century"
+  - "Ramp Rainbow"
+  - "Steam Lords"
+32-Color:
+  - "Please Select a Palette"
+  - "AFR"
+  - "Endesga"
+  - "Fantasy"
+  - "Hept"
+  - "Marshmellow"
+  - "Nanner"
+Large:
+  - "Please Select a Palette"
+  - "Comicscapes"
+  - "Resurrect"
+  - "Shido"
+
 # Addresses and sizes for default palettes
 Carpet Rose: 
   filename: carpet-rose-6.hex 

@@ -8,10 +8,6 @@
     max-height: 100%;
 }
 
-.palette-image {
-    visibility: hidden;
-}
-
 .image-dropdown {
     margin-top: 2%;
 }
@@ -26,7 +22,6 @@
 }
 
 .secondary-palette {
-    display: none;
     margin-top: 1%;
     margin-left: auto;
     margin-right: auto;
@@ -59,7 +54,9 @@ input[type="file"] {
     border-radius:.25rem;
     color:#fff;
     background-color:#0d6efd;
-    border-color:#0d6efd}
+    border-color:#0d6efd
+}
+
 .upload-primary:hover{
     color:#fff;
     background-color:#0b5ed7;

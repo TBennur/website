@@ -47,13 +47,12 @@ def upload_file(filename, upload_folder, session_id, system):
 def get_image_info(query, conversion_dictionary):
     request_info = query.get_data().decode('UTF-8').split("|")
     image_name = request_info[0][1:]
-    is_custom = (request_info[2][:-1] == "true")
+    is_custom = (request_info[1][:-1] == "true")
     if is_custom:
         image = secure_filename(image_name)
     else:
         image = conversion_dictionary[image_name]
-    palette_info = conversion_dictionary[request_info[1]]
-    return image, palette_info, is_custom
+    return image, is_custom
 
 def get_palette_info(query, conversion_dictionary):
     request_info = query.get_data().decode('UTF-8')
