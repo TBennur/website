@@ -104,17 +104,43 @@ years:
     fall_classes: 
       - number: 36-401
         name: Modern Regression
-        technical: False
+        technical: True
+        link: https://www.stat.cmu.edu/~larry/=stat401/
+        grade: B
       - number: 17-313
         name: Foundations of Software Engineering
-        technical: False
+        technical: True
+        link: https://cmu-313.github.io/
+        grade: A
       - number: 10-315
         name: Introduction to Machine Learning
-        technical: False
+        technical: True
+        link: https://www.cs.cmu.edu/~aarti/Class/10315_Spring22/ 
+        grade: A
       - number: 85-211
         name: Cognitive Psychology
         technical: False
       - number: 80-249
         name: AI Society and Humanity
         technical: False
-    has_spring: False
+    has_spring: True
+    spring_name: Spring 2024
+    spring_classes: 
+      - number: 11-485
+        name: Deep Learning
+        technical: False
+      - number: 10-422
+        name: Foundations of Learning, Game Theory and Their Connections
+        technical: False
+      - number: 15-451
+        name: Design and Analysis of Algorithms
+        technical: False
+      - number: 11-423
+        name: Conlanging
+        technical: False
+      - number: 79-234
+        name: Technology and Society
+        technical: False
+      - number: TA for 10-315
+        name: Introduction to Machine Learning
+        technical: False
